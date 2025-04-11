@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.helperserver.mapper.ResourceDownloadMapper">
+    <resultMap id="BaseResultMap" type="com.helperserver.bean.ResourceDownload">
+        <id column="download_id" property="downloadId" jdbcType="VARCHAR"/>
+        <result column="resource_id" property="resourceId" jdbcType="VARCHAR"/>
+        <result column="user_id" property="userId" jdbcType="VARCHAR"/>
+        <result column="file_name" property="fileName" jdbcType="VARCHAR"/>
+        <result column="file_type" property="fileType" jdbcType="VARCHAR"/>
+        <result column="file_size" property="fileSize" jdbcType="BIGINT"/>
+        <result column="download_url" property="downloadUrl" jdbcType="VARCHAR"/>
+        <result column="download_count" property="downloadCount" jdbcType="INTEGER"/>
+        <result column="last_download_time" property="lastDownloadTime" jdbcType="TIMESTAMP"/>
+        <result column="created_at" property="createdAt" jdbcType="TIMESTAMP"/>
+        <result column="updated_at" property="updatedAt" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        download_id, resource_id, user_id, file_name, file_type, file_size, download_url,
+        download_count, last_download_time, created_at, updated_at
+    </sql>
+
+    <select id="selectById" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM resource_download
+        WHERE download_id = #{downloadId}
+    </select>
+
+    <select id="selectByResourceId" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM resource_download
+        WHERE resource_id = #{resourceId}
+    </select>
+
+    <select id="selectByUserId" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM resource_download
+        WHERE user_id = #{userId}
+    </select>
+
+    <insert id="insert" parameterType="com.helperserver.bean.ResourceDownload">
+        INSERT INTO resource_download (
+        <include refid="Base_Column_List"/>
+        )
+        VALUES (
+        #{downloadId}, #{resourceId}, #{userId}, #{fileName}, #{fileType}, #{fileSize},
+        #{downloadUrl}, #{downloadCount}, #{lastDownloadTime}, #{createdAt}, #{updatedAt}
+        )
+    </insert>
+
+    <update id="update" parameterType="com.helperserver.bean.ResourceDownload">
+        UPDATE resource_download
+        SET file_name = #{fileName},
+            file_type = #{fileType},
+            file_size = #{fileSize},
+            download_url = #{downloadUrl},
+            download_count = #{downloadCount},
+            last_download_time = #{lastDownloadTime},
+            updated_at = #{updatedAt}
+        WHERE download_id = #{downloadId}
+    </update>
+
+    <update id="incrementDownloadCount">
+        UPDATE resource_download
+        SET download_count = download_count + 1,
+            last_download_time = CURRENT_TIMESTAMP,
+            updated_at = CURRENT_TIMESTAMP
+        WHERE download_id = #{downloadId}
+    </update>
+
+    <delete id="deleteById">
+        DELETE FROM resource_download WHERE download_id = #{downloadId}
+    </delete>
+</mapper>

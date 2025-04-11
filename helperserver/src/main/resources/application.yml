@@ -1,0 +1,58 @@
+server:
+  port: 8081
+
+ai:
+  app:
+    key: hengnaohH87BFDX0igOEwuxZLIk
+    secret: ygd8nqxqkq3aqzpsfip1yg95uy4a7xwb
+  service:
+    url: https://www.das-ai.com
+  agent:
+    id: a50a28d9-fdaa-497d-ae2d-cb4e7c53ca31
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/ai_helper?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+    druid:
+      initial-size: 5
+      min-idle: 5
+      max-active: 20
+      max-wait: 60000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 1 FROM DUAL
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.helperserver.bean
+  configuration:
+    map-underscore-to-camel-case: true
+
+springfox:
+  documentation:
+    swagger-ui:
+      enabled: true
+      path: /swagger-ui.html
+    swagger:
+      v2:
+        path: /v2/api-docs
+
+logging:
+  level:
+    root: info
+    com.helperserver: debug
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  file:
+    name: logs/application.log

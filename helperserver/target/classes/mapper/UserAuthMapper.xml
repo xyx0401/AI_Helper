@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.helperserver.mapper.UserAuthMapper">
+    <resultMap id="BaseResultMap" type="com.helperserver.bean.UserAuth">
+        <id column="auth_id" property="authId" jdbcType="VARCHAR"/>
+        <result column="user_id" property="userId" jdbcType="VARCHAR"/>
+        <result column="auth_type" property="authType" jdbcType="VARCHAR"/>
+        <result column="identifier" property="identifier" jdbcType="VARCHAR"/>
+        <result column="credential" property="credential" jdbcType="VARCHAR"/>
+        <result column="expires_at" property="expiresAt" jdbcType="TIMESTAMP"/>
+        <result column="created_at" property="createdAt" jdbcType="TIMESTAMP"/>
+        <result column="updated_at" property="updatedAt" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        auth_id, user_id, auth_type, identifier, credential, expires_at, created_at, updated_at
+    </sql>
+
+    <select id="selectById" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM user_auth
+        WHERE auth_id = #{authId}
+    </select>
+
+    <select id="selectByUserIdAndType" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM user_auth
+        WHERE user_id = #{userId} AND auth_type = #{authType}
+    </select>
+
+    <select id="selectByIdentifierAndType" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM user_auth
+        WHERE identifier = #{identifier} AND auth_type = #{authType}
+    </select>
+
+    <insert id="insert" parameterType="com.helperserver.bean.UserAuth">
+        INSERT INTO user_auth (
+        <include refid="Base_Column_List"/>
+        )
+        VALUES (
+        #{authId}, #{userId}, #{authType}, #{identifier}, #{credential},
+        #{expiresAt}, #{createdAt}, #{updatedAt}
+        )
+    </insert>
+
+    <update id="update" parameterType="com.helperserver.bean.UserAuth">
+        UPDATE user_auth
+        SET credential = #{credential},
+        expires_at = #{expiresAt},
+        updated_at = #{updatedAt}
+        WHERE auth_id = #{authId}
+    </update>
+
+    <delete id="deleteById">
+        DELETE FROM user_auth
+        WHERE auth_id = #{authId}
+    </delete>
+
+    <select id="selectByUserId" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM user_auth
+        WHERE user_id = #{userId}
+    </select>
+</mapper>

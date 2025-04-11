@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.helperserver.mapper.ConferenceGuideContentMapper">
+    <resultMap id="BaseResultMap" type="com.helperserver.bean.ConferenceGuideContent">
+        <id column="guide_id" property="guideId" jdbcType="VARCHAR"/>
+        <result column="conference_id" property="conferenceId" jdbcType="VARCHAR"/>
+        <result column="title" property="title" jdbcType="VARCHAR"/>
+        <result column="content" property="content" jdbcType="VARCHAR"/>
+        <result column="type" property="type" jdbcType="VARCHAR"/>
+        <result column="sort_order" property="sortOrder" jdbcType="INTEGER"/>
+        <result column="created_at" property="createdAt" jdbcType="TIMESTAMP"/>
+        <result column="updated_at" property="updatedAt" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        guide_id, conference_id, title, content, type, sort_order, created_at, updated_at
+    </sql>
+
+    <select id="selectById" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM conference_guide_content
+        WHERE guide_id = #{guideId}
+    </select>
+
+    <select id="selectByConferenceId" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM conference_guide_content
+        WHERE conference_id = #{conferenceId}
+        ORDER BY sort_order ASC
+    </select>
+
+    <select id="selectByConferenceIdAndType" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM conference_guide_content
+        WHERE conference_id = #{conferenceId} AND type = #{type}
+        ORDER BY sort_order ASC
+    </select>
+
+    <insert id="insert" parameterType="com.helperserver.bean.ConferenceGuideContent">
+        INSERT INTO conference_guide_content (
+        <include refid="Base_Column_List"/>
+        )
+        VALUES (
+        #{guideId}, #{conferenceId}, #{title}, #{content}, #{type}, #{sortOrder}, #{createdAt}, #{updatedAt}
+        )
+    </insert>
+
+    <update id="update" parameterType="com.helperserver.bean.ConferenceGuideContent">
+        UPDATE conference_guide_content
+        SET title = #{title},
+        content = #{content},
+        type = #{type},
+        sort_order = #{sortOrder},
+        updated_at = #{updatedAt}
+        WHERE guide_id = #{guideId}
+    </update>
+
+    <delete id="deleteById">
+        DELETE FROM conference_guide_content
+        WHERE guide_id = #{guideId}
+    </delete>
+
+    <delete id="deleteByConferenceId">
+        DELETE FROM conference_guide_content
+        WHERE conference_id = #{conferenceId}
+    </delete>
+</mapper>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.helperserver.mapper.ForumStatisticsMapper">
+    <resultMap id="BaseResultMap" type="com.helperserver.bean.ForumStatistics">
+        <id column="statistics_id" property="statisticsId" jdbcType="VARCHAR"/>
+        <result column="forum_id" property="forumId" jdbcType="VARCHAR"/>
+        <result column="forum_title" property="forumTitle" jdbcType="VARCHAR"/>
+        <result column="view_count" property="viewCount" jdbcType="INTEGER"/>
+        <result column="favorite_count" property="favoriteCount" jdbcType="INTEGER"/>
+        <result column="comment_count" property="commentCount" jdbcType="INTEGER"/>
+        <result column="share_count" property="shareCount" jdbcType="INTEGER"/>
+        <result column="created_at" property="createdAt" jdbcType="TIMESTAMP"/>
+        <result column="updated_at" property="updatedAt" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        statistics_id, forum_id, forum_title, view_count, favorite_count, comment_count, share_count, created_at, updated_at
+    </sql>
+
+    <select id="selectById" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM forum_statistics
+        WHERE statistics_id = #{statisticsId}
+    </select>
+
+    <select id="selectByForumId" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM forum_statistics
+        WHERE forum_id = #{forumId}
+    </select>
+
+    <select id="selectTopByViewCount" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM forum_statistics
+        ORDER BY view_count DESC LIMIT #{limit}
+    </select>
+
+    <select id="selectTopByFavoriteCount" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM forum_statistics
+        ORDER BY favorite_count DESC LIMIT #{limit}
+    </select>
+
+    <select id="selectTopByCommentCount" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM forum_statistics
+        ORDER BY comment_count DESC LIMIT #{limit}
+    </select>
+
+    <insert id="insert" parameterType="com.helperserver.bean.ForumStatistics">
+        INSERT INTO forum_statistics (
+        <include refid="Base_Column_List"/>
+        )
+        VALUES (
+        #{statisticsId}, #{forumId}, #{forumTitle}, #{viewCount}, #{favoriteCount}, #{commentCount}, #{shareCount}, #{createdAt}, #{updatedAt}
+        )
+    </insert>
+
+    <update id="update" parameterType="com.helperserver.bean.ForumStatistics">
+        UPDATE forum_statistics
+        SET view_count = #{viewCount},
+        favorite_count = #{favoriteCount},
+        comment_count = #{commentCount},
+        share_count = #{shareCount},
+        updated_at = #{updatedAt}
+        WHERE statistics_id = #{statisticsId}
+    </update>
+
+    <delete id="deleteById">
+        DELETE FROM forum_statistics
+        WHERE statistics_id = #{statisticsId}
+    </delete>
+
+    <update id="incrementViewCount">
+        UPDATE forum_statistics
+        SET view_count = view_count + 1,
+        updated_at = #{updatedAt}
+        WHERE forum_id = #{forumId}
+    </update>
+
+    <update id="incrementFavoriteCount">
+        UPDATE forum_statistics
+        SET favorite_count = favorite_count + 1,
+        updated_at = #{updatedAt}
+        WHERE forum_id = #{forumId}
+    </update>
+
+    <update id="incrementCommentCount">
+        UPDATE forum_statistics
+        SET comment_count = comment_count + 1,
+        updated_at = #{updatedAt}
+        WHERE forum_id = #{forumId}
+    </update>
+
+    <update id="incrementShareCount">
+        UPDATE forum_statistics
+        SET share_count = share_count + 1,
+            updated_at = #{updatedAt}
+        WHERE forum_id = #{forumId}
+    </update>
+</mapper>

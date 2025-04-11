@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.helperserver.mapper.ForumMapper">
+    <resultMap id="BaseResultMap" type="com.helperserver.bean.Forum">
+        <id column="forum_id" property="forumId" />
+        <result column="title" property="title" />
+        <result column="description" property="description" />
+        <result column="tag" property="tag" />
+        <result column="view_count" property="viewCount" />
+        <result column="favorite_count" property="favoriteCount" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+    </resultMap>
+
+    <select id="selectById" resultMap="BaseResultMap">
+        SELECT *
+        FROM forum
+        WHERE forum_id = #{forumId}
+    </select>
+
+    <select id="selectAll" resultMap="BaseResultMap">
+        SELECT *
+        FROM forum
+        ORDER BY create_time DESC
+    </select>
+
+    <select id="selectByTitle" resultMap="BaseResultMap">
+        SELECT *
+        FROM forum
+        WHERE title LIKE CONCAT('%', #{title}, '%')
+        ORDER BY create_time DESC
+    </select>
+
+    <select id="selectByTag" resultMap="BaseResultMap">
+        SELECT *
+        FROM forum
+        WHERE tag = #{tag}
+        ORDER BY create_time DESC
+    </select>
+
+    <insert id="insert">
+        INSERT INTO forum (
+            forum_id, title, description, tag,
+            view_count, favorite_count, create_time, update_time
+        )
+        VALUES (
+            #{forumId}, #{title}, #{description}, #{tag},
+            #{viewCount}, #{favoriteCount}, #{createTime}, #{updateTime}
+        )
+    </insert>
+
+    <update id="update">
+        UPDATE forum
+        SET title = #{title},
+            description = #{description},
+            tag = #{tag},
+            view_count = #{viewCount},
+            favorite_count = #{favoriteCount},
+            update_time = #{updateTime}
+        WHERE forum_id = #{forumId}
+    </update>
+
+    <delete id="deleteById">
+        DELETE FROM forum
+        WHERE forum_id = #{forumId}
+    </delete>
+
+    <update id="incrementViewCount">
+        UPDATE forum
+        SET view_count = view_count + 1,
+            update_time = #{updatedAt}
+        WHERE forum_id = #{forumId}
+    </update>
+
+    <update id="incrementFavoriteCount">
+        UPDATE forum
+        SET favorite_count = favorite_count + 1,
+            update_time = #{updatedAt}
+        WHERE forum_id = #{forumId}
+    </update>
+</mapper>

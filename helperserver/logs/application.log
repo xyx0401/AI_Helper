@@ -1,0 +1,1263 @@
+2025-04-08 00:00:35 [http-nio-8081-exec-7] DEBUG c.h.mapper.UserMapper.selectByEmail - ==>  Preparing: SELECT * FROM user WHERE email = ?
+2025-04-08 00:00:35 [http-nio-8081-exec-7] DEBUG c.h.mapper.UserMapper.selectByEmail - ==> Parameters: 1@12.com(String)
+2025-04-08 00:00:35 [http-nio-8081-exec-7] DEBUG c.h.mapper.UserMapper.selectByEmail - <==      Total: 1
+2025-04-08 04:58:11 [http-nio-8081-exec-2] ERROR c.h.config.GlobalExceptionHandler - 系统异常
+org.apache.catalina.connector.ClientAbortException: java.io.IOException: 你的主机中的软件中止了一个已建立的连接。
+	at org.apache.catalina.connector.OutputBuffer.doFlush(OutputBuffer.java:309)
+	at org.apache.catalina.connector.OutputBuffer.flush(OutputBuffer.java:271)
+	at org.apache.catalina.connector.CoyoteOutputStream.flush(CoyoteOutputStream.java:120)
+	at java.io.FilterOutputStream.flush(FilterOutputStream.java:140)
+	at com.fasterxml.jackson.core.json.UTF8JsonGenerator.flush(UTF8JsonGenerator.java:1187)
+	at com.fasterxml.jackson.databind.ObjectWriter.writeValue(ObjectWriter.java:1009)
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.writeInternal(AbstractJackson2HttpMessageConverter.java:456)
+	at org.springframework.http.converter.AbstractGenericHttpMessageConverter.write(AbstractGenericHttpMessageConverter.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:290)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.handleReturnValue(RequestResponseBodyMethodProcessor.java:183)
+	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:78)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:135)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:928)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1794)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.io.IOException: 你的主机中的软件中止了一个已建立的连接。
+	at sun.nio.ch.SocketDispatcher.write0(Native Method)
+	at sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:51)
+	at sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:93)
+	at sun.nio.ch.IOUtil.write(IOUtil.java:65)
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:471)
+	at org.apache.tomcat.util.net.NioChannel.write(NioChannel.java:136)
+	at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.doWrite(NioEndpoint.java:1431)
+	at org.apache.tomcat.util.net.SocketWrapperBase.doWrite(SocketWrapperBase.java:775)
+	at org.apache.tomcat.util.net.SocketWrapperBase.flushBlocking(SocketWrapperBase.java:739)
+	at org.apache.tomcat.util.net.SocketWrapperBase.flush(SocketWrapperBase.java:723)
+	at org.apache.coyote.http11.Http11OutputBuffer$SocketOutputBuffer.flush(Http11OutputBuffer.java:566)
+	at org.apache.coyote.http11.filters.ChunkedOutputFilter.flush(ChunkedOutputFilter.java:157)
+	at org.apache.coyote.http11.Http11OutputBuffer.flush(Http11OutputBuffer.java:220)
+	at org.apache.coyote.http11.Http11Processor.flush(Http11Processor.java:1244)
+	at org.apache.coyote.AbstractProcessor.action(AbstractProcessor.java:399)
+	at org.apache.coyote.Response.action(Response.java:207)
+	at org.apache.catalina.connector.OutputBuffer.doFlush(OutputBuffer.java:305)
+	... 54 common frames omitted
+2025-04-08 04:58:11 [http-nio-8081-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Failure in @ExceptionHandler com.helperserver.config.GlobalExceptionHandler#handleException(Exception)
+org.apache.catalina.connector.ClientAbortException: java.io.IOException: 你的主机中的软件中止了一个已建立的连接。
+	at org.apache.catalina.connector.OutputBuffer.doFlush(OutputBuffer.java:309)
+	at org.apache.catalina.connector.OutputBuffer.flush(OutputBuffer.java:271)
+	at org.apache.catalina.connector.CoyoteOutputStream.flush(CoyoteOutputStream.java:120)
+	at java.io.FilterOutputStream.flush(FilterOutputStream.java:140)
+	at com.fasterxml.jackson.core.json.UTF8JsonGenerator.flush(UTF8JsonGenerator.java:1187)
+	at com.fasterxml.jackson.databind.ObjectWriter.writeValue(ObjectWriter.java:1009)
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.writeInternal(AbstractJackson2HttpMessageConverter.java:456)
+	at org.springframework.http.converter.AbstractGenericHttpMessageConverter.write(AbstractGenericHttpMessageConverter.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:290)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.handleReturnValue(RequestResponseBodyMethodProcessor.java:183)
+	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:78)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:135)
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:428)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:75)
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:142)
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80)
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1332)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1143)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:928)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1794)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.io.IOException: 你的主机中的软件中止了一个已建立的连接。
+	at sun.nio.ch.SocketDispatcher.write0(Native Method)
+	at sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:51)
+	at sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:93)
+	at sun.nio.ch.IOUtil.write(IOUtil.java:65)
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:471)
+	at org.apache.tomcat.util.net.NioChannel.write(NioChannel.java:136)
+	at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.doWrite(NioEndpoint.java:1431)
+	at org.apache.tomcat.util.net.SocketWrapperBase.doWrite(SocketWrapperBase.java:775)
+	at org.apache.tomcat.util.net.SocketWrapperBase.flushBlocking(SocketWrapperBase.java:739)
+	at org.apache.tomcat.util.net.SocketWrapperBase.flush(SocketWrapperBase.java:723)
+	at org.apache.coyote.http11.Http11OutputBuffer$SocketOutputBuffer.flush(Http11OutputBuffer.java:566)
+	at org.apache.coyote.http11.filters.ChunkedOutputFilter.flush(ChunkedOutputFilter.java:157)
+	at org.apache.coyote.http11.Http11OutputBuffer.flush(Http11OutputBuffer.java:220)
+	at org.apache.coyote.http11.Http11Processor.flush(Http11Processor.java:1244)
+	at org.apache.coyote.AbstractProcessor.action(AbstractProcessor.java:399)
+	at org.apache.coyote.Response.action(Response.java:207)
+	at org.apache.catalina.connector.OutputBuffer.doFlush(OutputBuffer.java:305)
+	... 57 common frames omitted
+2025-04-08 10:41:57 [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-04-08 10:41:57 [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2025-04-08 10:42:50 [main] INFO  c.h.HelperServerApplication - Starting HelperServerApplication using Java 1.8.0_202 on XYX0401 with PID 36572 (D:\code\AI_helper\helperserver\target\classes started by 肖宇轩 in D:\code\AI_helper\helperserver)
+2025-04-08 10:42:50 [main] DEBUG c.h.HelperServerApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
+2025-04-08 10:42:50 [main] INFO  c.h.HelperServerApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-08 10:42:51 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2025-04-08 10:42:51 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-08 10:42:51 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-04-08 10:42:51 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-08 10:42:51 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1354 ms
+2025-04-08 10:42:51 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-04-08 10:42:52 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-04-08 10:42:53 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2025-04-08 10:42:53 [main] INFO  c.h.HelperServerApplication - Started HelperServerApplication in 3.773 seconds (JVM running for 4.074)
+2025-04-08 10:43:14 [http-nio-8081-exec-3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-08 10:43:14 [http-nio-8081-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-08 10:43:14 [http-nio-8081-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-04-08 10:43:14 [http-nio-8081-exec-3] INFO  c.h.controller.QaController - 收到问题: 你是谁
+2025-04-08 10:43:14 [http-nio-8081-exec-3] DEBUG c.h.service.impl.QaServiceImpl - 处理问题: 你是谁, 会议ID: default
+2025-04-08 10:43:14 [http-nio-8081-exec-3] DEBUG c.h.service.impl.QaServiceImpl - 请求时间戳: 1744080194465
+2025-04-08 10:43:14 [http-nio-8081-exec-3] DEBUG c.h.service.impl.QaServiceImpl - API请求地址: https://www.das-ai.com/open/api/v2/agent/execute
+2025-04-08 10:43:14 [http-nio-8081-exec-3] INFO  c.h.service.impl.QaServiceImpl - 开始调用AI服务，尝试次数: 1
+2025-04-08 10:43:23 [http-nio-8081-exec-3] DEBUG c.h.service.impl.QaServiceImpl - 响应内容: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":125,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2748},"session":{"messages":[{"role":"user","content":"你是谁"},{"role":"assistant","content":"我是2025西湖论剑大会的线上智能参会助手，依托安恒信息恒脑大模型强大的人工智能技术，能为参会者提供大会相关的全方位服务。无论是查询日程安排、嘉宾信息、成果发布，还是获取大会的最新动态，我都能为您提供帮助。通过智能对话，解答您的各类问题，并根据您的身份和兴趣，提供个性化的日程推荐和信息推送。同时，我还能实时更新推送大会的变更信息和重要通知、参会指南等，提高大会网站及小程序的使用体验。如果您有任何问题，欢迎随时向我提问。"}],"id":"d742c5f9-c5e8-437e-923c-3dd7797c5b9d"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.142.17440801978094301"}
+2025-04-08 10:43:23 [http-nio-8081-exec-3] DEBUG c.h.service.impl.QaServiceImpl - AI服务原始响应: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":125,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2748},"session":{"messages":[{"role":"user","content":"你是谁"},{"role":"assistant","content":"我是2025西湖论剑大会的线上智能参会助手，依托安恒信息恒脑大模型强大的人工智能技术，能为参会者提供大会相关的全方位服务。无论是查询日程安排、嘉宾信息、成果发布，还是获取大会的最新动态，我都能为您提供帮助。通过智能对话，解答您的各类问题，并根据您的身份和兴趣，提供个性化的日程推荐和信息推送。同时，我还能实时更新推送大会的变更信息和重要通知、参会指南等，提高大会网站及小程序的使用体验。如果您有任何问题，欢迎随时向我提问。"}],"id":"d742c5f9-c5e8-437e-923c-3dd7797c5b9d"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.142.17440801978094301"}
+2025-04-08 10:43:23 [http-nio-8081-exec-3] DEBUG c.h.service.impl.QaServiceImpl - 开始解析AI回复内容
+2025-04-08 10:43:23 [http-nio-8081-exec-3] DEBUG c.h.service.impl.QaServiceImpl - 成功解析AI回答: "我是2025西湖论剑大会的线上智能参会助手，依托安恒信息恒脑大模型强大的人工智能技术，能为参会者提供大会相关的全方位服务。无论是查询日程安排、嘉宾信息、成果发布，还是获取大会的最新动态，我都能为您提供帮助。通过智能对话，解答您的各类问题，并根据您的身份和兴趣，提供个性化的日程推荐和信息推送。同时，我还能实时更新推送大会的变更信息和重要通知、参会指南等，提高大会网站及小程序的使用体验。如果您有任何问题，欢迎随时向我提问。
+2025-04-08 10:43:23 [http-nio-8081-exec-3] INFO  c.h.service.impl.QaServiceImpl - AI服务回答: "我是2025西湖论剑大会的线上智能参会助手，依托安恒信息恒脑大模型强大的人工智能技术，能为参会者提供大会相关的全方位服务。无论是查询日程安排、嘉宾信息、成果发布，还是获取大会的最新动态，我都能为您提供帮助。通过智能对话，解答您的各类问题，并根据您的身份和兴趣，提供个性化的日程推荐和信息推送。同时，我还能实时更新推送大会的变更信息和重要通知、参会指南等，提高大会网站及小程序的使用体验。如果您有任何问题，欢迎随时向我提问。
+2025-04-08 10:43:23 [http-nio-8081-exec-3] DEBUG c.h.service.impl.QaServiceImpl - 答案生成成功: "我是2025西湖论剑大会的线上智能参会助手，依托安恒信息恒脑大模型强大的人工智能技术，能为参会者提供大会相关的全方位服务。无论是查询日程安排、嘉宾信息、成果发布，还是获取大会的最新动态，我都能为您提供帮助。通过智能对话，解答您的各类问题，并根据您的身份和兴趣，提供个性化的日程推荐和信息推送。同时，我还能实时更新推送大会的变更信息和重要通知、参会指南等，提高大会网站及小程序的使用体验。如果您有任何问题，欢迎随时向我提问。
+2025-04-08 10:43:23 [http-nio-8081-exec-3] INFO  c.h.controller.QaController - 返回AI回答, 长度: 212, 内容: "我是2025西湖论剑大会的线上智能参会助手，依托安恒信息恒脑大模型强大的人工智能技术，能为参会者提供大会相关的全方位服务。无论是查询日程安排、嘉宾信息、成果发布，还是获取大会的最新动态，我都能为您提供帮助。通过智能对话，解答您的各类问题，并根据您的身份和兴趣，提供个性化的日程推荐和信息推送。同时，我还能实时更新推送大会的变更信息和重要通知、参会指南等，提高大会网站及小程序的使用体验。如果您有任何问题，欢迎随时向我提问。
+2025-04-08 10:43:51 [http-nio-8081-exec-2] INFO  c.h.controller.QaController - 收到问题: 你能干什么
+2025-04-08 10:43:51 [http-nio-8081-exec-2] DEBUG c.h.service.impl.QaServiceImpl - 处理问题: 你能干什么, 会议ID: default
+2025-04-08 10:43:51 [http-nio-8081-exec-2] DEBUG c.h.service.impl.QaServiceImpl - 请求时间戳: 1744080231115
+2025-04-08 10:43:51 [http-nio-8081-exec-2] DEBUG c.h.service.impl.QaServiceImpl - API请求地址: https://www.das-ai.com/open/api/v2/agent/execute
+2025-04-08 10:43:51 [http-nio-8081-exec-2] INFO  c.h.service.impl.QaServiceImpl - 开始调用AI服务，尝试次数: 1
+2025-04-08 10:44:07 [http-nio-8081-exec-2] DEBUG c.h.service.impl.QaServiceImpl - 响应内容: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":215,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2838},"session":{"messages":[{"role":"user","content":"你能干什么"},{"role":"assistant","content":"您好！作为2025西湖论剑大会的线上智能参会助手，我可以为您提供以下服务：\n\n1. **查询大会信息**：包括日程安排、嘉宾介绍、成果发布等。\n2. **获取最新动态**：实时推送大会的最新通知和变更信息。\n3. **解答疑问**：针对您对大会的任何疑问提供解答。\n4. **个性化推荐**：根据您的身份和兴趣，提供个性化的日程安排和信息推送。\n5. **参会指南**：提供如何参会的指南，包括交通指引、会场布局等实用信息。\n6. **文档解析**：帮助您解析大会相关的文档，提取关键信息。\n7. **图片内容提取**：从图片中提取文字或表格内容。\n8. **数据可视化**：根据您的需求生成柱状图、折线图、饼状图等图表。\n9. **代码执行**：支持您运行Python代码，进行数据分析或其他编程任务。\n\n若您有任何具体问题或需求，欢迎随时告诉我！"}],"id":"14fd005e-f1d7-409d-a628-9a31b3dcb988"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.2947307.17440802343736453"}
+2025-04-08 10:44:07 [http-nio-8081-exec-2] DEBUG c.h.service.impl.QaServiceImpl - AI服务原始响应: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":215,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2838},"session":{"messages":[{"role":"user","content":"你能干什么"},{"role":"assistant","content":"您好！作为2025西湖论剑大会的线上智能参会助手，我可以为您提供以下服务：\n\n1. **查询大会信息**：包括日程安排、嘉宾介绍、成果发布等。\n2. **获取最新动态**：实时推送大会的最新通知和变更信息。\n3. **解答疑问**：针对您对大会的任何疑问提供解答。\n4. **个性化推荐**：根据您的身份和兴趣，提供个性化的日程安排和信息推送。\n5. **参会指南**：提供如何参会的指南，包括交通指引、会场布局等实用信息。\n6. **文档解析**：帮助您解析大会相关的文档，提取关键信息。\n7. **图片内容提取**：从图片中提取文字或表格内容。\n8. **数据可视化**：根据您的需求生成柱状图、折线图、饼状图等图表。\n9. **代码执行**：支持您运行Python代码，进行数据分析或其他编程任务。\n\n若您有任何具体问题或需求，欢迎随时告诉我！"}],"id":"14fd005e-f1d7-409d-a628-9a31b3dcb988"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.2947307.17440802343736453"}
+2025-04-08 10:44:07 [http-nio-8081-exec-2] DEBUG c.h.service.impl.QaServiceImpl - 开始解析AI回复内容
+2025-04-08 10:44:07 [http-nio-8081-exec-2] DEBUG c.h.service.impl.QaServiceImpl - 成功解析AI回答: "您好！作为2025西湖论剑大会的线上智能参会助手，我可以为您提供以下服务：
+
+1. **查询大会信息**：包括日程安排、嘉宾介绍、成果发布等。
+2. **获取最新动态**：实时推送大会的最新通知和变更信息。
+3. **解答疑问**：针对您对大会的任何疑问提供解答。
+4. **个性化推荐**：根据您的身份和兴趣，提供个性化的日程安排和信息推送。
+5. **参会指南**：提供如何参会的指南，包括交通指引、会场布局等实用信息。
+6. **文档解析**：帮助您解析大会相关的文档，提取关键信息。
+7. **图片内容提取**：从图片中提取文字或表格内容。
+8. **数据可视化**：根据您的需求生成柱状图、折线图、饼状图等图表。
+9. **代码执行**：支持您运行Python代码，进行数据分析或其他编程任务。
+
+若您有任何具体问题或需求，欢迎随时告诉我！
+2025-04-08 10:44:07 [http-nio-8081-exec-2] INFO  c.h.service.impl.QaServiceImpl - AI服务回答: "您好！作为2025西湖论剑大会的线上智能参会助手，我可以为您提供以下服务：
+
+1. **查询大会信息**：包括日程安排、嘉宾介绍、成果发布等。
+2. **获取最新动态**：实时推送大会的最新通知和变更信息。
+3. **解答疑问**：针对您对大会的任何疑问提供解答。
+4. **个性化推荐**：根据您的身份和兴趣，提供个性化的日程安排和信息推送。
+5. **参会指南**：提供如何参会的指南，包括交通指引、会场布局等实用信息。
+6. **文档解析**：帮助您解析大会相关的文档，提取关键信息。
+7. **图片内容提取**：从图片中提取文字或表格内容。
+8. **数据可视化**：根据您的需求生成柱状图、折线图、饼状图等图表。
+9. **代码执行**：支持您运行Python代码，进行数据分析或其他编程任务。
+
+若您有任何具体问题或需求，欢迎随时告诉我！
+2025-04-08 10:44:07 [http-nio-8081-exec-2] DEBUG c.h.service.impl.QaServiceImpl - 答案生成成功: "您好！作为2025西湖论剑大会的线上智能参会助手，我可以为您提供以下服务：
+
+1. **查询大会信息**：包括日程安排、嘉宾介绍、成果发布等。
+2. **获取最新动态**：实时推送大会的最新通知和变更信息。
+3. **解答疑问**：针对您对大会的任何疑问提供解答。
+4. **个性化推荐**：根据您的身份和兴趣，提供个性化的日程安排和信息推送。
+5. **参会指南**：提供如何参会的指南，包括交通指引、会场布局等实用信息。
+6. **文档解析**：帮助您解析大会相关的文档，提取关键信息。
+7. **图片内容提取**：从图片中提取文字或表格内容。
+8. **数据可视化**：根据您的需求生成柱状图、折线图、饼状图等图表。
+9. **代码执行**：支持您运行Python代码，进行数据分析或其他编程任务。
+
+若您有任何具体问题或需求，欢迎随时告诉我！
+2025-04-08 10:44:07 [http-nio-8081-exec-2] INFO  c.h.controller.QaController - 返回AI回答, 长度: 376, 内容: "您好！作为2025西湖论剑大会的线上智能参会助手，我可以为您提供以下服务：
+
+1. **查询大会信息**：包括日程安排、嘉宾介绍、成果发布等。
+2. **获取最新动态**：实时推送大会的最新通知和变更信息。
+3. **解答疑问**：针对您对大会的任何疑问提供解答。
+4. **个性化推荐**：根据您的身份和兴趣，提供个性化的日程安排和信息推送。
+5. **参会指南**：提供如何参会的指南，包括交通指引、会场布局等实用信息。
+6. **文档解析**：帮助您解析大会相关的文档，提取关键信息。
+7. **图片内容提取**：从图片中提取文字或表格内容。
+8. **数据可视化**：根据您的需求生成柱状图、折线图、饼状图等图表。
+9. **代码执行**：支持您运行Python代码，进行数据分析或其他编程任务。
+
+若您有任何具体问题或需求，欢迎随时告诉我！
+2025-04-08 10:45:03 [http-nio-8081-exec-1] INFO  c.h.controller.QaController - 收到问题: 你能做什么
+2025-04-08 10:45:03 [http-nio-8081-exec-1] DEBUG c.h.service.impl.QaServiceImpl - 处理问题: 你能做什么, 会议ID: default
+2025-04-08 10:45:03 [http-nio-8081-exec-1] DEBUG c.h.service.impl.QaServiceImpl - 请求时间戳: 1744080303385
+2025-04-08 10:45:03 [http-nio-8081-exec-1] DEBUG c.h.service.impl.QaServiceImpl - API请求地址: https://www.das-ai.com/open/api/v2/agent/execute
+2025-04-08 10:45:03 [http-nio-8081-exec-1] INFO  c.h.service.impl.QaServiceImpl - 开始调用AI服务，尝试次数: 1
+2025-04-08 10:45:21 [http-nio-8081-exec-1] DEBUG c.h.service.impl.QaServiceImpl - 响应内容: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":235,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2858},"session":{"messages":[{"role":"user","content":"你能做什么"},{"role":"assistant","content":"作为2025西湖论剑大会的线上智能参会助手，我能够为参会者提供以下服务：\n\n1. **日程安排查询**：你可以询问大会的日程安排，包括各个分会场的活动时间、主题等信息。\n2. **嘉宾信息查询**：提供参会嘉宾的背景资料、演讲主题等信息。\n3. **大会成果发布**：查询大会期间发布的重要成果、报告等。\n4. **大会最新动态**：获取大会最新进展、变更信息、重要通知等。\n5. **个性化日程推荐**：根据参会者的身份和兴趣，提供个性化的日程安排建议。\n6. **参会指南**：提供参会指南，包括交通指南、会场布局图、入场流程等。\n7. **资料获取**：帮助用户获取大会相关的文档、报告等资料。\n8. **互动交流**：参与大会的线上讨论，促进参会者之间的交流互动。\n\n通过这些服务，我致力于帮助参会者更好地参与西湖论剑大会，享受一个高效、舒适、有意义的参会体验。如果你有任何具体问题或需要帮助，请随时告诉我！"}],"id":"2206d3fd-d529-49e8-be60-a3e97b4d8f8a"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.5781121.17440803067735361"}
+2025-04-08 10:45:21 [http-nio-8081-exec-1] DEBUG c.h.service.impl.QaServiceImpl - AI服务原始响应: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":235,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2858},"session":{"messages":[{"role":"user","content":"你能做什么"},{"role":"assistant","content":"作为2025西湖论剑大会的线上智能参会助手，我能够为参会者提供以下服务：\n\n1. **日程安排查询**：你可以询问大会的日程安排，包括各个分会场的活动时间、主题等信息。\n2. **嘉宾信息查询**：提供参会嘉宾的背景资料、演讲主题等信息。\n3. **大会成果发布**：查询大会期间发布的重要成果、报告等。\n4. **大会最新动态**：获取大会最新进展、变更信息、重要通知等。\n5. **个性化日程推荐**：根据参会者的身份和兴趣，提供个性化的日程安排建议。\n6. **参会指南**：提供参会指南，包括交通指南、会场布局图、入场流程等。\n7. **资料获取**：帮助用户获取大会相关的文档、报告等资料。\n8. **互动交流**：参与大会的线上讨论，促进参会者之间的交流互动。\n\n通过这些服务，我致力于帮助参会者更好地参与西湖论剑大会，享受一个高效、舒适、有意义的参会体验。如果你有任何具体问题或需要帮助，请随时告诉我！"}],"id":"2206d3fd-d529-49e8-be60-a3e97b4d8f8a"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.5781121.17440803067735361"}
+2025-04-08 10:45:21 [http-nio-8081-exec-1] DEBUG c.h.service.impl.QaServiceImpl - 开始解析AI回复内容
+2025-04-08 10:45:21 [http-nio-8081-exec-1] DEBUG c.h.service.impl.QaServiceImpl - 成功解析AI回答: "作为2025西湖论剑大会的线上智能参会助手，我能够为参会者提供以下服务：
+
+1. **日程安排查询**：你可以询问大会的日程安排，包括各个分会场的活动时间、主题等信息。
+2. **嘉宾信息查询**：提供参会嘉宾的背景资料、演讲主题等信息。
+3. **大会成果发布**：查询大会期间发布的重要成果、报告等。
+4. **大会最新动态**：获取大会最新进展、变更信息、重要通知等。
+5. **个性化日程推荐**：根据参会者的身份和兴趣，提供个性化的日程安排建议。
+6. **参会指南**：提供参会指南，包括交通指南、会场布局图、入场流程等。
+7. **资料获取**：帮助用户获取大会相关的文档、报告等资料。
+8. **互动交流**：参与大会的线上讨论，促进参会者之间的交流互动。
+
+通过这些服务，我致力于帮助参会者更好地参与西湖论剑大会，享受一个高效、舒适、有意义的参会体验。如果你有任何具体问题或需要帮助，请随时告诉我！
+2025-04-08 10:45:21 [http-nio-8081-exec-1] INFO  c.h.service.impl.QaServiceImpl - AI服务回答: "作为2025西湖论剑大会的线上智能参会助手，我能够为参会者提供以下服务：
+
+1. **日程安排查询**：你可以询问大会的日程安排，包括各个分会场的活动时间、主题等信息。
+2. **嘉宾信息查询**：提供参会嘉宾的背景资料、演讲主题等信息。
+3. **大会成果发布**：查询大会期间发布的重要成果、报告等。
+4. **大会最新动态**：获取大会最新进展、变更信息、重要通知等。
+5. **个性化日程推荐**：根据参会者的身份和兴趣，提供个性化的日程安排建议。
+6. **参会指南**：提供参会指南，包括交通指南、会场布局图、入场流程等。
+7. **资料获取**：帮助用户获取大会相关的文档、报告等资料。
+8. **互动交流**：参与大会的线上讨论，促进参会者之间的交流互动。
+
+通过这些服务，我致力于帮助参会者更好地参与西湖论剑大会，享受一个高效、舒适、有意义的参会体验。如果你有任何具体问题或需要帮助，请随时告诉我！
+2025-04-08 10:45:21 [http-nio-8081-exec-1] DEBUG c.h.service.impl.QaServiceImpl - 答案生成成功: "作为2025西湖论剑大会的线上智能参会助手，我能够为参会者提供以下服务：
+
+1. **日程安排查询**：你可以询问大会的日程安排，包括各个分会场的活动时间、主题等信息。
+2. **嘉宾信息查询**：提供参会嘉宾的背景资料、演讲主题等信息。
+3. **大会成果发布**：查询大会期间发布的重要成果、报告等。
+4. **大会最新动态**：获取大会最新进展、变更信息、重要通知等。
+5. **个性化日程推荐**：根据参会者的身份和兴趣，提供个性化的日程安排建议。
+6. **参会指南**：提供参会指南，包括交通指南、会场布局图、入场流程等。
+7. **资料获取**：帮助用户获取大会相关的文档、报告等资料。
+8. **互动交流**：参与大会的线上讨论，促进参会者之间的交流互动。
+
+通过这些服务，我致力于帮助参会者更好地参与西湖论剑大会，享受一个高效、舒适、有意义的参会体验。如果你有任何具体问题或需要帮助，请随时告诉我！
+2025-04-08 10:45:21 [http-nio-8081-exec-1] INFO  c.h.controller.QaController - 返回AI回答, 长度: 409, 内容: "作为2025西湖论剑大会的线上智能参会助手，我能够为参会者提供以下服务：
+
+1. **日程安排查询**：你可以询问大会的日程安排，包括各个分会场的活动时间、主题等信息。
+2. **嘉宾信息查询**：提供参会嘉宾的背景资料、演讲主题等信息。
+3. **大会成果发布**：查询大会期间发布的重要成果、报告等。
+4. **大会最新动态**：获取大会最新进展、变更信息、重要通知等。
+5. **个性化日程推荐**：根据参会者的身份和兴趣，提供个性化的日程安排建议。
+6. **参会指南**：提供参会指南，包括交通指南、会场布局图、入场流程等。
+7. **资料获取**：帮助用户获取大会相关的文档、报告等资料。
+8. **互动交流**：参与大会的线上讨论，促进参会者之间的交流互动。
+
+通过这些服务，我致力于帮助参会者更好地参与西湖论剑大会，享受一个高效、舒适、有意义的参会体验。如果你有任何具体问题或需要帮助，请随时告诉我！
+2025-04-08 10:49:42 [http-nio-8081-exec-4] INFO  c.h.controller.QaController - 收到问题: 你能做什么
+2025-04-08 10:49:42 [http-nio-8081-exec-4] DEBUG c.h.service.impl.QaServiceImpl - 处理问题: 你能做什么, 会议ID: default
+2025-04-08 10:49:42 [http-nio-8081-exec-4] DEBUG c.h.service.impl.QaServiceImpl - 请求时间戳: 1744080582274
+2025-04-08 10:49:42 [http-nio-8081-exec-4] DEBUG c.h.service.impl.QaServiceImpl - API请求地址: https://www.das-ai.com/open/api/v2/agent/execute
+2025-04-08 10:49:42 [http-nio-8081-exec-4] INFO  c.h.service.impl.QaServiceImpl - 开始调用AI服务，尝试次数: 1
+2025-04-08 10:49:56 [http-nio-8081-exec-4] DEBUG c.h.service.impl.QaServiceImpl - 响应内容: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":178,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2801},"session":{"messages":[{"role":"user","content":"你能做什么"},{"role":"assistant","content":"我是2025西湖论剑大会的线上智能参会助手，主要职责和功能包括：\n\n1. **大会信息查询**：我可以帮助您查询大会的日程安排、嘉宾信息、成果发布等具体内容。\n2. **实时信息推送**：能够实时更新推送大会的变更信息和重要通知，确保参会者获取最新动态。\n3. **个性化服务**：根据您的身份和兴趣，提供个性化的日程推荐和信息推送，让您的参会体验更加丰富。\n4. **参会指南**：提供大会的参会指南，包括但不限于交通指南、住宿推荐、餐饮指南等。\n5. **互动交流**：作为智能助手，我支持多种对话场景，能够解答参会者的各类问题，促进大会参与人员之间的互动。\n\n如果您有任何问题或需要帮助，请随时告诉我，我会尽力为您解答或提供帮助。"}],"id":"0431e967-cfd4-4f28-b550-970543f5a1d6"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.134712.17440805854679559"}
+2025-04-08 10:49:56 [http-nio-8081-exec-4] DEBUG c.h.service.impl.QaServiceImpl - AI服务原始响应: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":178,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2801},"session":{"messages":[{"role":"user","content":"你能做什么"},{"role":"assistant","content":"我是2025西湖论剑大会的线上智能参会助手，主要职责和功能包括：\n\n1. **大会信息查询**：我可以帮助您查询大会的日程安排、嘉宾信息、成果发布等具体内容。\n2. **实时信息推送**：能够实时更新推送大会的变更信息和重要通知，确保参会者获取最新动态。\n3. **个性化服务**：根据您的身份和兴趣，提供个性化的日程推荐和信息推送，让您的参会体验更加丰富。\n4. **参会指南**：提供大会的参会指南，包括但不限于交通指南、住宿推荐、餐饮指南等。\n5. **互动交流**：作为智能助手，我支持多种对话场景，能够解答参会者的各类问题，促进大会参与人员之间的互动。\n\n如果您有任何问题或需要帮助，请随时告诉我，我会尽力为您解答或提供帮助。"}],"id":"0431e967-cfd4-4f28-b550-970543f5a1d6"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.134712.17440805854679559"}
+2025-04-08 10:49:56 [http-nio-8081-exec-4] DEBUG c.h.service.impl.QaServiceImpl - 开始解析AI回复内容
+2025-04-08 10:49:56 [http-nio-8081-exec-4] DEBUG c.h.service.impl.QaServiceImpl - 成功解析AI回答: "我是2025西湖论剑大会的线上智能参会助手，主要职责和功能包括：
+
+1. **大会信息查询**：我可以帮助您查询大会的日程安排、嘉宾信息、成果发布等具体内容。
+2. **实时信息推送**：能够实时更新推送大会的变更信息和重要通知，确保参会者获取最新动态。
+3. **个性化服务**：根据您的身份和兴趣，提供个性化的日程推荐和信息推送，让您的参会体验更加丰富。
+4. **参会指南**：提供大会的参会指南，包括但不限于交通指南、住宿推荐、餐饮指南等。
+5. **互动交流**：作为智能助手，我支持多种对话场景，能够解答参会者的各类问题，促进大会参与人员之间的互动。
+
+如果您有任何问题或需要帮助，请随时告诉我，我会尽力为您解答或提供帮助。
+2025-04-08 10:49:56 [http-nio-8081-exec-4] INFO  c.h.service.impl.QaServiceImpl - AI服务回答: "我是2025西湖论剑大会的线上智能参会助手，主要职责和功能包括：
+
+1. **大会信息查询**：我可以帮助您查询大会的日程安排、嘉宾信息、成果发布等具体内容。
+2. **实时信息推送**：能够实时更新推送大会的变更信息和重要通知，确保参会者获取最新动态。
+3. **个性化服务**：根据您的身份和兴趣，提供个性化的日程推荐和信息推送，让您的参会体验更加丰富。
+4. **参会指南**：提供大会的参会指南，包括但不限于交通指南、住宿推荐、餐饮指南等。
+5. **互动交流**：作为智能助手，我支持多种对话场景，能够解答参会者的各类问题，促进大会参与人员之间的互动。
+
+如果您有任何问题或需要帮助，请随时告诉我，我会尽力为您解答或提供帮助。
+2025-04-08 10:49:56 [http-nio-8081-exec-4] DEBUG c.h.service.impl.QaServiceImpl - 答案生成成功: "我是2025西湖论剑大会的线上智能参会助手，主要职责和功能包括：
+
+1. **大会信息查询**：我可以帮助您查询大会的日程安排、嘉宾信息、成果发布等具体内容。
+2. **实时信息推送**：能够实时更新推送大会的变更信息和重要通知，确保参会者获取最新动态。
+3. **个性化服务**：根据您的身份和兴趣，提供个性化的日程推荐和信息推送，让您的参会体验更加丰富。
+4. **参会指南**：提供大会的参会指南，包括但不限于交通指南、住宿推荐、餐饮指南等。
+5. **互动交流**：作为智能助手，我支持多种对话场景，能够解答参会者的各类问题，促进大会参与人员之间的互动。
+
+如果您有任何问题或需要帮助，请随时告诉我，我会尽力为您解答或提供帮助。
+2025-04-08 10:49:56 [http-nio-8081-exec-4] INFO  c.h.controller.QaController - 返回AI回答, 长度: 319, 内容: "我是2025西湖论剑大会的线上智能参会助手，主要职责和功能包括：
+
+1. **大会信息查询**：我可以帮助您查询大会的日程安排、嘉宾信息、成果发布等具体内容。
+2. **实时信息推送**：能够实时更新推送大会的变更信息和重要通知，确保参会者获取最新动态。
+3. **个性化服务**：根据您的身份和兴趣，提供个性化的日程推荐和信息推送，让您的参会体验更加丰富。
+4. **参会指南**：提供大会的参会指南，包括但不限于交通指南、住宿推荐、餐饮指南等。
+5. **互动交流**：作为智能助手，我支持多种对话场景，能够解答参会者的各类问题，促进大会参与人员之间的互动。
+
+如果您有任何问题或需要帮助，请随时告诉我，我会尽力为您解答或提供帮助。
+2025-04-08 10:52:22 [http-nio-8081-exec-6] INFO  c.h.controller.QaController - 收到问题: 你是谁
+2025-04-08 10:52:22 [http-nio-8081-exec-6] DEBUG c.h.service.impl.QaServiceImpl - 处理问题: 你是谁, 会议ID: default
+2025-04-08 10:52:22 [http-nio-8081-exec-6] DEBUG c.h.service.impl.QaServiceImpl - 请求时间戳: 1744080742061
+2025-04-08 10:52:22 [http-nio-8081-exec-6] DEBUG c.h.service.impl.QaServiceImpl - API请求地址: https://www.das-ai.com/open/api/v2/agent/execute
+2025-04-08 10:52:22 [http-nio-8081-exec-6] INFO  c.h.service.impl.QaServiceImpl - 开始调用AI服务，尝试次数: 1
+2025-04-08 10:52:28 [http-nio-8081-exec-6] DEBUG c.h.service.impl.QaServiceImpl - 响应内容: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":86,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2709},"session":{"messages":[{"role":"user","content":"你是谁"},{"role":"assistant","content":"我是2025西湖论剑大会的线上智能参会助手，基于安恒信息恒脑大模型的人工智能技术构建。您可以向我咨询大会相关的日程安排、嘉宾信息、成果发布等各类问题，我还可以根据您的身份和兴趣提供个性化的日程推荐和信息推送，帮助您更好地参与西湖论剑·数字安全大会。如果您有任何疑问，随时欢迎提问！"}],"id":"04c1e2be-268d-4c5b-801a-c397156fc645"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.134713.17440807455729545"}
+2025-04-08 10:52:28 [http-nio-8081-exec-6] DEBUG c.h.service.impl.QaServiceImpl - AI服务原始响应: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":86,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2709},"session":{"messages":[{"role":"user","content":"你是谁"},{"role":"assistant","content":"我是2025西湖论剑大会的线上智能参会助手，基于安恒信息恒脑大模型的人工智能技术构建。您可以向我咨询大会相关的日程安排、嘉宾信息、成果发布等各类问题，我还可以根据您的身份和兴趣提供个性化的日程推荐和信息推送，帮助您更好地参与西湖论剑·数字安全大会。如果您有任何疑问，随时欢迎提问！"}],"id":"04c1e2be-268d-4c5b-801a-c397156fc645"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.134713.17440807455729545"}
+2025-04-08 10:52:28 [http-nio-8081-exec-6] DEBUG c.h.service.impl.QaServiceImpl - 开始解析AI回复内容
+2025-04-08 10:52:28 [http-nio-8081-exec-6] DEBUG c.h.service.impl.QaServiceImpl - 成功解析AI回答: "我是2025西湖论剑大会的线上智能参会助手，基于安恒信息恒脑大模型的人工智能技术构建。您可以向我咨询大会相关的日程安排、嘉宾信息、成果发布等各类问题，我还可以根据您的身份和兴趣提供个性化的日程推荐和信息推送，帮助您更好地参与西湖论剑·数字安全大会。如果您有任何疑问，随时欢迎提问！
+2025-04-08 10:52:28 [http-nio-8081-exec-6] INFO  c.h.service.impl.QaServiceImpl - AI服务回答: "我是2025西湖论剑大会的线上智能参会助手，基于安恒信息恒脑大模型的人工智能技术构建。您可以向我咨询大会相关的日程安排、嘉宾信息、成果发布等各类问题，我还可以根据您的身份和兴趣提供个性化的日程推荐和信息推送，帮助您更好地参与西湖论剑·数字安全大会。如果您有任何疑问，随时欢迎提问！
+2025-04-08 10:52:28 [http-nio-8081-exec-6] DEBUG c.h.service.impl.QaServiceImpl - 答案生成成功: "我是2025西湖论剑大会的线上智能参会助手，基于安恒信息恒脑大模型的人工智能技术构建。您可以向我咨询大会相关的日程安排、嘉宾信息、成果发布等各类问题，我还可以根据您的身份和兴趣提供个性化的日程推荐和信息推送，帮助您更好地参与西湖论剑·数字安全大会。如果您有任何疑问，随时欢迎提问！
+2025-04-08 10:52:28 [http-nio-8081-exec-6] INFO  c.h.controller.QaController - 返回AI回答, 长度: 141, 内容: "我是2025西湖论剑大会的线上智能参会助手，基于安恒信息恒脑大模型的人工智能技术构建。您可以向我咨询大会相关的日程安排、嘉宾信息、成果发布等各类问题，我还可以根据您的身份和兴趣提供个性化的日程推荐和信息推送，帮助您更好地参与西湖论剑·数字安全大会。如果您有任何疑问，随时欢迎提问！
+2025-04-08 10:55:56 [http-nio-8081-exec-9] INFO  c.h.controller.QaController - 收到问题: 大会内容
+2025-04-08 10:55:56 [http-nio-8081-exec-9] DEBUG c.h.service.impl.QaServiceImpl - 处理问题: 大会内容, 会议ID: default
+2025-04-08 10:55:56 [http-nio-8081-exec-9] DEBUG c.h.service.impl.QaServiceImpl - 请求时间戳: 1744080956815
+2025-04-08 10:55:56 [http-nio-8081-exec-9] DEBUG c.h.service.impl.QaServiceImpl - API请求地址: https://www.das-ai.com/open/api/v2/agent/execute
+2025-04-08 10:55:56 [http-nio-8081-exec-9] INFO  c.h.service.impl.QaServiceImpl - 开始调用AI服务，尝试次数: 1
+2025-04-08 10:56:14 [http-nio-8081-exec-10] INFO  c.h.controller.QaController - 收到问题: 大会内容
+2025-04-08 10:56:14 [http-nio-8081-exec-10] DEBUG c.h.service.impl.QaServiceImpl - 处理问题: 大会内容, 会议ID: default
+2025-04-08 10:56:14 [http-nio-8081-exec-10] DEBUG c.h.service.impl.QaServiceImpl - 请求时间戳: 1744080974689
+2025-04-08 10:56:14 [http-nio-8081-exec-10] DEBUG c.h.service.impl.QaServiceImpl - API请求地址: https://www.das-ai.com/open/api/v2/agent/execute
+2025-04-08 10:56:14 [http-nio-8081-exec-10] INFO  c.h.service.impl.QaServiceImpl - 开始调用AI服务，尝试次数: 1
+2025-04-08 10:56:30 [http-nio-8081-exec-9] DEBUG c.h.service.impl.QaServiceImpl - 响应内容: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":401,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":3024},"session":{"messages":[{"role":"user","content":"大会内容"},{"role":"assistant","content":"您好！2025年西湖论剑·数字安全大会将围绕“AI向治·安全向智”的主题，探讨数字安全与人工智能治理的最新发展。大会将包括多个专题论坛、技术展览、成果发布和互动体验等环节。以下是大会的主要内容概览：\n\n1. **开幕式及主论坛**\n   - 开幕式将邀请国内外知名专家学者、政府官员和行业领袖出席，就数字安全的政策趋势、技术前沿等议题发表主旨演讲。\n   - 主论坛将围绕“AI向治·安全向智”主题，探讨人工智能在数字安全领域的应用与挑战。\n\n2. **专题论坛**\n   - **数据安全与隐私保护论坛**：聚焦数据安全法律法规、隐私保护技术、数据合规等话题。\n   - **AI安全与伦理论坛**：讨论AI安全风险、伦理准则、安全防护技术等。\n   - **网络安全与基础设施论坛**：关注关键基础设施保护、网络攻防技术、安全运营等。\n   - **数字化转型与安全创新论坛**：探讨数字化转型中的安全挑战与创新解决方案。\n\n3. **技术展览**\n   - 展览区将展示最新的数字安全产品和技术，包括智能安全设备、安全软件、数据保护解决方案等。\n\n4. **成果发布**\n   - 大会将发布一系列重要研究成果和行业报告，分享最新技术进展和实践经验。\n\n5. **互动体验**\n   - 互动体验区将设置多个互动体验项目，让参会者亲身体验最新的数字安全技术。\n\n6. **圆桌讨论**\n   - 多个圆桌讨论环节将邀请行业专家、企业代表和政府官员共同探讨热点话题，分享见解和经验。\n\n如果您对具体的内容或环节有更多疑问，或者需要详细的日程安排，请告诉我，我会为您提供更详细的信息。 \n\n您还有其他想要了解的内容吗？例如嘉宾信息、日程安排、参会指南等？"}],"id":"7cd8fc93-be49-4c74-9bfa-707dec9c5522"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.5781124.17440809602915529"}
+2025-04-08 10:56:30 [http-nio-8081-exec-9] DEBUG c.h.service.impl.QaServiceImpl - AI服务原始响应: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":401,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":3024},"session":{"messages":[{"role":"user","content":"大会内容"},{"role":"assistant","content":"您好！2025年西湖论剑·数字安全大会将围绕“AI向治·安全向智”的主题，探讨数字安全与人工智能治理的最新发展。大会将包括多个专题论坛、技术展览、成果发布和互动体验等环节。以下是大会的主要内容概览：\n\n1. **开幕式及主论坛**\n   - 开幕式将邀请国内外知名专家学者、政府官员和行业领袖出席，就数字安全的政策趋势、技术前沿等议题发表主旨演讲。\n   - 主论坛将围绕“AI向治·安全向智”主题，探讨人工智能在数字安全领域的应用与挑战。\n\n2. **专题论坛**\n   - **数据安全与隐私保护论坛**：聚焦数据安全法律法规、隐私保护技术、数据合规等话题。\n   - **AI安全与伦理论坛**：讨论AI安全风险、伦理准则、安全防护技术等。\n   - **网络安全与基础设施论坛**：关注关键基础设施保护、网络攻防技术、安全运营等。\n   - **数字化转型与安全创新论坛**：探讨数字化转型中的安全挑战与创新解决方案。\n\n3. **技术展览**\n   - 展览区将展示最新的数字安全产品和技术，包括智能安全设备、安全软件、数据保护解决方案等。\n\n4. **成果发布**\n   - 大会将发布一系列重要研究成果和行业报告，分享最新技术进展和实践经验。\n\n5. **互动体验**\n   - 互动体验区将设置多个互动体验项目，让参会者亲身体验最新的数字安全技术。\n\n6. **圆桌讨论**\n   - 多个圆桌讨论环节将邀请行业专家、企业代表和政府官员共同探讨热点话题，分享见解和经验。\n\n如果您对具体的内容或环节有更多疑问，或者需要详细的日程安排，请告诉我，我会为您提供更详细的信息。 \n\n您还有其他想要了解的内容吗？例如嘉宾信息、日程安排、参会指南等？"}],"id":"7cd8fc93-be49-4c74-9bfa-707dec9c5522"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.5781124.17440809602915529"}
+2025-04-08 10:56:30 [http-nio-8081-exec-9] DEBUG c.h.service.impl.QaServiceImpl - 开始解析AI回复内容
+2025-04-08 10:56:30 [http-nio-8081-exec-9] DEBUG c.h.service.impl.QaServiceImpl - 成功解析AI回答: "您好！2025年西湖论剑·数字安全大会将围绕“AI向治·安全向智”的主题，探讨数字安全与人工智能治理的最新发展。大会将包括多个专题论坛、技术展览、成果发布和互动体验等环节。以下是大会的主要内容概览：
+
+1. **开幕式及主论坛**
+   - 开幕式将邀请国内外知名专家学者、政府官员和行业领袖出席，就数字安全的政策趋势、技术前沿等议题发表主旨演讲。
+   - 主论坛将围绕“AI向治·安全向智”主题，探讨人工智能在数字安全领域的应用与挑战。
+
+2. **专题论坛**
+   - **数据安全与隐私保护论坛**：聚焦数据安全法律法规、隐私保护技术、数据合规等话题。
+   - **AI安全与伦理论坛**：讨论AI安全风险、伦理准则、安全防护技术等。
+   - **网络安全与基础设施论坛**：关注关键基础设施保护、网络攻防技术、安全运营等。
+   - **数字化转型与安全创新论坛**：探讨数字化转型中的安全挑战与创新解决方案。
+
+3. **技术展览**
+   - 展览区将展示最新的数字安全产品和技术，包括智能安全设备、安全软件、数据保护解决方案等。
+
+4. **成果发布**
+   - 大会将发布一系列重要研究成果和行业报告，分享最新技术进展和实践经验。
+
+5. **互动体验**
+   - 互动体验区将设置多个互动体验项目，让参会者亲身体验最新的数字安全技术。
+
+6. **圆桌讨论**
+   - 多个圆桌讨论环节将邀请行业专家、企业代表和政府官员共同探讨热点话题，分享见解和经验。
+
+如果您对具体的内容或环节有更多疑问，或者需要详细的日程安排，请告诉我，我会为您提供更详细的信息。 
+
+您还有其他想要了解的内容吗？例如嘉宾信息、日程安排、参会指南等？
+2025-04-08 10:56:30 [http-nio-8081-exec-9] INFO  c.h.service.impl.QaServiceImpl - AI服务回答: "您好！2025年西湖论剑·数字安全大会将围绕“AI向治·安全向智”的主题，探讨数字安全与人工智能治理的最新发展。大会将包括多个专题论坛、技术展览、成果发布和互动体验等环节。以下是大会的主要内容概览：
+
+1. **开幕式及主论坛**
+   - 开幕式将邀请国内外知名专家学者、政府官员和行业领袖出席，就数字安全的政策趋势、技术前沿等议题发表主旨演讲。
+   - 主论坛将围绕“AI向治·安全向智”主题，探讨人工智能在数字安全领域的应用与挑战。
+
+2. **专题论坛**
+   - **数据安全与隐私保护论坛**：聚焦数据安全法律法规、隐私保护技术、数据合规等话题。
+   - **AI安全与伦理论坛**：讨论AI安全风险、伦理准则、安全防护技术等。
+   - **网络安全与基础设施论坛**：关注关键基础设施保护、网络攻防技术、安全运营等。
+   - **数字化转型与安全创新论坛**：探讨数字化转型中的安全挑战与创新解决方案。
+
+3. **技术展览**
+   - 展览区将展示最新的数字安全产品和技术，包括智能安全设备、安全软件、数据保护解决方案等。
+
+4. **成果发布**
+   - 大会将发布一系列重要研究成果和行业报告，分享最新技术进展和实践经验。
+
+5. **互动体验**
+   - 互动体验区将设置多个互动体验项目，让参会者亲身体验最新的数字安全技术。
+
+6. **圆桌讨论**
+   - 多个圆桌讨论环节将邀请行业专家、企业代表和政府官员共同探讨热点话题，分享见解和经验。
+
+如果您对具体的内容或环节有更多疑问，或者需要详细的日程安排，请告诉我，我会为您提供更详细的信息。 
+
+您还有其他想要了解的内容吗？例如嘉宾信息、日程安排、参会指南等？
+2025-04-08 10:56:30 [http-nio-8081-exec-9] DEBUG c.h.service.impl.QaServiceImpl - 答案生成成功: "您好！2025年西湖论剑·数字安全大会将围绕“AI向治·安全向智”的主题，探讨数字安全与人工智能治理的最新发展。大会将包括多个专题论坛、技术展览、成果发布和互动体验等环节。以下是大会的主要内容概览：
+
+1. **开幕式及主论坛**
+   - 开幕式将邀请国内外知名专家学者、政府官员和行业领袖出席，就数字安全的政策趋势、技术前沿等议题发表主旨演讲。
+   - 主论坛将围绕“AI向治·安全向智”主题，探讨人工智能在数字安全领域的应用与挑战。
+
+2. **专题论坛**
+   - **数据安全与隐私保护论坛**：聚焦数据安全法律法规、隐私保护技术、数据合规等话题。
+   - **AI安全与伦理论坛**：讨论AI安全风险、伦理准则、安全防护技术等。
+   - **网络安全与基础设施论坛**：关注关键基础设施保护、网络攻防技术、安全运营等。
+   - **数字化转型与安全创新论坛**：探讨数字化转型中的安全挑战与创新解决方案。
+
+3. **技术展览**
+   - 展览区将展示最新的数字安全产品和技术，包括智能安全设备、安全软件、数据保护解决方案等。
+
+4. **成果发布**
+   - 大会将发布一系列重要研究成果和行业报告，分享最新技术进展和实践经验。
+
+5. **互动体验**
+   - 互动体验区将设置多个互动体验项目，让参会者亲身体验最新的数字安全技术。
+
+6. **圆桌讨论**
+   - 多个圆桌讨论环节将邀请行业专家、企业代表和政府官员共同探讨热点话题，分享见解和经验。
+
+如果您对具体的内容或环节有更多疑问，或者需要详细的日程安排，请告诉我，我会为您提供更详细的信息。 
+
+您还有其他想要了解的内容吗？例如嘉宾信息、日程安排、参会指南等？
+2025-04-08 10:56:30 [http-nio-8081-exec-9] INFO  c.h.controller.QaController - 返回AI回答, 长度: 729, 内容: "您好！2025年西湖论剑·数字安全大会将围绕“AI向治·安全向智”的主题，探讨数字安全与人工智能治理的最新发展。大会将包括多个专题论坛、技术展览、成果发布和互动体验等环节。以下是大会的主要内容概览：
+
+1. **开幕式及主论坛**
+   - 开幕式将邀请国内外知名专家学者、政府官员和行业领袖出席，就数字安全的政策趋势、技术前沿等议题发表主旨演讲。
+   - 主论坛将围绕“AI向治·安全向智”主题，探讨人工智能在数字安全领域的应用与挑战。
+
+2. **专题论坛**
+   - **数据安全与隐私保护论坛**：聚焦数据安全法律法规、隐私保护技术、数据合规等话题。
+   - **AI安全与伦理论坛**：讨论AI安全风险、伦理准则、安全防护技术等。
+   - **网络安全与基础设施论坛**：关注关键基础设施保护、网络攻防技术、安全运营等。
+   - **数字化转型与安全创新论坛**：探讨数字化转型中的安全挑战与创新解决方案。
+
+3. **技术展览**
+   - 展览区将展示最新的数字安全产品和技术，包括智能安全设备、安全软件、数据保护解决方案等。
+
+4. **成果发布**
+   - 大会将发布一系列重要研究成果和行业报告，分享最新技术进展和实践经验。
+
+5. **互动体验**
+   - 互动体验区将设置多个互动体验项目，让参会者亲身体验最新的数字安全技术。
+
+6. **圆桌讨论**
+   - 多个圆桌讨论环节将邀请行业专家、企业代表和政府官员共同探讨热点话题，分享见解和经验。
+
+如果您对具体的内容或环节有更多疑问，或者需要详细的日程安排，请告诉我，我会为您提供更详细的信息。 
+
+您还有其他想要了解的内容吗？例如嘉宾信息、日程安排、参会指南等？
+2025-04-08 10:56:36 [http-nio-8081-exec-10] DEBUG c.h.service.impl.QaServiceImpl - 响应内容: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":295,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2918},"session":{"messages":[{"role":"user","content":"大会内容"},{"role":"assistant","content":"您好！2025年西湖论剑·数字安全大会的主题为“AI向治·安全向智”，大会将在中国数谷核心区举办，旨在探索数字安全赋能数字政府、数字经济、数字社会的有效途径，为全球数智化转型提供“中国式治理”新范式。\n\n大会内容涵盖了多个方面，包括但不限于以下几点：\n\n1. **主题演讲**：国内外知名专家学者、行业领袖将就数字安全的前沿技术、发展趋势、政策法规等话题进行深入探讨。\n2. **专题论坛**：围绕人工智能安全、数据安全、网络安全等热点话题设立多个专题论坛，邀请相关领域的专家学者和企业代表进行交流和讨论。\n3. **成果发布**：大会将展示最新研究成果、技术产品和解决方案，为参会者提供宝贵的信息和资源。\n4. **技术展示**：多家参展企业将展示最新的数字安全技术、产品和服务。\n5. **互动体验**：设置互动体验区，参会者可以通过实际操作和体验，更加直观地了解数字安全技术的应用场景。\n6. **圆桌会议**：组织多场圆桌会议，邀请行业专家、企业家和政府官员就数字安全领域的热点问题进行讨论和交流。\n7. **高端访谈**：大会期间将安排多场高端访谈，邀请行业领袖分享他们的见解和经验。\n\n如果您有任何具体的问题或需要进一步的信息，请随时告诉我，我会尽力帮助您！"}],"id":"9a1fbe9c-bb05-4cb3-a6d6-4fc21e59c973"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.1748.17440809779776777"}
+2025-04-08 10:56:36 [http-nio-8081-exec-10] DEBUG c.h.service.impl.QaServiceImpl - AI服务原始响应: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":295,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2918},"session":{"messages":[{"role":"user","content":"大会内容"},{"role":"assistant","content":"您好！2025年西湖论剑·数字安全大会的主题为“AI向治·安全向智”，大会将在中国数谷核心区举办，旨在探索数字安全赋能数字政府、数字经济、数字社会的有效途径，为全球数智化转型提供“中国式治理”新范式。\n\n大会内容涵盖了多个方面，包括但不限于以下几点：\n\n1. **主题演讲**：国内外知名专家学者、行业领袖将就数字安全的前沿技术、发展趋势、政策法规等话题进行深入探讨。\n2. **专题论坛**：围绕人工智能安全、数据安全、网络安全等热点话题设立多个专题论坛，邀请相关领域的专家学者和企业代表进行交流和讨论。\n3. **成果发布**：大会将展示最新研究成果、技术产品和解决方案，为参会者提供宝贵的信息和资源。\n4. **技术展示**：多家参展企业将展示最新的数字安全技术、产品和服务。\n5. **互动体验**：设置互动体验区，参会者可以通过实际操作和体验，更加直观地了解数字安全技术的应用场景。\n6. **圆桌会议**：组织多场圆桌会议，邀请行业专家、企业家和政府官员就数字安全领域的热点问题进行讨论和交流。\n7. **高端访谈**：大会期间将安排多场高端访谈，邀请行业领袖分享他们的见解和经验。\n\n如果您有任何具体的问题或需要进一步的信息，请随时告诉我，我会尽力帮助您！"}],"id":"9a1fbe9c-bb05-4cb3-a6d6-4fc21e59c973"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.1748.17440809779776777"}
+2025-04-08 10:56:36 [http-nio-8081-exec-10] DEBUG c.h.service.impl.QaServiceImpl - 开始解析AI回复内容
+2025-04-08 10:56:36 [http-nio-8081-exec-10] DEBUG c.h.service.impl.QaServiceImpl - 成功解析AI回答: "您好！2025年西湖论剑·数字安全大会的主题为“AI向治·安全向智”，大会将在中国数谷核心区举办，旨在探索数字安全赋能数字政府、数字经济、数字社会的有效途径，为全球数智化转型提供“中国式治理”新范式。
+
+大会内容涵盖了多个方面，包括但不限于以下几点：
+
+1. **主题演讲**：国内外知名专家学者、行业领袖将就数字安全的前沿技术、发展趋势、政策法规等话题进行深入探讨。
+2. **专题论坛**：围绕人工智能安全、数据安全、网络安全等热点话题设立多个专题论坛，邀请相关领域的专家学者和企业代表进行交流和讨论。
+3. **成果发布**：大会将展示最新研究成果、技术产品和解决方案，为参会者提供宝贵的信息和资源。
+4. **技术展示**：多家参展企业将展示最新的数字安全技术、产品和服务。
+5. **互动体验**：设置互动体验区，参会者可以通过实际操作和体验，更加直观地了解数字安全技术的应用场景。
+6. **圆桌会议**：组织多场圆桌会议，邀请行业专家、企业家和政府官员就数字安全领域的热点问题进行讨论和交流。
+7. **高端访谈**：大会期间将安排多场高端访谈，邀请行业领袖分享他们的见解和经验。
+
+如果您有任何具体的问题或需要进一步的信息，请随时告诉我，我会尽力帮助您！
+2025-04-08 10:56:36 [http-nio-8081-exec-10] INFO  c.h.service.impl.QaServiceImpl - AI服务回答: "您好！2025年西湖论剑·数字安全大会的主题为“AI向治·安全向智”，大会将在中国数谷核心区举办，旨在探索数字安全赋能数字政府、数字经济、数字社会的有效途径，为全球数智化转型提供“中国式治理”新范式。
+
+大会内容涵盖了多个方面，包括但不限于以下几点：
+
+1. **主题演讲**：国内外知名专家学者、行业领袖将就数字安全的前沿技术、发展趋势、政策法规等话题进行深入探讨。
+2. **专题论坛**：围绕人工智能安全、数据安全、网络安全等热点话题设立多个专题论坛，邀请相关领域的专家学者和企业代表进行交流和讨论。
+3. **成果发布**：大会将展示最新研究成果、技术产品和解决方案，为参会者提供宝贵的信息和资源。
+4. **技术展示**：多家参展企业将展示最新的数字安全技术、产品和服务。
+5. **互动体验**：设置互动体验区，参会者可以通过实际操作和体验，更加直观地了解数字安全技术的应用场景。
+6. **圆桌会议**：组织多场圆桌会议，邀请行业专家、企业家和政府官员就数字安全领域的热点问题进行讨论和交流。
+7. **高端访谈**：大会期间将安排多场高端访谈，邀请行业领袖分享他们的见解和经验。
+
+如果您有任何具体的问题或需要进一步的信息，请随时告诉我，我会尽力帮助您！
+2025-04-08 10:56:36 [http-nio-8081-exec-10] DEBUG c.h.service.impl.QaServiceImpl - 答案生成成功: "您好！2025年西湖论剑·数字安全大会的主题为“AI向治·安全向智”，大会将在中国数谷核心区举办，旨在探索数字安全赋能数字政府、数字经济、数字社会的有效途径，为全球数智化转型提供“中国式治理”新范式。
+
+大会内容涵盖了多个方面，包括但不限于以下几点：
+
+1. **主题演讲**：国内外知名专家学者、行业领袖将就数字安全的前沿技术、发展趋势、政策法规等话题进行深入探讨。
+2. **专题论坛**：围绕人工智能安全、数据安全、网络安全等热点话题设立多个专题论坛，邀请相关领域的专家学者和企业代表进行交流和讨论。
+3. **成果发布**：大会将展示最新研究成果、技术产品和解决方案，为参会者提供宝贵的信息和资源。
+4. **技术展示**：多家参展企业将展示最新的数字安全技术、产品和服务。
+5. **互动体验**：设置互动体验区，参会者可以通过实际操作和体验，更加直观地了解数字安全技术的应用场景。
+6. **圆桌会议**：组织多场圆桌会议，邀请行业专家、企业家和政府官员就数字安全领域的热点问题进行讨论和交流。
+7. **高端访谈**：大会期间将安排多场高端访谈，邀请行业领袖分享他们的见解和经验。
+
+如果您有任何具体的问题或需要进一步的信息，请随时告诉我，我会尽力帮助您！
+2025-04-08 10:56:36 [http-nio-8081-exec-10] INFO  c.h.controller.QaController - 返回AI回答, 长度: 536, 内容: "您好！2025年西湖论剑·数字安全大会的主题为“AI向治·安全向智”，大会将在中国数谷核心区举办，旨在探索数字安全赋能数字政府、数字经济、数字社会的有效途径，为全球数智化转型提供“中国式治理”新范式。
+
+大会内容涵盖了多个方面，包括但不限于以下几点：
+
+1. **主题演讲**：国内外知名专家学者、行业领袖将就数字安全的前沿技术、发展趋势、政策法规等话题进行深入探讨。
+2. **专题论坛**：围绕人工智能安全、数据安全、网络安全等热点话题设立多个专题论坛，邀请相关领域的专家学者和企业代表进行交流和讨论。
+3. **成果发布**：大会将展示最新研究成果、技术产品和解决方案，为参会者提供宝贵的信息和资源。
+4. **技术展示**：多家参展企业将展示最新的数字安全技术、产品和服务。
+5. **互动体验**：设置互动体验区，参会者可以通过实际操作和体验，更加直观地了解数字安全技术的应用场景。
+6. **圆桌会议**：组织多场圆桌会议，邀请行业专家、企业家和政府官员就数字安全领域的热点问题进行讨论和交流。
+7. **高端访谈**：大会期间将安排多场高端访谈，邀请行业领袖分享他们的见解和经验。
+
+如果您有任何具体的问题或需要进一步的信息，请随时告诉我，我会尽力帮助您！
+2025-04-08 11:00:44 [http-nio-8081-exec-7] INFO  c.h.controller.QaController - 收到问题: 会议内容
+2025-04-08 11:00:44 [http-nio-8081-exec-7] DEBUG c.h.service.impl.QaServiceImpl - 处理问题: 会议内容, 会议ID: default
+2025-04-08 11:00:44 [http-nio-8081-exec-7] DEBUG c.h.service.impl.QaServiceImpl - 请求时间戳: 1744081244415
+2025-04-08 11:00:44 [http-nio-8081-exec-7] DEBUG c.h.service.impl.QaServiceImpl - API请求地址: https://www.das-ai.com/open/api/v2/agent/execute
+2025-04-08 11:00:44 [http-nio-8081-exec-7] INFO  c.h.service.impl.QaServiceImpl - 开始调用AI服务，尝试次数: 1
+2025-04-08 11:01:06 [http-nio-8081-exec-7] DEBUG c.h.service.impl.QaServiceImpl - 响应内容: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":260,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2883},"session":{"messages":[{"role":"user","content":"会议内容"},{"role":"assistant","content":"您好！2025西湖论剑·数字安全大会的主题是\"AI向治·安全向智\"，会议内容将涵盖以下方面：\n\n1. **人工智能与数据安全**：讨论人工智能技术的发展趋势及其在数据安全领域中的应用，探索AI如何提升网络安全防御能力，防止数据泄露等安全事件。\n\n2. **数字政府建设**：探讨如何利用数字技术推动政府服务的现代化，提升政府决策的科学性和精准度，同时确保政府数据的安全与隐私保护。\n\n3. **数字经济的挑战与机遇**：分析数字经济环境下企业面临的安全挑战，分享业界最佳实践，推动企业安全水平的提升。\n\n4. **数字社会构建**：关注数字技术如何影响社会结构和人们的生活方式，讨论在建设智慧城市过程中应如何平衡便利性和安全性。\n\n5. **政策法规解读**：邀请相关领域的专家学者，对国内外最新的数字安全法律法规进行解读，为企业和个人提供合规指导。\n\n6. **技术展示与交流**：设置产品展览区，参展商将展示最新的数字安全解决方案和技术产品，参会者有机会与行业领先者面对面交流。\n\n如果您有具体感兴趣的议题或环节，也可以告诉我，我可以为您提供更加详细的信息。希望这些内容能帮助您更好地了解本次大会。"}],"id":"6b691c18-9cf4-4815-a972-211d6a5250ef"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.2947314.17440812476078207"}
+2025-04-08 11:01:06 [http-nio-8081-exec-7] DEBUG c.h.service.impl.QaServiceImpl - AI服务原始响应: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":260,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2883},"session":{"messages":[{"role":"user","content":"会议内容"},{"role":"assistant","content":"您好！2025西湖论剑·数字安全大会的主题是\"AI向治·安全向智\"，会议内容将涵盖以下方面：\n\n1. **人工智能与数据安全**：讨论人工智能技术的发展趋势及其在数据安全领域中的应用，探索AI如何提升网络安全防御能力，防止数据泄露等安全事件。\n\n2. **数字政府建设**：探讨如何利用数字技术推动政府服务的现代化，提升政府决策的科学性和精准度，同时确保政府数据的安全与隐私保护。\n\n3. **数字经济的挑战与机遇**：分析数字经济环境下企业面临的安全挑战，分享业界最佳实践，推动企业安全水平的提升。\n\n4. **数字社会构建**：关注数字技术如何影响社会结构和人们的生活方式，讨论在建设智慧城市过程中应如何平衡便利性和安全性。\n\n5. **政策法规解读**：邀请相关领域的专家学者，对国内外最新的数字安全法律法规进行解读，为企业和个人提供合规指导。\n\n6. **技术展示与交流**：设置产品展览区，参展商将展示最新的数字安全解决方案和技术产品，参会者有机会与行业领先者面对面交流。\n\n如果您有具体感兴趣的议题或环节，也可以告诉我，我可以为您提供更加详细的信息。希望这些内容能帮助您更好地了解本次大会。"}],"id":"6b691c18-9cf4-4815-a972-211d6a5250ef"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.2947314.17440812476078207"}
+2025-04-08 11:01:06 [http-nio-8081-exec-7] DEBUG c.h.service.impl.QaServiceImpl - 开始解析AI回复内容
+2025-04-08 11:01:06 [http-nio-8081-exec-7] DEBUG c.h.service.impl.QaServiceImpl - 成功解析AI回答: "您好！2025西湖论剑·数字安全大会的主题是\
+2025-04-08 11:01:06 [http-nio-8081-exec-7] INFO  c.h.service.impl.QaServiceImpl - AI服务回答: "您好！2025西湖论剑·数字安全大会的主题是\
+2025-04-08 11:01:06 [http-nio-8081-exec-7] DEBUG c.h.service.impl.QaServiceImpl - 答案生成成功: "您好！2025西湖论剑·数字安全大会的主题是\
+2025-04-08 11:01:06 [http-nio-8081-exec-7] INFO  c.h.controller.QaController - 返回AI回答, 长度: 24, 内容: "您好！2025西湖论剑·数字安全大会的主题是\
+2025-04-08 11:01:19 [http-nio-8081-exec-8] INFO  c.h.controller.QaController - 收到问题: 会议
+2025-04-08 11:01:19 [http-nio-8081-exec-8] DEBUG c.h.service.impl.QaServiceImpl - 处理问题: 会议, 会议ID: default
+2025-04-08 11:01:19 [http-nio-8081-exec-8] DEBUG c.h.service.impl.QaServiceImpl - 请求时间戳: 1744081279793
+2025-04-08 11:01:19 [http-nio-8081-exec-8] DEBUG c.h.service.impl.QaServiceImpl - API请求地址: https://www.das-ai.com/open/api/v2/agent/execute
+2025-04-08 11:01:19 [http-nio-8081-exec-8] INFO  c.h.service.impl.QaServiceImpl - 开始调用AI服务，尝试次数: 1
+2025-04-08 11:01:24 [http-nio-8081-exec-8] DEBUG c.h.service.impl.QaServiceImpl - 响应内容: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":63,"prompt_tokens":2622,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2685},"session":{"messages":[{"role":"user","content":"会议"},{"role":"assistant","content":"您好！关于2025西湖论剑·数字安全大会，您想了解哪方面的信息呢？例如会议日程、嘉宾介绍、成果发布、参会指南等。请告诉我您的具体需求，我会为您提供帮助。如果您想了解往届会议的信息，也请一并告知。"}],"id":"05148f35-72ae-4ae5-82e7-3cce953045ae"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.1747.17440812830935607"}
+2025-04-08 11:01:24 [http-nio-8081-exec-8] DEBUG c.h.service.impl.QaServiceImpl - AI服务原始响应: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":63,"prompt_tokens":2622,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2685},"session":{"messages":[{"role":"user","content":"会议"},{"role":"assistant","content":"您好！关于2025西湖论剑·数字安全大会，您想了解哪方面的信息呢？例如会议日程、嘉宾介绍、成果发布、参会指南等。请告诉我您的具体需求，我会为您提供帮助。如果您想了解往届会议的信息，也请一并告知。"}],"id":"05148f35-72ae-4ae5-82e7-3cce953045ae"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.1747.17440812830935607"}
+2025-04-08 11:01:24 [http-nio-8081-exec-8] DEBUG c.h.service.impl.QaServiceImpl - 开始解析AI回复内容
+2025-04-08 11:01:24 [http-nio-8081-exec-8] DEBUG c.h.service.impl.QaServiceImpl - 成功解析AI回答: "您好！关于2025西湖论剑·数字安全大会，您想了解哪方面的信息呢？例如会议日程、嘉宾介绍、成果发布、参会指南等。请告诉我您的具体需求，我会为您提供帮助。如果您想了解往届会议的信息，也请一并告知。
+2025-04-08 11:01:24 [http-nio-8081-exec-8] INFO  c.h.service.impl.QaServiceImpl - AI服务回答: "您好！关于2025西湖论剑·数字安全大会，您想了解哪方面的信息呢？例如会议日程、嘉宾介绍、成果发布、参会指南等。请告诉我您的具体需求，我会为您提供帮助。如果您想了解往届会议的信息，也请一并告知。
+2025-04-08 11:01:24 [http-nio-8081-exec-8] DEBUG c.h.service.impl.QaServiceImpl - 答案生成成功: "您好！关于2025西湖论剑·数字安全大会，您想了解哪方面的信息呢？例如会议日程、嘉宾介绍、成果发布、参会指南等。请告诉我您的具体需求，我会为您提供帮助。如果您想了解往届会议的信息，也请一并告知。
+2025-04-08 11:01:24 [http-nio-8081-exec-8] INFO  c.h.controller.QaController - 返回AI回答, 长度: 98, 内容: "您好！关于2025西湖论剑·数字安全大会，您想了解哪方面的信息呢？例如会议日程、嘉宾介绍、成果发布、参会指南等。请告诉我您的具体需求，我会为您提供帮助。如果您想了解往届会议的信息，也请一并告知。
+2025-04-08 11:01:29 [http-nio-8081-exec-3] INFO  c.h.controller.QaController - 收到问题: 牛一内容
+2025-04-08 11:01:29 [http-nio-8081-exec-3] DEBUG c.h.service.impl.QaServiceImpl - 处理问题: 牛一内容, 会议ID: default
+2025-04-08 11:01:29 [http-nio-8081-exec-3] DEBUG c.h.service.impl.QaServiceImpl - 请求时间戳: 1744081289559
+2025-04-08 11:01:29 [http-nio-8081-exec-3] DEBUG c.h.service.impl.QaServiceImpl - API请求地址: https://www.das-ai.com/open/api/v2/agent/execute
+2025-04-08 11:01:29 [http-nio-8081-exec-3] INFO  c.h.service.impl.QaServiceImpl - 开始调用AI服务，尝试次数: 1
+2025-04-08 11:01:33 [http-nio-8081-exec-3] DEBUG c.h.service.impl.QaServiceImpl - 响应内容: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":51,"prompt_tokens":2624,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2675},"session":{"messages":[{"role":"user","content":"牛一内容"},{"role":"assistant","content":"您提到的“牛一内容”我需要更多的信息以便为您提供准确的帮助。您是指与2025西湖论剑大会相关的内容吗？还是有其他特定的含义？请提供更多的上下文信息，感谢您的配合！"}],"id":"b61c8014-44db-48a2-95ea-0e052bfba128"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.22362.17440812927772101"}
+2025-04-08 11:01:33 [http-nio-8081-exec-3] DEBUG c.h.service.impl.QaServiceImpl - AI服务原始响应: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":51,"prompt_tokens":2624,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2675},"session":{"messages":[{"role":"user","content":"牛一内容"},{"role":"assistant","content":"您提到的“牛一内容”我需要更多的信息以便为您提供准确的帮助。您是指与2025西湖论剑大会相关的内容吗？还是有其他特定的含义？请提供更多的上下文信息，感谢您的配合！"}],"id":"b61c8014-44db-48a2-95ea-0e052bfba128"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.22362.17440812927772101"}
+2025-04-08 11:01:33 [http-nio-8081-exec-3] DEBUG c.h.service.impl.QaServiceImpl - 开始解析AI回复内容
+2025-04-08 11:01:33 [http-nio-8081-exec-3] DEBUG c.h.service.impl.QaServiceImpl - 成功解析AI回答: "您提到的“牛一内容”我需要更多的信息以便为您提供准确的帮助。您是指与2025西湖论剑大会相关的内容吗？还是有其他特定的含义？请提供更多的上下文信息，感谢您的配合！
+2025-04-08 11:01:33 [http-nio-8081-exec-3] INFO  c.h.service.impl.QaServiceImpl - AI服务回答: "您提到的“牛一内容”我需要更多的信息以便为您提供准确的帮助。您是指与2025西湖论剑大会相关的内容吗？还是有其他特定的含义？请提供更多的上下文信息，感谢您的配合！
+2025-04-08 11:01:33 [http-nio-8081-exec-3] DEBUG c.h.service.impl.QaServiceImpl - 答案生成成功: "您提到的“牛一内容”我需要更多的信息以便为您提供准确的帮助。您是指与2025西湖论剑大会相关的内容吗？还是有其他特定的含义？请提供更多的上下文信息，感谢您的配合！
+2025-04-08 11:01:33 [http-nio-8081-exec-3] INFO  c.h.controller.QaController - 返回AI回答, 长度: 82, 内容: "您提到的“牛一内容”我需要更多的信息以便为您提供准确的帮助。您是指与2025西湖论剑大会相关的内容吗？还是有其他特定的含义？请提供更多的上下文信息，感谢您的配合！
+2025-04-08 11:01:35 [http-nio-8081-exec-2] INFO  c.h.controller.QaController - 收到问题: 会议内容
+2025-04-08 11:01:35 [http-nio-8081-exec-2] DEBUG c.h.service.impl.QaServiceImpl - 处理问题: 会议内容, 会议ID: default
+2025-04-08 11:01:35 [http-nio-8081-exec-2] DEBUG c.h.service.impl.QaServiceImpl - 请求时间戳: 1744081295111
+2025-04-08 11:01:35 [http-nio-8081-exec-2] DEBUG c.h.service.impl.QaServiceImpl - API请求地址: https://www.das-ai.com/open/api/v2/agent/execute
+2025-04-08 11:01:35 [http-nio-8081-exec-2] INFO  c.h.service.impl.QaServiceImpl - 开始调用AI服务，尝试次数: 1
+2025-04-08 11:01:42 [http-nio-8081-exec-2] DEBUG c.h.service.impl.QaServiceImpl - 响应内容: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":85,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2708},"session":{"messages":[{"role":"user","content":"会议内容"},{"role":"assistant","content":"您提到的“会议内容”是指2025年西湖论剑数字安全大会的会议内容吗？如果是的话，可以为您介绍本次大会的主要议题、嘉宾演讲、圆桌讨论等详细内容。请明确您的需求，以便我能更准确地为您提供信息。如果您是想了解往届西湖论剑会议的内容，也请告知具体年份，我将竭力为您提供相关信息。"}],"id":"33662ddb-abba-4b07-bbbe-eb77c897955b"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.37906.17440812982150649"}
+2025-04-08 11:01:42 [http-nio-8081-exec-2] DEBUG c.h.service.impl.QaServiceImpl - AI服务原始响应: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":85,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2708},"session":{"messages":[{"role":"user","content":"会议内容"},{"role":"assistant","content":"您提到的“会议内容”是指2025年西湖论剑数字安全大会的会议内容吗？如果是的话，可以为您介绍本次大会的主要议题、嘉宾演讲、圆桌讨论等详细内容。请明确您的需求，以便我能更准确地为您提供信息。如果您是想了解往届西湖论剑会议的内容，也请告知具体年份，我将竭力为您提供相关信息。"}],"id":"33662ddb-abba-4b07-bbbe-eb77c897955b"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.37906.17440812982150649"}
+2025-04-08 11:01:42 [http-nio-8081-exec-2] DEBUG c.h.service.impl.QaServiceImpl - 开始解析AI回复内容
+2025-04-08 11:01:42 [http-nio-8081-exec-2] DEBUG c.h.service.impl.QaServiceImpl - 成功解析AI回答: "您提到的“会议内容”是指2025年西湖论剑数字安全大会的会议内容吗？如果是的话，可以为您介绍本次大会的主要议题、嘉宾演讲、圆桌讨论等详细内容。请明确您的需求，以便我能更准确地为您提供信息。如果您是想了解往届西湖论剑会议的内容，也请告知具体年份，我将竭力为您提供相关信息。
+2025-04-08 11:01:42 [http-nio-8081-exec-2] INFO  c.h.service.impl.QaServiceImpl - AI服务回答: "您提到的“会议内容”是指2025年西湖论剑数字安全大会的会议内容吗？如果是的话，可以为您介绍本次大会的主要议题、嘉宾演讲、圆桌讨论等详细内容。请明确您的需求，以便我能更准确地为您提供信息。如果您是想了解往届西湖论剑会议的内容，也请告知具体年份，我将竭力为您提供相关信息。
+2025-04-08 11:01:42 [http-nio-8081-exec-2] DEBUG c.h.service.impl.QaServiceImpl - 答案生成成功: "您提到的“会议内容”是指2025年西湖论剑数字安全大会的会议内容吗？如果是的话，可以为您介绍本次大会的主要议题、嘉宾演讲、圆桌讨论等详细内容。请明确您的需求，以便我能更准确地为您提供信息。如果您是想了解往届西湖论剑会议的内容，也请告知具体年份，我将竭力为您提供相关信息。
+2025-04-08 11:01:42 [http-nio-8081-exec-2] INFO  c.h.controller.QaController - 返回AI回答, 长度: 136, 内容: "您提到的“会议内容”是指2025年西湖论剑数字安全大会的会议内容吗？如果是的话，可以为您介绍本次大会的主要议题、嘉宾演讲、圆桌讨论等详细内容。请明确您的需求，以便我能更准确地为您提供信息。如果您是想了解往届西湖论剑会议的内容，也请告知具体年份，我将竭力为您提供相关信息。
+2025-04-08 11:02:00 [http-nio-8081-exec-1] INFO  c.h.controller.QaController - 收到问题: 解释一下哥德巴赫猜想
+2025-04-08 11:02:00 [http-nio-8081-exec-1] DEBUG c.h.service.impl.QaServiceImpl - 处理问题: 解释一下哥德巴赫猜想, 会议ID: default
+2025-04-08 11:02:00 [http-nio-8081-exec-1] DEBUG c.h.service.impl.QaServiceImpl - 请求时间戳: 1744081320043
+2025-04-08 11:02:00 [http-nio-8081-exec-1] DEBUG c.h.service.impl.QaServiceImpl - API请求地址: https://www.das-ai.com/open/api/v2/agent/execute
+2025-04-08 11:02:00 [http-nio-8081-exec-1] INFO  c.h.service.impl.QaServiceImpl - 开始调用AI服务，尝试次数: 1
+2025-04-08 11:02:27 [http-nio-8081-exec-4] INFO  c.h.controller.QaController - 收到问题: 说一下5月5号的日程
+2025-04-08 11:02:27 [http-nio-8081-exec-4] DEBUG c.h.service.impl.QaServiceImpl - 处理问题: 说一下5月5号的日程, 会议ID: default
+2025-04-08 11:02:27 [http-nio-8081-exec-4] DEBUG c.h.service.impl.QaServiceImpl - 请求时间戳: 1744081347148
+2025-04-08 11:02:27 [http-nio-8081-exec-4] DEBUG c.h.service.impl.QaServiceImpl - API请求地址: https://www.das-ai.com/open/api/v2/agent/execute
+2025-04-08 11:02:27 [http-nio-8081-exec-4] INFO  c.h.service.impl.QaServiceImpl - 开始调用AI服务，尝试次数: 1
+2025-04-08 11:02:52 [http-nio-8081-exec-1] DEBUG c.h.service.impl.QaServiceImpl - 响应内容: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":594,"prompt_tokens":2628,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":3222},"session":{"messages":[{"role":"user","content":"解释一下哥德巴赫猜想"},{"role":"assistant","content":"哥德巴赫猜想（Goldbach's conjecture）是数论中的一个著名问题，其陈述非常简单，但至今仍未被证明或推翻。它的原始版本是由德国数学家克里斯蒂安·哥德巴赫（Christian Goldbach）于1742年提出，通过写给瑞士数学家莱昂哈德·欧拉（Leonhard Euler）的一封信。欧拉之后将这个问题简化为现时所接受的形式，即所谓的“强哥德巴赫猜想”或“二重哥德巴赫猜想”。\n\n强哥德巴赫猜想的内容如下：每个大于2的偶数都可以表示为两个质数之和。\n\n例如：\n- 4 = 2 + 2\n- 6 = 3 + 3\n- 8 = 3 + 5\n- 10 = 3 + 7 = 5 + 5\n- 12 = 5 + 7\n- 14 = 7 + 7 = 3 + 11\n- 16 = 5 + 11 = 3 + 13\n- 18 = 5 + 13 = 7 + 11\n- 20 = 7 + 13 = 3 + 17\n\n随着数字的增大，表达为两个质数和的方式似乎越来越多，但是至今为止，尽管数学家们对于大量的偶数进行了验证，并且使用计算机验证了极大量的数值，但还没有找到一个反例，也没有找到证明此猜想的方法。\n\n还存在一个相关的“弱哥德巴赫猜想”，它断言每个大于5的奇数都是三个质数的和。这个猜想在2013年被秘鲁数学家哈罗德·赫夫戈特（Harald Helfgott）证明，因此现在被称为“赫夫戈特定理”。\n\n尽管强哥德巴赫猜想还没有得到完全的证明，但数学家们已经取得了一些进展。例如，1937年，苏联数学家伊万·文格罗夫（Ivan Vinogradov）证明了一个弱化版本，即几乎所有的偶数可以表示为两个质数的和（“几乎所有”是指除了有限的例外情况以外，所有足够大的偶数都满足这个条件）。另外，数学家们还证明了，对于任何正整数k，存在一个整数N，使得所有大于N的偶数可以表示为不超过k个质数的和。当k=2时，这就是哥德巴赫猜想。\n\n哥德巴赫猜想是数学中一个非常吸引人的问题，因为它看起来既简单又直觉，但要找到一个严格的证明却异常困难。它也是许多数学家努力的目标，并且，对它的研究推动了数学其他分支的发展。"}],"id":"5a1f76ab-3cf8-44d6-ae42-0697a9ccf380"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.532957.17440813233381963"}
+2025-04-08 11:02:52 [http-nio-8081-exec-1] DEBUG c.h.service.impl.QaServiceImpl - AI服务原始响应: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":594,"prompt_tokens":2628,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":3222},"session":{"messages":[{"role":"user","content":"解释一下哥德巴赫猜想"},{"role":"assistant","content":"哥德巴赫猜想（Goldbach's conjecture）是数论中的一个著名问题，其陈述非常简单，但至今仍未被证明或推翻。它的原始版本是由德国数学家克里斯蒂安·哥德巴赫（Christian Goldbach）于1742年提出，通过写给瑞士数学家莱昂哈德·欧拉（Leonhard Euler）的一封信。欧拉之后将这个问题简化为现时所接受的形式，即所谓的“强哥德巴赫猜想”或“二重哥德巴赫猜想”。\n\n强哥德巴赫猜想的内容如下：每个大于2的偶数都可以表示为两个质数之和。\n\n例如：\n- 4 = 2 + 2\n- 6 = 3 + 3\n- 8 = 3 + 5\n- 10 = 3 + 7 = 5 + 5\n- 12 = 5 + 7\n- 14 = 7 + 7 = 3 + 11\n- 16 = 5 + 11 = 3 + 13\n- 18 = 5 + 13 = 7 + 11\n- 20 = 7 + 13 = 3 + 17\n\n随着数字的增大，表达为两个质数和的方式似乎越来越多，但是至今为止，尽管数学家们对于大量的偶数进行了验证，并且使用计算机验证了极大量的数值，但还没有找到一个反例，也没有找到证明此猜想的方法。\n\n还存在一个相关的“弱哥德巴赫猜想”，它断言每个大于5的奇数都是三个质数的和。这个猜想在2013年被秘鲁数学家哈罗德·赫夫戈特（Harald Helfgott）证明，因此现在被称为“赫夫戈特定理”。\n\n尽管强哥德巴赫猜想还没有得到完全的证明，但数学家们已经取得了一些进展。例如，1937年，苏联数学家伊万·文格罗夫（Ivan Vinogradov）证明了一个弱化版本，即几乎所有的偶数可以表示为两个质数的和（“几乎所有”是指除了有限的例外情况以外，所有足够大的偶数都满足这个条件）。另外，数学家们还证明了，对于任何正整数k，存在一个整数N，使得所有大于N的偶数可以表示为不超过k个质数的和。当k=2时，这就是哥德巴赫猜想。\n\n哥德巴赫猜想是数学中一个非常吸引人的问题，因为它看起来既简单又直觉，但要找到一个严格的证明却异常困难。它也是许多数学家努力的目标，并且，对它的研究推动了数学其他分支的发展。"}],"id":"5a1f76ab-3cf8-44d6-ae42-0697a9ccf380"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.532957.17440813233381963"}
+2025-04-08 11:02:52 [http-nio-8081-exec-1] DEBUG c.h.service.impl.QaServiceImpl - 开始解析AI回复内容
+2025-04-08 11:02:52 [http-nio-8081-exec-1] DEBUG c.h.service.impl.QaServiceImpl - 成功解析AI回答: "哥德巴赫猜想（Goldbach's conjecture）是数论中的一个著名问题，其陈述非常简单，但至今仍未被证明或推翻。它的原始版本是由德国数学家克里斯蒂安·哥德巴赫（Christian Goldbach）于1742年提出，通过写给瑞士数学家莱昂哈德·欧拉（Leonhard Euler）的一封信。欧拉之后将这个问题简化为现时所接受的形式，即所谓的“强哥德巴赫猜想”或“二重哥德巴赫猜想”。
+
+强哥德巴赫猜想的内容如下：每个大于2的偶数都可以表示为两个质数之和。
+
+例如：
+- 4 = 2 + 2
+- 6 = 3 + 3
+- 8 = 3 + 5
+- 10 = 3 + 7 = 5 + 5
+- 12 = 5 + 7
+- 14 = 7 + 7 = 3 + 11
+- 16 = 5 + 11 = 3 + 13
+- 18 = 5 + 13 = 7 + 11
+- 20 = 7 + 13 = 3 + 17
+
+随着数字的增大，表达为两个质数和的方式似乎越来越多，但是至今为止，尽管数学家们对于大量的偶数进行了验证，并且使用计算机验证了极大量的数值，但还没有找到一个反例，也没有找到证明此猜想的方法。
+
+还存在一个相关的“弱哥德巴赫猜想”，它断言每个大于5的奇数都是三个质数的和。这个猜想在2013年被秘鲁数学家哈罗德·赫夫戈特（Harald Helfgott）证明，因此现在被称为“赫夫戈特定理”。
+
+尽管强哥德巴赫猜想还没有得到完全的证明，但数学家们已经取得了一些进展。例如，1937年，苏联数学家伊万·文格罗夫（Ivan Vinogradov）证明了一个弱化版本，即几乎所有的偶数可以表示为两个质数的和（“几乎所有”是指除了有限的例外情况以外，所有足够大的偶数都满足这个条件）。另外，数学家们还证明了，对于任何正整数k，存在一个整数N，使得所有大于N的偶数可以表示为不超过k个质数的和。当k=2时，这就是哥德巴赫猜想。
+
+哥德巴赫猜想是数学中一个非常吸引人的问题，因为它看起来既简单又直觉，但要找到一个严格的证明却异常困难。它也是许多数学家努力的目标，并且，对它的研究推动了数学其他分支的发展。
+2025-04-08 11:02:52 [http-nio-8081-exec-1] INFO  c.h.service.impl.QaServiceImpl - AI服务回答: "哥德巴赫猜想（Goldbach's conjecture）是数论中的一个著名问题，其陈述非常简单，但至今仍未被证明或推翻。它的原始版本是由德国数学家克里斯蒂安·哥德巴赫（Christian Goldbach）于1742年提出，通过写给瑞士数学家莱昂哈德·欧拉（Leonhard Euler）的一封信。欧拉之后将这个问题简化为现时所接受的形式，即所谓的“强哥德巴赫猜想”或“二重哥德巴赫猜想”。
+
+强哥德巴赫猜想的内容如下：每个大于2的偶数都可以表示为两个质数之和。
+
+例如：
+- 4 = 2 + 2
+- 6 = 3 + 3
+- 8 = 3 + 5
+- 10 = 3 + 7 = 5 + 5
+- 12 = 5 + 7
+- 14 = 7 + 7 = 3 + 11
+- 16 = 5 + 11 = 3 + 13
+- 18 = 5 + 13 = 7 + 11
+- 20 = 7 + 13 = 3 + 17
+
+随着数字的增大，表达为两个质数和的方式似乎越来越多，但是至今为止，尽管数学家们对于大量的偶数进行了验证，并且使用计算机验证了极大量的数值，但还没有找到一个反例，也没有找到证明此猜想的方法。
+
+还存在一个相关的“弱哥德巴赫猜想”，它断言每个大于5的奇数都是三个质数的和。这个猜想在2013年被秘鲁数学家哈罗德·赫夫戈特（Harald Helfgott）证明，因此现在被称为“赫夫戈特定理”。
+
+尽管强哥德巴赫猜想还没有得到完全的证明，但数学家们已经取得了一些进展。例如，1937年，苏联数学家伊万·文格罗夫（Ivan Vinogradov）证明了一个弱化版本，即几乎所有的偶数可以表示为两个质数的和（“几乎所有”是指除了有限的例外情况以外，所有足够大的偶数都满足这个条件）。另外，数学家们还证明了，对于任何正整数k，存在一个整数N，使得所有大于N的偶数可以表示为不超过k个质数的和。当k=2时，这就是哥德巴赫猜想。
+
+哥德巴赫猜想是数学中一个非常吸引人的问题，因为它看起来既简单又直觉，但要找到一个严格的证明却异常困难。它也是许多数学家努力的目标，并且，对它的研究推动了数学其他分支的发展。
+2025-04-08 11:02:52 [http-nio-8081-exec-1] DEBUG c.h.service.impl.QaServiceImpl - 答案生成成功: "哥德巴赫猜想（Goldbach's conjecture）是数论中的一个著名问题，其陈述非常简单，但至今仍未被证明或推翻。它的原始版本是由德国数学家克里斯蒂安·哥德巴赫（Christian Goldbach）于1742年提出，通过写给瑞士数学家莱昂哈德·欧拉（Leonhard Euler）的一封信。欧拉之后将这个问题简化为现时所接受的形式，即所谓的“强哥德巴赫猜想”或“二重哥德巴赫猜想”。
+
+强哥德巴赫猜想的内容如下：每个大于2的偶数都可以表示为两个质数之和。
+
+例如：
+- 4 = 2 + 2
+- 6 = 3 + 3
+- 8 = 3 + 5
+- 10 = 3 + 7 = 5 + 5
+- 12 = 5 + 7
+- 14 = 7 + 7 = 3 + 11
+- 16 = 5 + 11 = 3 + 13
+- 18 = 5 + 13 = 7 + 11
+- 20 = 7 + 13 = 3 + 17
+
+随着数字的增大，表达为两个质数和的方式似乎越来越多，但是至今为止，尽管数学家们对于大量的偶数进行了验证，并且使用计算机验证了极大量的数值，但还没有找到一个反例，也没有找到证明此猜想的方法。
+
+还存在一个相关的“弱哥德巴赫猜想”，它断言每个大于5的奇数都是三个质数的和。这个猜想在2013年被秘鲁数学家哈罗德·赫夫戈特（Harald Helfgott）证明，因此现在被称为“赫夫戈特定理”。
+
+尽管强哥德巴赫猜想还没有得到完全的证明，但数学家们已经取得了一些进展。例如，1937年，苏联数学家伊万·文格罗夫（Ivan Vinogradov）证明了一个弱化版本，即几乎所有的偶数可以表示为两个质数的和（“几乎所有”是指除了有限的例外情况以外，所有足够大的偶数都满足这个条件）。另外，数学家们还证明了，对于任何正整数k，存在一个整数N，使得所有大于N的偶数可以表示为不超过k个质数的和。当k=2时，这就是哥德巴赫猜想。
+
+哥德巴赫猜想是数学中一个非常吸引人的问题，因为它看起来既简单又直觉，但要找到一个严格的证明却异常困难。它也是许多数学家努力的目标，并且，对它的研究推动了数学其他分支的发展。
+2025-04-08 11:02:52 [http-nio-8081-exec-1] INFO  c.h.controller.QaController - 返回AI回答, 长度: 895, 内容: "哥德巴赫猜想（Goldbach's conjecture）是数论中的一个著名问题，其陈述非常简单，但至今仍未被证明或推翻。它的原始版本是由德国数学家克里斯蒂安·哥德巴赫（Christian Goldbach）于1742年提出，通过写给瑞士数学家莱昂哈德·欧拉（Leonhard Euler）的一封信。欧拉之后将这个问题简化为现时所接受的形式，即所谓的“强哥德巴赫猜想”或“二重哥德巴赫猜想”。
+
+强哥德巴赫猜想的内容如下：每个大于2的偶数都可以表示为两个质数之和。
+
+例如：
+- 4 = 2 + 2
+- 6 = 3 + 3
+- 8 = 3 + 5
+- 10 = 3 + 7 = 5 + 5
+- 12 = 5 + 7
+- 14 = 7 + 7 = 3 + 11
+- 16 = 5 + 11 = 3 + 13
+- 18 = 5 + 13 = 7 + 11
+- 20 = 7 + 13 = 3 + 17
+
+随着数字的增大，表达为两个质数和的方式似乎越来越多，但是至今为止，尽管数学家们对于大量的偶数进行了验证，并且使用计算机验证了极大量的数值，但还没有找到一个反例，也没有找到证明此猜想的方法。
+
+还存在一个相关的“弱哥德巴赫猜想”，它断言每个大于5的奇数都是三个质数的和。这个猜想在2013年被秘鲁数学家哈罗德·赫夫戈特（Harald Helfgott）证明，因此现在被称为“赫夫戈特定理”。
+
+尽管强哥德巴赫猜想还没有得到完全的证明，但数学家们已经取得了一些进展。例如，1937年，苏联数学家伊万·文格罗夫（Ivan Vinogradov）证明了一个弱化版本，即几乎所有的偶数可以表示为两个质数的和（“几乎所有”是指除了有限的例外情况以外，所有足够大的偶数都满足这个条件）。另外，数学家们还证明了，对于任何正整数k，存在一个整数N，使得所有大于N的偶数可以表示为不超过k个质数的和。当k=2时，这就是哥德巴赫猜想。
+
+哥德巴赫猜想是数学中一个非常吸引人的问题，因为它看起来既简单又直觉，但要找到一个严格的证明却异常困难。它也是许多数学家努力的目标，并且，对它的研究推动了数学其他分支的发展。
+2025-04-08 11:02:56 [http-nio-8081-exec-4] DEBUG c.h.service.impl.QaServiceImpl - 响应内容: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":189,"prompt_tokens":7501,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":7690},"session":{"messages":[{"role":"user","content":"说一下5月5号的日程"},{"role":"assistant","content":"目前，2025年西湖论剑·数字安全大会的具体日程安排主要集中在5月10日。关于5月5日的日程，官方尚未公布详细信息。建议您持续关注大会官网或官方公众号，以便及时获取最新的日程安排和相关信息。如果您有其他问题，也可以随时向我提问。"}],"id":"ef51b773-60db-446b-99e9-6d485d94a8bc"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.1744.17440813503715627"}
+2025-04-08 11:02:56 [http-nio-8081-exec-4] DEBUG c.h.service.impl.QaServiceImpl - AI服务原始响应: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":189,"prompt_tokens":7501,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":7690},"session":{"messages":[{"role":"user","content":"说一下5月5号的日程"},{"role":"assistant","content":"目前，2025年西湖论剑·数字安全大会的具体日程安排主要集中在5月10日。关于5月5日的日程，官方尚未公布详细信息。建议您持续关注大会官网或官方公众号，以便及时获取最新的日程安排和相关信息。如果您有其他问题，也可以随时向我提问。"}],"id":"ef51b773-60db-446b-99e9-6d485d94a8bc"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.1744.17440813503715627"}
+2025-04-08 11:02:56 [http-nio-8081-exec-4] DEBUG c.h.service.impl.QaServiceImpl - 开始解析AI回复内容
+2025-04-08 11:02:56 [http-nio-8081-exec-4] DEBUG c.h.service.impl.QaServiceImpl - 成功解析AI回答: "目前，2025年西湖论剑·数字安全大会的具体日程安排主要集中在5月10日。关于5月5日的日程，官方尚未公布详细信息。建议您持续关注大会官网或官方公众号，以便及时获取最新的日程安排和相关信息。如果您有其他问题，也可以随时向我提问。
+2025-04-08 11:02:56 [http-nio-8081-exec-4] INFO  c.h.service.impl.QaServiceImpl - AI服务回答: "目前，2025年西湖论剑·数字安全大会的具体日程安排主要集中在5月10日。关于5月5日的日程，官方尚未公布详细信息。建议您持续关注大会官网或官方公众号，以便及时获取最新的日程安排和相关信息。如果您有其他问题，也可以随时向我提问。
+2025-04-08 11:02:56 [http-nio-8081-exec-4] DEBUG c.h.service.impl.QaServiceImpl - 答案生成成功: "目前，2025年西湖论剑·数字安全大会的具体日程安排主要集中在5月10日。关于5月5日的日程，官方尚未公布详细信息。建议您持续关注大会官网或官方公众号，以便及时获取最新的日程安排和相关信息。如果您有其他问题，也可以随时向我提问。
+2025-04-08 11:02:56 [http-nio-8081-exec-4] INFO  c.h.controller.QaController - 返回AI回答, 长度: 115, 内容: "目前，2025年西湖论剑·数字安全大会的具体日程安排主要集中在5月10日。关于5月5日的日程，官方尚未公布详细信息。建议您持续关注大会官网或官方公众号，以便及时获取最新的日程安排和相关信息。如果您有其他问题，也可以随时向我提问。
+2025-04-08 11:04:26 [http-nio-8081-exec-6] INFO  c.h.controller.QaController - 收到问题: 说一下5月5号的日程
+2025-04-08 11:04:26 [http-nio-8081-exec-6] DEBUG c.h.service.impl.QaServiceImpl - 处理问题: 说一下5月5号的日程, 会议ID: default
+2025-04-08 11:04:26 [http-nio-8081-exec-6] DEBUG c.h.service.impl.QaServiceImpl - 请求时间戳: 1744081466073
+2025-04-08 11:04:26 [http-nio-8081-exec-6] DEBUG c.h.service.impl.QaServiceImpl - API请求地址: https://www.das-ai.com/open/api/v2/agent/execute
+2025-04-08 11:04:26 [http-nio-8081-exec-6] INFO  c.h.service.impl.QaServiceImpl - 开始调用AI服务，尝试次数: 1
+2025-04-08 11:05:06 [http-nio-8081-exec-6] DEBUG c.h.service.impl.QaServiceImpl - 响应内容: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":331,"prompt_tokens":7584,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":7915},"session":{"messages":[{"role":"user","content":"说一下5月5号的日程"},{"role":"assistant","content":"目前，2025年5月5日的具体日程尚未公布，但可以参考2023年5月5日的日程安排，那一天晚上举办的是**西湖论剑·网络安全科普活动—格致论道专场**。这是一场专为科普网络安全知识而设的活动，旨在提高公众对网络安全的意识和理解。\n\n![2023年西湖论剑科普活动](1.png)\n\n对于2025年的具体安排，建议您保持关注大会的官方网站或小程序，以便获得最新的日程信息。如果您有其他问题或需要进一步的帮助，欢迎随时提问！"}],"id":"1d366ed9-d065-48d6-be1c-62404c007430"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.2947330.17440814665297231"}
+2025-04-08 11:05:06 [http-nio-8081-exec-6] DEBUG c.h.service.impl.QaServiceImpl - AI服务原始响应: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":331,"prompt_tokens":7584,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":7915},"session":{"messages":[{"role":"user","content":"说一下5月5号的日程"},{"role":"assistant","content":"目前，2025年5月5日的具体日程尚未公布，但可以参考2023年5月5日的日程安排，那一天晚上举办的是**西湖论剑·网络安全科普活动—格致论道专场**。这是一场专为科普网络安全知识而设的活动，旨在提高公众对网络安全的意识和理解。\n\n![2023年西湖论剑科普活动](1.png)\n\n对于2025年的具体安排，建议您保持关注大会的官方网站或小程序，以便获得最新的日程信息。如果您有其他问题或需要进一步的帮助，欢迎随时提问！"}],"id":"1d366ed9-d065-48d6-be1c-62404c007430"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.2947330.17440814665297231"}
+2025-04-08 11:05:06 [http-nio-8081-exec-6] DEBUG c.h.service.impl.QaServiceImpl - 开始解析AI回复内容
+2025-04-08 11:05:06 [http-nio-8081-exec-6] DEBUG c.h.service.impl.QaServiceImpl - 成功解析AI回答: "目前，2025年5月5日的具体日程尚未公布，但可以参考2023年5月5日的日程安排，那一天晚上举办的是**西湖论剑·网络安全科普活动—格致论道专场**。这是一场专为科普网络安全知识而设的活动，旨在提高公众对网络安全的意识和理解。
+
+![2023年西湖论剑科普活动](1.png)
+
+对于2025年的具体安排，建议您保持关注大会的官方网站或小程序，以便获得最新的日程信息。如果您有其他问题或需要进一步的帮助，欢迎随时提问！
+2025-04-08 11:05:06 [http-nio-8081-exec-6] INFO  c.h.service.impl.QaServiceImpl - AI服务回答: "目前，2025年5月5日的具体日程尚未公布，但可以参考2023年5月5日的日程安排，那一天晚上举办的是**西湖论剑·网络安全科普活动—格致论道专场**。这是一场专为科普网络安全知识而设的活动，旨在提高公众对网络安全的意识和理解。
+
+![2023年西湖论剑科普活动](1.png)
+
+对于2025年的具体安排，建议您保持关注大会的官方网站或小程序，以便获得最新的日程信息。如果您有其他问题或需要进一步的帮助，欢迎随时提问！
+2025-04-08 11:05:06 [http-nio-8081-exec-6] DEBUG c.h.service.impl.QaServiceImpl - 答案生成成功: "目前，2025年5月5日的具体日程尚未公布，但可以参考2023年5月5日的日程安排，那一天晚上举办的是**西湖论剑·网络安全科普活动—格致论道专场**。这是一场专为科普网络安全知识而设的活动，旨在提高公众对网络安全的意识和理解。
+
+![2023年西湖论剑科普活动](1.png)
+
+对于2025年的具体安排，建议您保持关注大会的官方网站或小程序，以便获得最新的日程信息。如果您有其他问题或需要进一步的帮助，欢迎随时提问！
+2025-04-08 11:05:06 [http-nio-8081-exec-6] INFO  c.h.controller.QaController - 返回AI回答, 长度: 211, 内容: "目前，2025年5月5日的具体日程尚未公布，但可以参考2023年5月5日的日程安排，那一天晚上举办的是**西湖论剑·网络安全科普活动—格致论道专场**。这是一场专为科普网络安全知识而设的活动，旨在提高公众对网络安全的意识和理解。
+
+![2023年西湖论剑科普活动](1.png)
+
+对于2025年的具体安排，建议您保持关注大会的官方网站或小程序，以便获得最新的日程信息。如果您有其他问题或需要进一步的帮助，欢迎随时提问！
+2025-04-08 11:05:09 [http-nio-8081-exec-5] INFO  c.h.controller.QaController - 收到问题: 说一下五月六号的日成
+2025-04-08 11:05:09 [http-nio-8081-exec-5] DEBUG c.h.service.impl.QaServiceImpl - 处理问题: 说一下五月六号的日成, 会议ID: default
+2025-04-08 11:05:09 [http-nio-8081-exec-5] DEBUG c.h.service.impl.QaServiceImpl - 请求时间戳: 1744081509178
+2025-04-08 11:05:09 [http-nio-8081-exec-5] DEBUG c.h.service.impl.QaServiceImpl - API请求地址: https://www.das-ai.com/open/api/v2/agent/execute
+2025-04-08 11:05:09 [http-nio-8081-exec-5] INFO  c.h.service.impl.QaServiceImpl - 开始调用AI服务，尝试次数: 1
+2025-04-08 11:05:52 [http-nio-8081-exec-5] DEBUG c.h.service.impl.QaServiceImpl - 响应内容: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":396,"prompt_tokens":7573,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":7969},"session":{"messages":[{"role":"user","content":"说一下五月六号的日成"},{"role":"assistant","content":"2025西湖论剑大会5月6日的具体日程安排还没有在现有的信息中明确给出。不过，通常情况下，大会前的几天会安排一些预备活动，例如参会者的注册、设备的调试、场地布置等。正式的议程可能会在5月10日中国数谷大厦举办的主活动日之前，安排一些预热研讨会或专题讨论会。\n\n为了获得最准确的5月6日日程信息，建议您：\n\n- **访问大会官方网站**：查看大会的最新公告和日程安排。\n- **关注大会小程序或App**：这些平台通常会及时更新大会的相关信息。\n- **联系大会组织方**：如果有具体的疑问，直接联系大会的客服或组织团队将获得最直接的帮助。\n\n如果您需要我帮您查找更多大会的信息，或者有其他问题，也欢迎随时问我！"}],"id":"42388bb3-25d9-45a5-96bf-0e83c4b6231e"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.22361.17440815093334909"}
+2025-04-08 11:05:52 [http-nio-8081-exec-5] DEBUG c.h.service.impl.QaServiceImpl - AI服务原始响应: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":396,"prompt_tokens":7573,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":7969},"session":{"messages":[{"role":"user","content":"说一下五月六号的日成"},{"role":"assistant","content":"2025西湖论剑大会5月6日的具体日程安排还没有在现有的信息中明确给出。不过，通常情况下，大会前的几天会安排一些预备活动，例如参会者的注册、设备的调试、场地布置等。正式的议程可能会在5月10日中国数谷大厦举办的主活动日之前，安排一些预热研讨会或专题讨论会。\n\n为了获得最准确的5月6日日程信息，建议您：\n\n- **访问大会官方网站**：查看大会的最新公告和日程安排。\n- **关注大会小程序或App**：这些平台通常会及时更新大会的相关信息。\n- **联系大会组织方**：如果有具体的疑问，直接联系大会的客服或组织团队将获得最直接的帮助。\n\n如果您需要我帮您查找更多大会的信息，或者有其他问题，也欢迎随时问我！"}],"id":"42388bb3-25d9-45a5-96bf-0e83c4b6231e"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.22361.17440815093334909"}
+2025-04-08 11:05:52 [http-nio-8081-exec-5] DEBUG c.h.service.impl.QaServiceImpl - 开始解析AI回复内容
+2025-04-08 11:05:52 [http-nio-8081-exec-5] DEBUG c.h.service.impl.QaServiceImpl - 成功解析AI回答: "2025西湖论剑大会5月6日的具体日程安排还没有在现有的信息中明确给出。不过，通常情况下，大会前的几天会安排一些预备活动，例如参会者的注册、设备的调试、场地布置等。正式的议程可能会在5月10日中国数谷大厦举办的主活动日之前，安排一些预热研讨会或专题讨论会。
+
+为了获得最准确的5月6日日程信息，建议您：
+
+- **访问大会官方网站**：查看大会的最新公告和日程安排。
+- **关注大会小程序或App**：这些平台通常会及时更新大会的相关信息。
+- **联系大会组织方**：如果有具体的疑问，直接联系大会的客服或组织团队将获得最直接的帮助。
+
+如果您需要我帮您查找更多大会的信息，或者有其他问题，也欢迎随时问我！
+2025-04-08 11:05:52 [http-nio-8081-exec-5] INFO  c.h.service.impl.QaServiceImpl - AI服务回答: "2025西湖论剑大会5月6日的具体日程安排还没有在现有的信息中明确给出。不过，通常情况下，大会前的几天会安排一些预备活动，例如参会者的注册、设备的调试、场地布置等。正式的议程可能会在5月10日中国数谷大厦举办的主活动日之前，安排一些预热研讨会或专题讨论会。
+
+为了获得最准确的5月6日日程信息，建议您：
+
+- **访问大会官方网站**：查看大会的最新公告和日程安排。
+- **关注大会小程序或App**：这些平台通常会及时更新大会的相关信息。
+- **联系大会组织方**：如果有具体的疑问，直接联系大会的客服或组织团队将获得最直接的帮助。
+
+如果您需要我帮您查找更多大会的信息，或者有其他问题，也欢迎随时问我！
+2025-04-08 11:05:52 [http-nio-8081-exec-5] DEBUG c.h.service.impl.QaServiceImpl - 答案生成成功: "2025西湖论剑大会5月6日的具体日程安排还没有在现有的信息中明确给出。不过，通常情况下，大会前的几天会安排一些预备活动，例如参会者的注册、设备的调试、场地布置等。正式的议程可能会在5月10日中国数谷大厦举办的主活动日之前，安排一些预热研讨会或专题讨论会。
+
+为了获得最准确的5月6日日程信息，建议您：
+
+- **访问大会官方网站**：查看大会的最新公告和日程安排。
+- **关注大会小程序或App**：这些平台通常会及时更新大会的相关信息。
+- **联系大会组织方**：如果有具体的疑问，直接联系大会的客服或组织团队将获得最直接的帮助。
+
+如果您需要我帮您查找更多大会的信息，或者有其他问题，也欢迎随时问我！
+2025-04-08 11:05:52 [http-nio-8081-exec-5] INFO  c.h.controller.QaController - 返回AI回答, 长度: 306, 内容: "2025西湖论剑大会5月6日的具体日程安排还没有在现有的信息中明确给出。不过，通常情况下，大会前的几天会安排一些预备活动，例如参会者的注册、设备的调试、场地布置等。正式的议程可能会在5月10日中国数谷大厦举办的主活动日之前，安排一些预热研讨会或专题讨论会。
+
+为了获得最准确的5月6日日程信息，建议您：
+
+- **访问大会官方网站**：查看大会的最新公告和日程安排。
+- **关注大会小程序或App**：这些平台通常会及时更新大会的相关信息。
+- **联系大会组织方**：如果有具体的疑问，直接联系大会的客服或组织团队将获得最直接的帮助。
+
+如果您需要我帮您查找更多大会的信息，或者有其他问题，也欢迎随时问我！
+2025-04-08 11:13:57 [http-nio-8081-exec-9] INFO  c.h.controller.QaController - 收到问题: 五月六号日程
+2025-04-08 11:13:57 [http-nio-8081-exec-9] DEBUG c.h.service.impl.QaServiceImpl - 处理问题: 五月六号日程, 会议ID: default
+2025-04-08 11:13:57 [http-nio-8081-exec-9] DEBUG c.h.service.impl.QaServiceImpl - 请求时间戳: 1744082037719
+2025-04-08 11:13:57 [http-nio-8081-exec-9] DEBUG c.h.service.impl.QaServiceImpl - API请求地址: https://www.das-ai.com/open/api/v2/agent/execute
+2025-04-08 11:13:57 [http-nio-8081-exec-9] INFO  c.h.service.impl.QaServiceImpl - 开始调用AI服务，尝试次数: 1
+2025-04-08 11:14:46 [http-nio-8081-exec-9] DEBUG c.h.service.impl.QaServiceImpl - 响应内容: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":457,"prompt_tokens":7673,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":8130},"session":{"messages":[{"role":"user","content":"五月六号日程"},{"role":"assistant","content":"根据现有的信息，2025年西湖论剑大会的主要活动时间集中在5月5日至8日，但5月6日的具体日程尚未详细列出。大会期间将举办包括主论坛、平行论坛、研讨会等一系列活动，涵盖数字安全的前沿技术、行业应用与人才培养等议题。如果5月6日有重要的活动安排，它们可能是这些活动的一部分。\n\n为了提供给您更准确的5月6日日程信息，建议您：\n\n- 查看大会官方网站上的最新日程安排\n- 关注大会的官方社交媒体平台\n- 联系大会组委会获取最新资讯\n\n如果您有其他问题或需要进一步的帮助，欢迎随时询问。此外，如果您已经注册参加大会，您的参会手册里也会有关于每日活动的具体安排，可以查阅一下。"}],"id":"58b75099-647c-4abe-bc5d-a00b1178a396"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.101.17440820382105213"}
+2025-04-08 11:14:46 [http-nio-8081-exec-9] DEBUG c.h.service.impl.QaServiceImpl - AI服务原始响应: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":457,"prompt_tokens":7673,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":8130},"session":{"messages":[{"role":"user","content":"五月六号日程"},{"role":"assistant","content":"根据现有的信息，2025年西湖论剑大会的主要活动时间集中在5月5日至8日，但5月6日的具体日程尚未详细列出。大会期间将举办包括主论坛、平行论坛、研讨会等一系列活动，涵盖数字安全的前沿技术、行业应用与人才培养等议题。如果5月6日有重要的活动安排，它们可能是这些活动的一部分。\n\n为了提供给您更准确的5月6日日程信息，建议您：\n\n- 查看大会官方网站上的最新日程安排\n- 关注大会的官方社交媒体平台\n- 联系大会组委会获取最新资讯\n\n如果您有其他问题或需要进一步的帮助，欢迎随时询问。此外，如果您已经注册参加大会，您的参会手册里也会有关于每日活动的具体安排，可以查阅一下。"}],"id":"58b75099-647c-4abe-bc5d-a00b1178a396"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.101.17440820382105213"}
+2025-04-08 11:14:46 [http-nio-8081-exec-9] DEBUG c.h.service.impl.QaServiceImpl - 开始解析AI回复内容
+2025-04-08 11:14:46 [http-nio-8081-exec-9] DEBUG c.h.service.impl.QaServiceImpl - 成功解析AI回答: "根据现有的信息，2025年西湖论剑大会的主要活动时间集中在5月5日至8日，但5月6日的具体日程尚未详细列出。大会期间将举办包括主论坛、平行论坛、研讨会等一系列活动，涵盖数字安全的前沿技术、行业应用与人才培养等议题。如果5月6日有重要的活动安排，它们可能是这些活动的一部分。
+
+为了提供给您更准确的5月6日日程信息，建议您：
+
+- 查看大会官方网站上的最新日程安排
+- 关注大会的官方社交媒体平台
+- 联系大会组委会获取最新资讯
+
+如果您有其他问题或需要进一步的帮助，欢迎随时询问。此外，如果您已经注册参加大会，您的参会手册里也会有关于每日活动的具体安排，可以查阅一下。
+2025-04-08 11:14:46 [http-nio-8081-exec-9] INFO  c.h.service.impl.QaServiceImpl - AI服务回答: "根据现有的信息，2025年西湖论剑大会的主要活动时间集中在5月5日至8日，但5月6日的具体日程尚未详细列出。大会期间将举办包括主论坛、平行论坛、研讨会等一系列活动，涵盖数字安全的前沿技术、行业应用与人才培养等议题。如果5月6日有重要的活动安排，它们可能是这些活动的一部分。
+
+为了提供给您更准确的5月6日日程信息，建议您：
+
+- 查看大会官方网站上的最新日程安排
+- 关注大会的官方社交媒体平台
+- 联系大会组委会获取最新资讯
+
+如果您有其他问题或需要进一步的帮助，欢迎随时询问。此外，如果您已经注册参加大会，您的参会手册里也会有关于每日活动的具体安排，可以查阅一下。
+2025-04-08 11:14:46 [http-nio-8081-exec-9] DEBUG c.h.service.impl.QaServiceImpl - 答案生成成功: "根据现有的信息，2025年西湖论剑大会的主要活动时间集中在5月5日至8日，但5月6日的具体日程尚未详细列出。大会期间将举办包括主论坛、平行论坛、研讨会等一系列活动，涵盖数字安全的前沿技术、行业应用与人才培养等议题。如果5月6日有重要的活动安排，它们可能是这些活动的一部分。
+
+为了提供给您更准确的5月6日日程信息，建议您：
+
+- 查看大会官方网站上的最新日程安排
+- 关注大会的官方社交媒体平台
+- 联系大会组委会获取最新资讯
+
+如果您有其他问题或需要进一步的帮助，欢迎随时询问。此外，如果您已经注册参加大会，您的参会手册里也会有关于每日活动的具体安排，可以查阅一下。
+2025-04-08 11:14:46 [http-nio-8081-exec-9] INFO  c.h.controller.QaController - 返回AI回答, 长度: 285, 内容: "根据现有的信息，2025年西湖论剑大会的主要活动时间集中在5月5日至8日，但5月6日的具体日程尚未详细列出。大会期间将举办包括主论坛、平行论坛、研讨会等一系列活动，涵盖数字安全的前沿技术、行业应用与人才培养等议题。如果5月6日有重要的活动安排，它们可能是这些活动的一部分。
+
+为了提供给您更准确的5月6日日程信息，建议您：
+
+- 查看大会官方网站上的最新日程安排
+- 关注大会的官方社交媒体平台
+- 联系大会组委会获取最新资讯
+
+如果您有其他问题或需要进一步的帮助，欢迎随时询问。此外，如果您已经注册参加大会，您的参会手册里也会有关于每日活动的具体安排，可以查阅一下。
+2025-04-08 11:22:04 [http-nio-8081-exec-10] INFO  c.h.controller.QaController - 收到问题: 大会内容
+2025-04-08 11:22:04 [http-nio-8081-exec-10] DEBUG c.h.service.impl.QaServiceImpl - 处理问题: 大会内容, 会议ID: default
+2025-04-08 11:22:04 [http-nio-8081-exec-10] DEBUG c.h.service.impl.QaServiceImpl - 请求时间戳: 1744082524836
+2025-04-08 11:22:04 [http-nio-8081-exec-10] DEBUG c.h.service.impl.QaServiceImpl - API请求地址: https://www.das-ai.com/open/api/v2/agent/execute
+2025-04-08 11:22:04 [http-nio-8081-exec-10] INFO  c.h.service.impl.QaServiceImpl - 开始调用AI服务，尝试次数: 1
+2025-04-08 11:22:31 [http-nio-8081-exec-10] DEBUG c.h.service.impl.QaServiceImpl - 响应内容: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":229,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2852},"session":{"messages":[{"role":"user","content":"大会内容"},{"role":"assistant","content":"2025年西湖论剑·数字安全大会的主题为\"AI向治·安全向智\"，旨在探讨人工智能与数据安全的融合发展，以及如何通过数字安全赋能数字政府、数字经济和数字社会。大会将邀请国内外政界、产业界、学术界和研究机构的专家和学者，共同讨论政策导向、技术创新及应用场景等话题。\n\n大会主要内容包括但不限于：\n\n1. **主题演讲**：行业领袖和专家将就当前热点问题发表主题演讲，分享观点与洞见。\n2. **圆桌论坛**：围绕不同的焦点话题设置多个圆桌论坛，邀请相关领域的专业人士展开深入讨论。\n3. **技术分享**：安全厂商和技术团队展示最新的研究成果和技术解决方案。\n4. **成果发布**：展示最新的科研成果和安全产品，促进行业交流与合作。\n5. **展览展示**：为参会企业提供展示平台，展示最新的安全技术和解决方案。\n6. **互动交流**：设置多种形式的交流环节，促进参会者之间的沟通与合作。\n\n如需了解更多详情或有特定关注点，欢迎随时提问！"}],"id":"dc178df8-e2ac-4d7d-8d42-3158bce4ec06"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.43400.17440825252452475"}
+2025-04-08 11:22:31 [http-nio-8081-exec-10] DEBUG c.h.service.impl.QaServiceImpl - AI服务原始响应: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":229,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2852},"session":{"messages":[{"role":"user","content":"大会内容"},{"role":"assistant","content":"2025年西湖论剑·数字安全大会的主题为\"AI向治·安全向智\"，旨在探讨人工智能与数据安全的融合发展，以及如何通过数字安全赋能数字政府、数字经济和数字社会。大会将邀请国内外政界、产业界、学术界和研究机构的专家和学者，共同讨论政策导向、技术创新及应用场景等话题。\n\n大会主要内容包括但不限于：\n\n1. **主题演讲**：行业领袖和专家将就当前热点问题发表主题演讲，分享观点与洞见。\n2. **圆桌论坛**：围绕不同的焦点话题设置多个圆桌论坛，邀请相关领域的专业人士展开深入讨论。\n3. **技术分享**：安全厂商和技术团队展示最新的研究成果和技术解决方案。\n4. **成果发布**：展示最新的科研成果和安全产品，促进行业交流与合作。\n5. **展览展示**：为参会企业提供展示平台，展示最新的安全技术和解决方案。\n6. **互动交流**：设置多种形式的交流环节，促进参会者之间的沟通与合作。\n\n如需了解更多详情或有特定关注点，欢迎随时提问！"}],"id":"dc178df8-e2ac-4d7d-8d42-3158bce4ec06"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.43400.17440825252452475"}
+2025-04-08 11:22:31 [http-nio-8081-exec-10] DEBUG c.h.service.impl.QaServiceImpl - 开始解析AI回复内容
+2025-04-08 11:22:31 [http-nio-8081-exec-10] DEBUG c.h.service.impl.QaServiceImpl - 成功解析AI回答: "2025年西湖论剑·数字安全大会的主题为\
+2025-04-08 11:22:31 [http-nio-8081-exec-10] INFO  c.h.service.impl.QaServiceImpl - AI服务回答: "2025年西湖论剑·数字安全大会的主题为\
+2025-04-08 11:22:31 [http-nio-8081-exec-10] DEBUG c.h.service.impl.QaServiceImpl - 答案生成成功: "2025年西湖论剑·数字安全大会的主题为\
+2025-04-08 11:22:31 [http-nio-8081-exec-10] INFO  c.h.controller.QaController - 返回AI回答, 长度: 22, 内容: "2025年西湖论剑·数字安全大会的主题为\
+2025-04-08 11:24:27 [http-nio-8081-exec-7] INFO  c.h.controller.QaController - 收到问题: 大会内容
+2025-04-08 11:24:27 [http-nio-8081-exec-7] DEBUG c.h.service.impl.QaServiceImpl - 处理问题: 大会内容, 会议ID: default
+2025-04-08 11:24:27 [http-nio-8081-exec-7] DEBUG c.h.service.impl.QaServiceImpl - 请求时间戳: 1744082667888
+2025-04-08 11:24:27 [http-nio-8081-exec-7] DEBUG c.h.service.impl.QaServiceImpl - API请求地址: https://www.das-ai.com/open/api/v2/agent/execute
+2025-04-08 11:24:27 [http-nio-8081-exec-7] INFO  c.h.service.impl.QaServiceImpl - 开始调用AI服务，尝试次数: 1
+2025-04-08 11:24:45 [http-nio-8081-exec-7] DEBUG c.h.service.impl.QaServiceImpl - 响应内容: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":250,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2873},"session":{"messages":[{"role":"user","content":"大会内容"},{"role":"assistant","content":"2025西湖论剑·数字安全大会的内容聚焦于\"AI向治·安全向智\"的主题，旨在探索人工智能和数据安全的新路径。大会将包括但不限于以下几个方面的内容：\n\n1. **主题演讲**：来自国内外的政策制定者、学者、行业专家和企业领袖将分享最新的政策导向、研究成果和实践案例。\n\n2. **专题论坛**：围绕数字安全政策、技术实践、应用场景等方向设立多个专题论坛，探讨数字安全与政府治理、经济运行和社会服务的深度融合。\n\n3. **成果展示**：展示数字安全领域最新技术产品和解决方案，鼓励创新和技术转化。\n\n4. **圆桌讨论**：邀请行业内的领军人物和意见领袖，就数字安全领域内的热点问题和发展趋势进行深入交流。\n\n5. **合作洽谈**：为参会者提供一个平台，促进数字安全领域内企业、机构和个人之间的合作与交流。\n\n6. **人才交流**：吸引和培养数字安全领域的人才，促进产学研多方合作。\n\n如果您对特定的活动或内容感兴趣，或需要更详细的信息，欢迎告诉我，我将竭力为您提供帮助。您是想了解哪一个部分的详细信息呢？"}],"id":"6cf07f92-b32d-47d1-9623-5098bdf9215b"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.2947304.17440826681608385"}
+2025-04-08 11:24:45 [http-nio-8081-exec-7] DEBUG c.h.service.impl.QaServiceImpl - AI服务原始响应: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":250,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2873},"session":{"messages":[{"role":"user","content":"大会内容"},{"role":"assistant","content":"2025西湖论剑·数字安全大会的内容聚焦于\"AI向治·安全向智\"的主题，旨在探索人工智能和数据安全的新路径。大会将包括但不限于以下几个方面的内容：\n\n1. **主题演讲**：来自国内外的政策制定者、学者、行业专家和企业领袖将分享最新的政策导向、研究成果和实践案例。\n\n2. **专题论坛**：围绕数字安全政策、技术实践、应用场景等方向设立多个专题论坛，探讨数字安全与政府治理、经济运行和社会服务的深度融合。\n\n3. **成果展示**：展示数字安全领域最新技术产品和解决方案，鼓励创新和技术转化。\n\n4. **圆桌讨论**：邀请行业内的领军人物和意见领袖，就数字安全领域内的热点问题和发展趋势进行深入交流。\n\n5. **合作洽谈**：为参会者提供一个平台，促进数字安全领域内企业、机构和个人之间的合作与交流。\n\n6. **人才交流**：吸引和培养数字安全领域的人才，促进产学研多方合作。\n\n如果您对特定的活动或内容感兴趣，或需要更详细的信息，欢迎告诉我，我将竭力为您提供帮助。您是想了解哪一个部分的详细信息呢？"}],"id":"6cf07f92-b32d-47d1-9623-5098bdf9215b"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.2947304.17440826681608385"}
+2025-04-08 11:24:45 [http-nio-8081-exec-7] DEBUG c.h.service.impl.QaServiceImpl - 开始解析AI回复内容
+2025-04-08 11:24:45 [http-nio-8081-exec-7] DEBUG c.h.service.impl.QaServiceImpl - 成功解析AI回答: "2025西湖论剑·数字安全大会的内容聚焦于\
+2025-04-08 11:24:45 [http-nio-8081-exec-7] INFO  c.h.service.impl.QaServiceImpl - AI服务回答: "2025西湖论剑·数字安全大会的内容聚焦于\
+2025-04-08 11:24:45 [http-nio-8081-exec-7] DEBUG c.h.service.impl.QaServiceImpl - 答案生成成功: "2025西湖论剑·数字安全大会的内容聚焦于\
+2025-04-08 11:24:45 [http-nio-8081-exec-7] INFO  c.h.controller.QaController - 返回AI回答, 长度: 23, 内容: "2025西湖论剑·数字安全大会的内容聚焦于\
+2025-04-08 11:24:46 [http-nio-8081-exec-8] INFO  c.h.controller.QaController - 收到问题: 你是谁
+2025-04-08 11:24:46 [http-nio-8081-exec-8] DEBUG c.h.service.impl.QaServiceImpl - 处理问题: 你是谁, 会议ID: default
+2025-04-08 11:24:46 [http-nio-8081-exec-8] DEBUG c.h.service.impl.QaServiceImpl - 请求时间戳: 1744082686699
+2025-04-08 11:24:46 [http-nio-8081-exec-8] DEBUG c.h.service.impl.QaServiceImpl - API请求地址: https://www.das-ai.com/open/api/v2/agent/execute
+2025-04-08 11:24:46 [http-nio-8081-exec-8] INFO  c.h.service.impl.QaServiceImpl - 开始调用AI服务，尝试次数: 1
+2025-04-08 11:24:56 [http-nio-8081-exec-8] DEBUG c.h.service.impl.QaServiceImpl - 响应内容: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":123,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2746},"session":{"messages":[{"role":"user","content":"你是谁"},{"role":"assistant","content":"我是2025西湖论剑大会的线上智能参会助手。我依托安恒信息恒脑大模型强大的人工智能技术，能为参会者提供大会相关的全方位服务。无论是查询日程安排、嘉宾信息、成果发布，还是获取大会的最新动态，我都能够为您服务。同时，我还能根据您的身份和兴趣，提供个性化的日程推荐和信息推送，确保您能够及时了解到大会的变更信息和重要通知，以及参会指南等信息，使您的参会体验更加方便快捷！如果您有任何问题或需要帮助，随时可以向我提问。"}],"id":"20075bef-f42a-4be1-a12b-b84396df53ba"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.2947325.17440826867979563"}
+2025-04-08 11:24:56 [http-nio-8081-exec-8] DEBUG c.h.service.impl.QaServiceImpl - AI服务原始响应: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":123,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2746},"session":{"messages":[{"role":"user","content":"你是谁"},{"role":"assistant","content":"我是2025西湖论剑大会的线上智能参会助手。我依托安恒信息恒脑大模型强大的人工智能技术，能为参会者提供大会相关的全方位服务。无论是查询日程安排、嘉宾信息、成果发布，还是获取大会的最新动态，我都能够为您服务。同时，我还能根据您的身份和兴趣，提供个性化的日程推荐和信息推送，确保您能够及时了解到大会的变更信息和重要通知，以及参会指南等信息，使您的参会体验更加方便快捷！如果您有任何问题或需要帮助，随时可以向我提问。"}],"id":"20075bef-f42a-4be1-a12b-b84396df53ba"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.2947325.17440826867979563"}
+2025-04-08 11:24:56 [http-nio-8081-exec-8] DEBUG c.h.service.impl.QaServiceImpl - 开始解析AI回复内容
+2025-04-08 11:24:56 [http-nio-8081-exec-8] DEBUG c.h.service.impl.QaServiceImpl - 成功解析AI回答: "我是2025西湖论剑大会的线上智能参会助手。我依托安恒信息恒脑大模型强大的人工智能技术，能为参会者提供大会相关的全方位服务。无论是查询日程安排、嘉宾信息、成果发布，还是获取大会的最新动态，我都能够为您服务。同时，我还能根据您的身份和兴趣，提供个性化的日程推荐和信息推送，确保您能够及时了解到大会的变更信息和重要通知，以及参会指南等信息，使您的参会体验更加方便快捷！如果您有任何问题或需要帮助，随时可以向我提问。
+2025-04-08 11:24:56 [http-nio-8081-exec-8] INFO  c.h.service.impl.QaServiceImpl - AI服务回答: "我是2025西湖论剑大会的线上智能参会助手。我依托安恒信息恒脑大模型强大的人工智能技术，能为参会者提供大会相关的全方位服务。无论是查询日程安排、嘉宾信息、成果发布，还是获取大会的最新动态，我都能够为您服务。同时，我还能根据您的身份和兴趣，提供个性化的日程推荐和信息推送，确保您能够及时了解到大会的变更信息和重要通知，以及参会指南等信息，使您的参会体验更加方便快捷！如果您有任何问题或需要帮助，随时可以向我提问。
+2025-04-08 11:24:56 [http-nio-8081-exec-8] DEBUG c.h.service.impl.QaServiceImpl - 答案生成成功: "我是2025西湖论剑大会的线上智能参会助手。我依托安恒信息恒脑大模型强大的人工智能技术，能为参会者提供大会相关的全方位服务。无论是查询日程安排、嘉宾信息、成果发布，还是获取大会的最新动态，我都能够为您服务。同时，我还能根据您的身份和兴趣，提供个性化的日程推荐和信息推送，确保您能够及时了解到大会的变更信息和重要通知，以及参会指南等信息，使您的参会体验更加方便快捷！如果您有任何问题或需要帮助，随时可以向我提问。
+2025-04-08 11:24:56 [http-nio-8081-exec-8] INFO  c.h.controller.QaController - 返回AI回答, 长度: 206, 内容: "我是2025西湖论剑大会的线上智能参会助手。我依托安恒信息恒脑大模型强大的人工智能技术，能为参会者提供大会相关的全方位服务。无论是查询日程安排、嘉宾信息、成果发布，还是获取大会的最新动态，我都能够为您服务。同时，我还能根据您的身份和兴趣，提供个性化的日程推荐和信息推送，确保您能够及时了解到大会的变更信息和重要通知，以及参会指南等信息，使您的参会体验更加方便快捷！如果您有任何问题或需要帮助，随时可以向我提问。
+2025-04-08 11:24:59 [http-nio-8081-exec-3] INFO  c.h.controller.QaController - 收到问题: 大会内容
+2025-04-08 11:24:59 [http-nio-8081-exec-3] DEBUG c.h.service.impl.QaServiceImpl - 处理问题: 大会内容, 会议ID: default
+2025-04-08 11:24:59 [http-nio-8081-exec-3] DEBUG c.h.service.impl.QaServiceImpl - 请求时间戳: 1744082699959
+2025-04-08 11:24:59 [http-nio-8081-exec-3] DEBUG c.h.service.impl.QaServiceImpl - API请求地址: https://www.das-ai.com/open/api/v2/agent/execute
+2025-04-08 11:24:59 [http-nio-8081-exec-3] INFO  c.h.service.impl.QaServiceImpl - 开始调用AI服务，尝试次数: 1
+2025-04-08 11:25:20 [http-nio-8081-exec-3] DEBUG c.h.service.impl.QaServiceImpl - 响应内容: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":255,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2878},"session":{"messages":[{"role":"user","content":"大会内容"},{"role":"assistant","content":"关于2025西湖论剑·数字安全大会，这是一场聚焦于数字安全的行业盛会，旨在探索数字安全如何更好地赋能数字政府、数字经济和数字社会。大会的主题为“AI向治·安全向智”，将深入探讨人工智能与数据安全的最新进展和趋势，以及如何通过政策、技术和实践来解决数字时代面临的挑战。\n\n大会的主要内容将包括但不限于：\n\n1. **主题演讲**：来自国内外的顶级专家、政策制定者和行业领袖将分享他们的洞察和经验。\n2. **专题讨论**：涵盖多个数字安全领域的热点话题，如AI安全、数据保护、网络安全等。\n3. **技术展示**：展示最新的数字安全技术和解决方案。\n4. **成果发布**：发布最新的研究报告、行业标准和政策动向。\n5. **互动环节**：提供参会者与演讲者、专家互动的机会，包括圆桌会议、工作坊等。\n6. **展览区**：为参展企业提供展示平台，展示最新的产品和服务。\n\n如果您对具体的日程安排、嘉宾信息或其他详细内容感兴趣，可以告诉我，我会为您提供更详细的信息。您还可以告诉我您的身份和兴趣方向，我可以为您推荐个性化的日程安排。"}],"id":"5e658a4d-c7ba-4bde-9e69-ae1118dcfd7c"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.1748.17440827000608001"}
+2025-04-08 11:25:20 [http-nio-8081-exec-3] DEBUG c.h.service.impl.QaServiceImpl - AI服务原始响应: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":255,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2878},"session":{"messages":[{"role":"user","content":"大会内容"},{"role":"assistant","content":"关于2025西湖论剑·数字安全大会，这是一场聚焦于数字安全的行业盛会，旨在探索数字安全如何更好地赋能数字政府、数字经济和数字社会。大会的主题为“AI向治·安全向智”，将深入探讨人工智能与数据安全的最新进展和趋势，以及如何通过政策、技术和实践来解决数字时代面临的挑战。\n\n大会的主要内容将包括但不限于：\n\n1. **主题演讲**：来自国内外的顶级专家、政策制定者和行业领袖将分享他们的洞察和经验。\n2. **专题讨论**：涵盖多个数字安全领域的热点话题，如AI安全、数据保护、网络安全等。\n3. **技术展示**：展示最新的数字安全技术和解决方案。\n4. **成果发布**：发布最新的研究报告、行业标准和政策动向。\n5. **互动环节**：提供参会者与演讲者、专家互动的机会，包括圆桌会议、工作坊等。\n6. **展览区**：为参展企业提供展示平台，展示最新的产品和服务。\n\n如果您对具体的日程安排、嘉宾信息或其他详细内容感兴趣，可以告诉我，我会为您提供更详细的信息。您还可以告诉我您的身份和兴趣方向，我可以为您推荐个性化的日程安排。"}],"id":"5e658a4d-c7ba-4bde-9e69-ae1118dcfd7c"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.1748.17440827000608001"}
+2025-04-08 11:25:20 [http-nio-8081-exec-3] DEBUG c.h.service.impl.QaServiceImpl - 开始解析AI回复内容
+2025-04-08 11:25:20 [http-nio-8081-exec-3] DEBUG c.h.service.impl.QaServiceImpl - 成功解析AI回答: "关于2025西湖论剑·数字安全大会，这是一场聚焦于数字安全的行业盛会，旨在探索数字安全如何更好地赋能数字政府、数字经济和数字社会。大会的主题为“AI向治·安全向智”，将深入探讨人工智能与数据安全的最新进展和趋势，以及如何通过政策、技术和实践来解决数字时代面临的挑战。
+
+大会的主要内容将包括但不限于：
+
+1. **主题演讲**：来自国内外的顶级专家、政策制定者和行业领袖将分享他们的洞察和经验。
+2. **专题讨论**：涵盖多个数字安全领域的热点话题，如AI安全、数据保护、网络安全等。
+3. **技术展示**：展示最新的数字安全技术和解决方案。
+4. **成果发布**：发布最新的研究报告、行业标准和政策动向。
+5. **互动环节**：提供参会者与演讲者、专家互动的机会，包括圆桌会议、工作坊等。
+6. **展览区**：为参展企业提供展示平台，展示最新的产品和服务。
+
+如果您对具体的日程安排、嘉宾信息或其他详细内容感兴趣，可以告诉我，我会为您提供更详细的信息。您还可以告诉我您的身份和兴趣方向，我可以为您推荐个性化的日程安排。
+2025-04-08 11:25:20 [http-nio-8081-exec-3] INFO  c.h.service.impl.QaServiceImpl - AI服务回答: "关于2025西湖论剑·数字安全大会，这是一场聚焦于数字安全的行业盛会，旨在探索数字安全如何更好地赋能数字政府、数字经济和数字社会。大会的主题为“AI向治·安全向智”，将深入探讨人工智能与数据安全的最新进展和趋势，以及如何通过政策、技术和实践来解决数字时代面临的挑战。
+
+大会的主要内容将包括但不限于：
+
+1. **主题演讲**：来自国内外的顶级专家、政策制定者和行业领袖将分享他们的洞察和经验。
+2. **专题讨论**：涵盖多个数字安全领域的热点话题，如AI安全、数据保护、网络安全等。
+3. **技术展示**：展示最新的数字安全技术和解决方案。
+4. **成果发布**：发布最新的研究报告、行业标准和政策动向。
+5. **互动环节**：提供参会者与演讲者、专家互动的机会，包括圆桌会议、工作坊等。
+6. **展览区**：为参展企业提供展示平台，展示最新的产品和服务。
+
+如果您对具体的日程安排、嘉宾信息或其他详细内容感兴趣，可以告诉我，我会为您提供更详细的信息。您还可以告诉我您的身份和兴趣方向，我可以为您推荐个性化的日程安排。
+2025-04-08 11:25:20 [http-nio-8081-exec-3] DEBUG c.h.service.impl.QaServiceImpl - 答案生成成功: "关于2025西湖论剑·数字安全大会，这是一场聚焦于数字安全的行业盛会，旨在探索数字安全如何更好地赋能数字政府、数字经济和数字社会。大会的主题为“AI向治·安全向智”，将深入探讨人工智能与数据安全的最新进展和趋势，以及如何通过政策、技术和实践来解决数字时代面临的挑战。
+
+大会的主要内容将包括但不限于：
+
+1. **主题演讲**：来自国内外的顶级专家、政策制定者和行业领袖将分享他们的洞察和经验。
+2. **专题讨论**：涵盖多个数字安全领域的热点话题，如AI安全、数据保护、网络安全等。
+3. **技术展示**：展示最新的数字安全技术和解决方案。
+4. **成果发布**：发布最新的研究报告、行业标准和政策动向。
+5. **互动环节**：提供参会者与演讲者、专家互动的机会，包括圆桌会议、工作坊等。
+6. **展览区**：为参展企业提供展示平台，展示最新的产品和服务。
+
+如果您对具体的日程安排、嘉宾信息或其他详细内容感兴趣，可以告诉我，我会为您提供更详细的信息。您还可以告诉我您的身份和兴趣方向，我可以为您推荐个性化的日程安排。
+2025-04-08 11:25:20 [http-nio-8081-exec-3] INFO  c.h.controller.QaController - 返回AI回答, 长度: 466, 内容: "关于2025西湖论剑·数字安全大会，这是一场聚焦于数字安全的行业盛会，旨在探索数字安全如何更好地赋能数字政府、数字经济和数字社会。大会的主题为“AI向治·安全向智”，将深入探讨人工智能与数据安全的最新进展和趋势，以及如何通过政策、技术和实践来解决数字时代面临的挑战。
+
+大会的主要内容将包括但不限于：
+
+1. **主题演讲**：来自国内外的顶级专家、政策制定者和行业领袖将分享他们的洞察和经验。
+2. **专题讨论**：涵盖多个数字安全领域的热点话题，如AI安全、数据保护、网络安全等。
+3. **技术展示**：展示最新的数字安全技术和解决方案。
+4. **成果发布**：发布最新的研究报告、行业标准和政策动向。
+5. **互动环节**：提供参会者与演讲者、专家互动的机会，包括圆桌会议、工作坊等。
+6. **展览区**：为参展企业提供展示平台，展示最新的产品和服务。
+
+如果您对具体的日程安排、嘉宾信息或其他详细内容感兴趣，可以告诉我，我会为您提供更详细的信息。您还可以告诉我您的身份和兴趣方向，我可以为您推荐个性化的日程安排。
+2025-04-08 11:30:28 [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-04-08 11:30:28 [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2025-04-08 11:30:37 [main] INFO  c.h.HelperServerApplication - Starting HelperServerApplication using Java 1.8.0_202 on XYX0401 with PID 7948 (D:\code\AI_helper\helperserver\target\classes started by 肖宇轩 in D:\code\AI_helper\helperserver)
+2025-04-08 11:30:37 [main] DEBUG c.h.HelperServerApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
+2025-04-08 11:30:37 [main] INFO  c.h.HelperServerApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-08 11:30:38 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2025-04-08 11:30:38 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-08 11:30:38 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-04-08 11:30:38 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-08 11:30:38 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1146 ms
+2025-04-08 11:30:38 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-04-08 11:30:39 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-04-08 11:30:40 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2025-04-08 11:30:40 [main] INFO  c.h.HelperServerApplication - Started HelperServerApplication in 3.124 seconds (JVM running for 3.388)
+2025-04-08 11:30:51 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-08 11:30:51 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-08 11:30:51 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2025-04-08 11:30:51 [http-nio-8081-exec-3] INFO  c.h.controller.QaController - 收到问题: 大会内容
+2025-04-08 11:30:51 [http-nio-8081-exec-3] DEBUG c.h.service.impl.QaServiceImpl - 处理问题: 大会内容, 会议ID: default
+2025-04-08 11:30:51 [http-nio-8081-exec-3] DEBUG c.h.service.impl.QaServiceImpl - 请求时间戳: 1744083051449
+2025-04-08 11:30:51 [http-nio-8081-exec-3] DEBUG c.h.service.impl.QaServiceImpl - API请求地址: https://www.das-ai.com/open/api/v2/agent/execute
+2025-04-08 11:30:51 [http-nio-8081-exec-3] INFO  c.h.service.impl.QaServiceImpl - 开始调用AI服务，尝试次数: 1
+2025-04-08 11:31:09 [http-nio-8081-exec-3] DEBUG c.h.service.impl.QaServiceImpl - 响应内容: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":245,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2868},"session":{"messages":[{"role":"user","content":"大会内容"},{"role":"assistant","content":"2025西湖论剑·数字安全大会将围绕“AI向治·安全向智”的主题，探讨人工智能和数据安全的融合发展，以及如何通过技术创新和政策引导实现数字化转型过程中的安全治理。大会内容将涵盖政策解读、技术分享、案例分析、前沿趋势等多个方面，旨在为参会者提供全面、深入的交流平台。\n\n大会的具体内容包括但不限于以下几点：\n\n1. **主旨演讲：** 由国内外知名专家、行业领袖和政策制定者带来关于数字安全最新趋势和见解的分享。\n2. **专题论坛：** 涉及数字政府、数字经济、数字社会等多个领域的专题讨论，探索不同场景下的安全解决方案。\n3. **技术展示：** 展示最新的数字安全技术和产品，促进技术创新与应用的结合。\n4. **成果发布：** 介绍最新的研究成果、标准规范以及政策动向，为数字安全领域的发展提供指导。\n5. **圆桌会议：** 针对特定议题，邀请嘉宾进行深入讨论，为参会者提供互动交流的机会。\n\n如果您对某个具体方面或环节感兴趣，或者有其他问题，欢迎随时向我提问！"}],"id":"21654bbe-dad9-4c92-b246-d23f119e9199"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.5781114.17440830517477713"}
+2025-04-08 11:31:09 [http-nio-8081-exec-3] DEBUG c.h.service.impl.QaServiceImpl - AI服务原始响应: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":245,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2868},"session":{"messages":[{"role":"user","content":"大会内容"},{"role":"assistant","content":"2025西湖论剑·数字安全大会将围绕“AI向治·安全向智”的主题，探讨人工智能和数据安全的融合发展，以及如何通过技术创新和政策引导实现数字化转型过程中的安全治理。大会内容将涵盖政策解读、技术分享、案例分析、前沿趋势等多个方面，旨在为参会者提供全面、深入的交流平台。\n\n大会的具体内容包括但不限于以下几点：\n\n1. **主旨演讲：** 由国内外知名专家、行业领袖和政策制定者带来关于数字安全最新趋势和见解的分享。\n2. **专题论坛：** 涉及数字政府、数字经济、数字社会等多个领域的专题讨论，探索不同场景下的安全解决方案。\n3. **技术展示：** 展示最新的数字安全技术和产品，促进技术创新与应用的结合。\n4. **成果发布：** 介绍最新的研究成果、标准规范以及政策动向，为数字安全领域的发展提供指导。\n5. **圆桌会议：** 针对特定议题，邀请嘉宾进行深入讨论，为参会者提供互动交流的机会。\n\n如果您对某个具体方面或环节感兴趣，或者有其他问题，欢迎随时向我提问！"}],"id":"21654bbe-dad9-4c92-b246-d23f119e9199"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.5781114.17440830517477713"}
+2025-04-08 11:31:09 [http-nio-8081-exec-3] DEBUG c.h.service.impl.QaServiceImpl - 开始解析AI回复内容
+2025-04-08 11:31:09 [http-nio-8081-exec-3] DEBUG c.h.service.impl.QaServiceImpl - 成功解析AI回答: "2025西湖论剑·数字安全大会将围绕“AI向治·安全向智”的主题，探讨人工智能和数据安全的融合发展，以及如何通过技术创新和政策引导实现数字化转型过程中的安全治理。大会内容将涵盖政策解读、技术分享、案例分析、前沿趋势等多个方面，旨在为参会者提供全面、深入的交流平台。大会的具体内容包括但不限于以下几点：1. 主旨演讲： 由国内外知名专家、行业领袖和政策制定者带来关于数字安全最新趋势和见解的分享。2. 专题论坛： 涉及数字政府、数字经济、数字社会等多个领域的专题讨论，探索不同场景下的安全解决方案。3. 技术展示： 展示最新的数字安全技术和产品，促进技术创新与应用的结合。4. 成果发布： 介绍最新的研究成果、标准规范以及政策动向，为数字安全领域的发展提供指导。5. 圆桌会议： 针对特定议题，邀请嘉宾进行深入讨论，为参会者提供互动交流的机会。如果您对某个具体方面或环节感兴趣，或者有其他问题，欢迎随时向我提问！
+2025-04-08 11:31:09 [http-nio-8081-exec-3] INFO  c.h.service.impl.QaServiceImpl - AI服务回答: "2025西湖论剑·数字安全大会将围绕“AI向治·安全向智”的主题，探讨人工智能和数据安全的融合发展，以及如何通过技术创新和政策引导实现数字化转型过程中的安全治理。大会内容将涵盖政策解读、技术分享、案例分析、前沿趋势等多个方面，旨在为参会者提供全面、深入的交流平台。大会的具体内容包括但不限于以下几点：1. 主旨演讲： 由国内外知名专家、行业领袖和政策制定者带来关于数字安全最新趋势和见解的分享。2. 专题论坛： 涉及数字政府、数字经济、数字社会等多个领域的专题讨论，探索不同场景下的安全解决方案。3. 技术展示： 展示最新的数字安全技术和产品，促进技术创新与应用的结合。4. 成果发布： 介绍最新的研究成果、标准规范以及政策动向，为数字安全领域的发展提供指导。5. 圆桌会议： 针对特定议题，邀请嘉宾进行深入讨论，为参会者提供互动交流的机会。如果您对某个具体方面或环节感兴趣，或者有其他问题，欢迎随时向我提问！
+2025-04-08 11:31:09 [http-nio-8081-exec-3] DEBUG c.h.service.impl.QaServiceImpl - 答案生成成功: "2025西湖论剑·数字安全大会将围绕“AI向治·安全向智”的主题，探讨人工智能和数据安全的融合发展，以及如何通过技术创新和政策引导实现数字化转型过程中的安全治理。大会内容将涵盖政策解读、技术分享、案例分析、前沿趋势等多个方面，旨在为参会者提供全面、深入的交流平台。大会的具体内容包括但不限于以下几点：1. 主旨演讲： 由国内外知名专家、行业领袖和政策制定者带来关于数字安全最新趋势和见解的分享。2. 专题论坛： 涉及数字政府、数字经济、数字社会等多个领域的专题讨论，探索不同场景下的安全解决方案。3. 技术展示： 展示最新的数字安全技术和产品，促进技术创新与应用的结合。4. 成果发布： 介绍最新的研究成果、标准规范以及政策动向，为数字安全领域的发展提供指导。5. 圆桌会议： 针对特定议题，邀请嘉宾进行深入讨论，为参会者提供互动交流的机会。如果您对某个具体方面或环节感兴趣，或者有其他问题，欢迎随时向我提问！
+2025-04-08 11:31:09 [http-nio-8081-exec-3] INFO  c.h.controller.QaController - 返回AI回答, 长度: 406
+2025-04-08 11:33:06 [http-nio-8081-exec-2] INFO  c.h.controller.QaController - 收到问题: 大会内容
+2025-04-08 11:33:06 [http-nio-8081-exec-2] DEBUG c.h.service.impl.QaServiceImpl - 处理问题: 大会内容, 会议ID: default
+2025-04-08 11:33:06 [http-nio-8081-exec-2] DEBUG c.h.service.impl.QaServiceImpl - 请求时间戳: 1744083186925
+2025-04-08 11:33:06 [http-nio-8081-exec-2] DEBUG c.h.service.impl.QaServiceImpl - API请求地址: https://www.das-ai.com/open/api/v2/agent/execute
+2025-04-08 11:33:06 [http-nio-8081-exec-2] INFO  c.h.service.impl.QaServiceImpl - 开始调用AI服务，尝试次数: 1
+2025-04-08 11:33:25 [http-nio-8081-exec-2] DEBUG c.h.service.impl.QaServiceImpl - 响应内容: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":222,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2845},"session":{"messages":[{"role":"user","content":"大会内容"},{"role":"assistant","content":"您好！2025西湖论剑·数字安全大会的主题为“AI向治·安全向智”，将深入探讨人工智能和数据要素的发展和安全之道，聚焦政策、技术、场景三大方向，旨在为全球数智化转型提供“中国式治理”新范式。大会将邀请国内外政产学研多方力量共同参与研讨。\n\n大会内容将涵盖但不限于以下方面：\n- **主旨演讲**：最新政策解读及全球数字安全趋势分析。\n- **圆桌论坛**：政产学研用各界专家围绕数字安全热点问题进行探讨。\n- **技术展览**：展示最新的数字安全技术与解决方案。\n- **成果发布**：发布数字安全领域的最新研究成果和技术标准。\n- **专题论坛**：针对具体应用场景的技术分享和实践交流。\n- **互动体验**：设置互动体验区，让参会者直接体验最新的数字安全技术。\n\n如需了解更详细的信息，例如具体日程、嘉宾介绍等，请告诉我您的具体需求，我将为您提供更详尽的服务。您是希望了解哪一部分的内容呢？"}],"id":"67538a16-9186-4a80-851b-a21da8bf1f78"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.2947324.17440831874956957"}
+2025-04-08 11:33:25 [http-nio-8081-exec-2] DEBUG c.h.service.impl.QaServiceImpl - AI服务原始响应: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":222,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2845},"session":{"messages":[{"role":"user","content":"大会内容"},{"role":"assistant","content":"您好！2025西湖论剑·数字安全大会的主题为“AI向治·安全向智”，将深入探讨人工智能和数据要素的发展和安全之道，聚焦政策、技术、场景三大方向，旨在为全球数智化转型提供“中国式治理”新范式。大会将邀请国内外政产学研多方力量共同参与研讨。\n\n大会内容将涵盖但不限于以下方面：\n- **主旨演讲**：最新政策解读及全球数字安全趋势分析。\n- **圆桌论坛**：政产学研用各界专家围绕数字安全热点问题进行探讨。\n- **技术展览**：展示最新的数字安全技术与解决方案。\n- **成果发布**：发布数字安全领域的最新研究成果和技术标准。\n- **专题论坛**：针对具体应用场景的技术分享和实践交流。\n- **互动体验**：设置互动体验区，让参会者直接体验最新的数字安全技术。\n\n如需了解更详细的信息，例如具体日程、嘉宾介绍等，请告诉我您的具体需求，我将为您提供更详尽的服务。您是希望了解哪一部分的内容呢？"}],"id":"67538a16-9186-4a80-851b-a21da8bf1f78"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.2947324.17440831874956957"}
+2025-04-08 11:33:25 [http-nio-8081-exec-2] DEBUG c.h.service.impl.QaServiceImpl - 开始解析AI回复内容
+2025-04-08 11:33:25 [http-nio-8081-exec-2] DEBUG c.h.service.impl.QaServiceImpl - 成功解析AI回答: "您好！2025西湖论剑·数字安全大会的主题为“AI向治·安全向智”，将深入探讨人工智能和数据要素的发展和安全之道，聚焦政策、技术、场景三大方向，旨在为全球数智化转型提供“中国式治理”新范式。大会将邀请国内外政产学研多方力量共同参与研讨。大会内容将涵盖但不限于以下方面：- 主旨演讲：最新政策解读及全球数字安全趋势分析。- 圆桌论坛：政产学研用各界专家围绕数字安全热点问题进行探讨。- 技术展览：展示最新的数字安全技术与解决方案。- 成果发布：发布数字安全领域的最新研究成果和技术标准。- 专题论坛：针对具体应用场景的技术分享和实践交流。- 互动体验：设置互动体验区，让参会者直接体验最新的数字安全技术。如需了解更详细的信息，例如具体日程、嘉宾介绍等，请告诉我您的具体需求，我将为您提供更详尽的服务。您是希望了解哪一部分的内容呢？
+2025-04-08 11:33:25 [http-nio-8081-exec-2] INFO  c.h.service.impl.QaServiceImpl - AI服务回答: "您好！2025西湖论剑·数字安全大会的主题为“AI向治·安全向智”，将深入探讨人工智能和数据要素的发展和安全之道，聚焦政策、技术、场景三大方向，旨在为全球数智化转型提供“中国式治理”新范式。大会将邀请国内外政产学研多方力量共同参与研讨。大会内容将涵盖但不限于以下方面：- 主旨演讲：最新政策解读及全球数字安全趋势分析。- 圆桌论坛：政产学研用各界专家围绕数字安全热点问题进行探讨。- 技术展览：展示最新的数字安全技术与解决方案。- 成果发布：发布数字安全领域的最新研究成果和技术标准。- 专题论坛：针对具体应用场景的技术分享和实践交流。- 互动体验：设置互动体验区，让参会者直接体验最新的数字安全技术。如需了解更详细的信息，例如具体日程、嘉宾介绍等，请告诉我您的具体需求，我将为您提供更详尽的服务。您是希望了解哪一部分的内容呢？
+2025-04-08 11:33:25 [http-nio-8081-exec-2] DEBUG c.h.service.impl.QaServiceImpl - 答案生成成功: "您好！2025西湖论剑·数字安全大会的主题为“AI向治·安全向智”，将深入探讨人工智能和数据要素的发展和安全之道，聚焦政策、技术、场景三大方向，旨在为全球数智化转型提供“中国式治理”新范式。大会将邀请国内外政产学研多方力量共同参与研讨。大会内容将涵盖但不限于以下方面：- 主旨演讲：最新政策解读及全球数字安全趋势分析。- 圆桌论坛：政产学研用各界专家围绕数字安全热点问题进行探讨。- 技术展览：展示最新的数字安全技术与解决方案。- 成果发布：发布数字安全领域的最新研究成果和技术标准。- 专题论坛：针对具体应用场景的技术分享和实践交流。- 互动体验：设置互动体验区，让参会者直接体验最新的数字安全技术。如需了解更详细的信息，例如具体日程、嘉宾介绍等，请告诉我您的具体需求，我将为您提供更详尽的服务。您是希望了解哪一部分的内容呢？
+2025-04-08 11:33:25 [http-nio-8081-exec-2] INFO  c.h.controller.QaController - 返回AI回答, 长度: 365
+2025-04-08 11:36:10 [http-nio-8081-exec-4] INFO  c.h.controller.QaController - 收到问题: 大会内容
+2025-04-08 11:36:10 [http-nio-8081-exec-4] DEBUG c.h.service.impl.QaServiceImpl - 处理问题: 大会内容, 会议ID: default
+2025-04-08 11:36:10 [http-nio-8081-exec-4] DEBUG c.h.service.impl.QaServiceImpl - 请求时间戳: 1744083370754
+2025-04-08 11:36:10 [http-nio-8081-exec-4] DEBUG c.h.service.impl.QaServiceImpl - API请求地址: https://www.das-ai.com/open/api/v2/agent/execute
+2025-04-08 11:36:10 [http-nio-8081-exec-4] INFO  c.h.service.impl.QaServiceImpl - 开始调用AI服务，尝试次数: 1
+2025-04-08 11:36:27 [http-nio-8081-exec-4] DEBUG c.h.service.impl.QaServiceImpl - 响应内容: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":242,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2865},"session":{"messages":[{"role":"user","content":"大会内容"},{"role":"assistant","content":"您好！关于2025西湖论剑·数字安全大会的内容，主要包括以下几个方面：\n\n1. **大会主题**：2025年大会的主题为\"AI向治·安全向智\"，将聚焦人工智能和数据安全的新发展、新挑战，探讨数字安全的前沿话题。\n\n2. **会议日程**：大会将包括开幕式、主旨演讲、分论坛、专题研讨会、成果发布、展览展示等多个环节。具体的日程安排将根据最新的会议计划更新，请关注大会官方网站和小程序获取最新信息。\n\n3. **嘉宾阵容**：预计大会将邀请来自国内外政府、产业界、学术界等领域的知名专家、学者、企业家作为演讲嘉宾，分享他们的研究成果和实践经验。\n\n4. **成果发布**：大会期间将有一系列最新的研究成果、技术产品、解决方案等发布，涵盖数字政府、数字经济、数字社会等多个领域。\n\n5. **互动交流**：大会将设置多个交流环节，包括圆桌讨论、专题研讨、一对一交流等，为参会者提供充分的交流平台。\n\n如果您有更具体的问题或者需要了解的内容，欢迎随时提问！我将竭诚为您服务。"}],"id":"f66a67cb-e82c-445d-a9d9-3899abae914f"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.2947306.17440833713349073"}
+2025-04-08 11:36:27 [http-nio-8081-exec-4] DEBUG c.h.service.impl.QaServiceImpl - AI服务原始响应: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":242,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2865},"session":{"messages":[{"role":"user","content":"大会内容"},{"role":"assistant","content":"您好！关于2025西湖论剑·数字安全大会的内容，主要包括以下几个方面：\n\n1. **大会主题**：2025年大会的主题为\"AI向治·安全向智\"，将聚焦人工智能和数据安全的新发展、新挑战，探讨数字安全的前沿话题。\n\n2. **会议日程**：大会将包括开幕式、主旨演讲、分论坛、专题研讨会、成果发布、展览展示等多个环节。具体的日程安排将根据最新的会议计划更新，请关注大会官方网站和小程序获取最新信息。\n\n3. **嘉宾阵容**：预计大会将邀请来自国内外政府、产业界、学术界等领域的知名专家、学者、企业家作为演讲嘉宾，分享他们的研究成果和实践经验。\n\n4. **成果发布**：大会期间将有一系列最新的研究成果、技术产品、解决方案等发布，涵盖数字政府、数字经济、数字社会等多个领域。\n\n5. **互动交流**：大会将设置多个交流环节，包括圆桌讨论、专题研讨、一对一交流等，为参会者提供充分的交流平台。\n\n如果您有更具体的问题或者需要了解的内容，欢迎随时提问！我将竭诚为您服务。"}],"id":"f66a67cb-e82c-445d-a9d9-3899abae914f"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.2947306.17440833713349073"}
+2025-04-08 11:36:27 [http-nio-8081-exec-4] DEBUG c.h.service.impl.QaServiceImpl - 开始解析AI回复内容
+2025-04-08 11:36:27 [http-nio-8081-exec-4] DEBUG c.h.service.impl.QaServiceImpl - 成功解析AI回答: "您好！关于2025西湖论剑·数字安全大会的内容，主要包括以下几个方面：1. 大会主题：2025年大会的主题为\
+2025-04-08 11:36:27 [http-nio-8081-exec-4] INFO  c.h.service.impl.QaServiceImpl - AI服务回答: "您好！关于2025西湖论剑·数字安全大会的内容，主要包括以下几个方面：1. 大会主题：2025年大会的主题为\
+2025-04-08 11:36:27 [http-nio-8081-exec-4] DEBUG c.h.service.impl.QaServiceImpl - 答案生成成功: "您好！关于2025西湖论剑·数字安全大会的内容，主要包括以下几个方面：1. 大会主题：2025年大会的主题为\
+2025-04-08 11:36:27 [http-nio-8081-exec-4] INFO  c.h.controller.QaController - 返回AI回答, 长度: 56
+2025-04-08 11:40:38 [http-nio-8081-exec-5] INFO  c.h.controller.QaController - 收到问题: 大会内容
+2025-04-08 11:40:38 [http-nio-8081-exec-5] DEBUG c.h.service.impl.QaServiceImpl - 处理问题: 大会内容, 会议ID: default
+2025-04-08 11:40:38 [http-nio-8081-exec-5] DEBUG c.h.service.impl.QaServiceImpl - 请求时间戳: 1744083638352
+2025-04-08 11:40:38 [http-nio-8081-exec-5] DEBUG c.h.service.impl.QaServiceImpl - API请求地址: https://www.das-ai.com/open/api/v2/agent/execute
+2025-04-08 11:40:38 [http-nio-8081-exec-5] INFO  c.h.service.impl.QaServiceImpl - 开始调用AI服务，尝试次数: 1
+2025-04-08 11:40:47 [http-nio-8081-exec-5] DEBUG c.h.service.impl.QaServiceImpl - 响应内容: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":76,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2699},"session":{"messages":[{"role":"user","content":"大会内容"},{"role":"assistant","content":"您好！关于2025西湖论剑·数字安全大会的内容，我可以为您提供大会的日程安排、嘉宾介绍、成果发布、最新动态等信息。请您具体说明您想了解哪方面的内容，以便我更准确地为您提供服务。如果您对往届大会的内容感兴趣，也请告诉我具体是哪一届，我将尽力为您提供相关信息。"}],"id":"31170f7c-e981-4c9d-a7ae-be9f1f30bcd6"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.2947305.17440836389351067"}
+2025-04-08 11:40:47 [http-nio-8081-exec-5] DEBUG c.h.service.impl.QaServiceImpl - AI服务原始响应: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":76,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2699},"session":{"messages":[{"role":"user","content":"大会内容"},{"role":"assistant","content":"您好！关于2025西湖论剑·数字安全大会的内容，我可以为您提供大会的日程安排、嘉宾介绍、成果发布、最新动态等信息。请您具体说明您想了解哪方面的内容，以便我更准确地为您提供服务。如果您对往届大会的内容感兴趣，也请告诉我具体是哪一届，我将尽力为您提供相关信息。"}],"id":"31170f7c-e981-4c9d-a7ae-be9f1f30bcd6"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.2947305.17440836389351067"}
+2025-04-08 11:40:47 [http-nio-8081-exec-5] DEBUG c.h.service.impl.QaServiceImpl - 开始解析AI回复内容
+2025-04-08 11:40:47 [http-nio-8081-exec-5] DEBUG c.h.service.impl.QaServiceImpl - 成功解析AI回答: "您好！关于2025西湖论剑·数字安全大会的内容，我可以为您提供大会的日程安排、嘉宾介绍、成果发布、最新动态等信息。请您具体说明您想了解哪方面的内容，以便我更准确地为您提供服务。如果您对往届大会的内容感兴趣，也请告诉我具体是哪一届，我将尽力为您提供相关信息。
+2025-04-08 11:40:47 [http-nio-8081-exec-5] INFO  c.h.service.impl.QaServiceImpl - AI服务回答: "您好！关于2025西湖论剑·数字安全大会的内容，我可以为您提供大会的日程安排、嘉宾介绍、成果发布、最新动态等信息。请您具体说明您想了解哪方面的内容，以便我更准确地为您提供服务。如果您对往届大会的内容感兴趣，也请告诉我具体是哪一届，我将尽力为您提供相关信息。
+2025-04-08 11:40:47 [http-nio-8081-exec-5] DEBUG c.h.service.impl.QaServiceImpl - 答案生成成功: "您好！关于2025西湖论剑·数字安全大会的内容，我可以为您提供大会的日程安排、嘉宾介绍、成果发布、最新动态等信息。请您具体说明您想了解哪方面的内容，以便我更准确地为您提供服务。如果您对往届大会的内容感兴趣，也请告诉我具体是哪一届，我将尽力为您提供相关信息。
+2025-04-08 11:40:47 [http-nio-8081-exec-5] INFO  c.h.controller.QaController - 返回AI回答, 长度: 129
+2025-04-08 11:47:44 [http-nio-8081-exec-7] INFO  c.h.controller.QaController - 收到问题: 大会内容
+2025-04-08 11:47:44 [http-nio-8081-exec-7] DEBUG c.h.service.impl.QaServiceImpl - 处理问题: 大会内容, 会议ID: default
+2025-04-08 11:47:44 [http-nio-8081-exec-7] DEBUG c.h.service.impl.QaServiceImpl - 请求时间戳: 1744084064319
+2025-04-08 11:47:44 [http-nio-8081-exec-7] DEBUG c.h.service.impl.QaServiceImpl - API请求地址: https://www.das-ai.com/open/api/v2/agent/execute
+2025-04-08 11:47:44 [http-nio-8081-exec-7] INFO  c.h.service.impl.QaServiceImpl - 开始调用AI服务，尝试次数: 1
+2025-04-08 11:48:04 [http-nio-8081-exec-7] DEBUG c.h.service.impl.QaServiceImpl - 响应内容: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":266,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2889},"session":{"messages":[{"role":"user","content":"大会内容"},{"role":"assistant","content":"2025西湖论剑·数字安全大会以“AI向治·安全向智”为主题，将于中国数谷核心区召开。大会将汇集来自全球的政府官员、行业专家、学者及企业代表，共同探讨数字时代下的人工智能与数据安全议题，旨在为数字政府、数字经济和数字社会的建设提供有力支撑。\n\n大会内容涵盖多个方面：\n1. **主论坛**：邀请国内外政产学研各界的权威专家，分享最新政策导向、行业趋势和技术创新。\n2. **分论坛**：设立多个分论坛，聚焦人工智能安全、数据要素流通、数字政府建设、数字经济挑战与机遇等热点话题。\n3. **成果发布**：展示最新的研究成果、技术产品和解决方案，促进产学研用深度合作。\n4. **圆桌讨论**：组织多场圆桌讨论，让与会者围绕特定议题进行深入交流，碰撞思想火花。\n5. **展览展示**：举办数字安全领域的专业展览，展示前沿技术和应用案例。\n6. **配套活动**：包括但不限于企业对接会、项目洽谈会、技术沙龙等，为与会者搭建合作交流平台。\n\n如果您对特定的议程、嘉宾或活动感兴趣，欢迎随时向我提问，我会为您提供更详细的信息。"}],"id":"616a8d6e-e020-49e1-a370-2dc67ec6c627"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.532952.17440840648622151"}
+2025-04-08 11:48:04 [http-nio-8081-exec-7] DEBUG c.h.service.impl.QaServiceImpl - AI服务原始响应: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":266,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2889},"session":{"messages":[{"role":"user","content":"大会内容"},{"role":"assistant","content":"2025西湖论剑·数字安全大会以“AI向治·安全向智”为主题，将于中国数谷核心区召开。大会将汇集来自全球的政府官员、行业专家、学者及企业代表，共同探讨数字时代下的人工智能与数据安全议题，旨在为数字政府、数字经济和数字社会的建设提供有力支撑。\n\n大会内容涵盖多个方面：\n1. **主论坛**：邀请国内外政产学研各界的权威专家，分享最新政策导向、行业趋势和技术创新。\n2. **分论坛**：设立多个分论坛，聚焦人工智能安全、数据要素流通、数字政府建设、数字经济挑战与机遇等热点话题。\n3. **成果发布**：展示最新的研究成果、技术产品和解决方案，促进产学研用深度合作。\n4. **圆桌讨论**：组织多场圆桌讨论，让与会者围绕特定议题进行深入交流，碰撞思想火花。\n5. **展览展示**：举办数字安全领域的专业展览，展示前沿技术和应用案例。\n6. **配套活动**：包括但不限于企业对接会、项目洽谈会、技术沙龙等，为与会者搭建合作交流平台。\n\n如果您对特定的议程、嘉宾或活动感兴趣，欢迎随时向我提问，我会为您提供更详细的信息。"}],"id":"616a8d6e-e020-49e1-a370-2dc67ec6c627"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.532952.17440840648622151"}
+2025-04-08 11:48:04 [http-nio-8081-exec-7] DEBUG c.h.service.impl.QaServiceImpl - 开始解析AI回复内容
+2025-04-08 11:48:04 [http-nio-8081-exec-7] DEBUG c.h.service.impl.QaServiceImpl - 成功解析AI回答: "2025西湖论剑·数字安全大会以“AI向治·安全向智”为主题，将于中国数谷核心区召开。大会将汇集来自全球的政府官员、行业专家、学者及企业代表，共同探讨数字时代下的人工智能与数据安全议题，旨在为数字政府、数字经济和数字社会的建设提供有力支撑。大会内容涵盖多个方面：1. 主论坛：邀请国内外政产学研各界的权威专家，分享最新政策导向、行业趋势和技术创新。2. 分论坛：设立多个分论坛，聚焦人工智能安全、数据要素流通、数字政府建设、数字经济挑战与机遇等热点话题。3. 成果发布：展示最新的研究成果、技术产品和解决方案，促进产学研用深度合作。4. 圆桌讨论：组织多场圆桌讨论，让与会者围绕特定议题进行深入交流，碰撞思想火花。5. 展览展示：举办数字安全领域的专业展览，展示前沿技术和应用案例。6. 配套活动：包括但不限于企业对接会、项目洽谈会、技术沙龙等，为与会者搭建合作交流平台。如果您对特定的议程、嘉宾或活动感兴趣，欢迎随时向我提问，我会为您提供更详细的信息。
+2025-04-08 11:48:04 [http-nio-8081-exec-7] INFO  c.h.service.impl.QaServiceImpl - AI服务回答: "2025西湖论剑·数字安全大会以“AI向治·安全向智”为主题，将于中国数谷核心区召开。大会将汇集来自全球的政府官员、行业专家、学者及企业代表，共同探讨数字时代下的人工智能与数据安全议题，旨在为数字政府、数字经济和数字社会的建设提供有力支撑。大会内容涵盖多个方面：1. 主论坛：邀请国内外政产学研各界的权威专家，分享最新政策导向、行业趋势和技术创新。2. 分论坛：设立多个分论坛，聚焦人工智能安全、数据要素流通、数字政府建设、数字经济挑战与机遇等热点话题。3. 成果发布：展示最新的研究成果、技术产品和解决方案，促进产学研用深度合作。4. 圆桌讨论：组织多场圆桌讨论，让与会者围绕特定议题进行深入交流，碰撞思想火花。5. 展览展示：举办数字安全领域的专业展览，展示前沿技术和应用案例。6. 配套活动：包括但不限于企业对接会、项目洽谈会、技术沙龙等，为与会者搭建合作交流平台。如果您对特定的议程、嘉宾或活动感兴趣，欢迎随时向我提问，我会为您提供更详细的信息。
+2025-04-08 11:48:04 [http-nio-8081-exec-7] DEBUG c.h.service.impl.QaServiceImpl - 答案生成成功: "2025西湖论剑·数字安全大会以“AI向治·安全向智”为主题，将于中国数谷核心区召开。大会将汇集来自全球的政府官员、行业专家、学者及企业代表，共同探讨数字时代下的人工智能与数据安全议题，旨在为数字政府、数字经济和数字社会的建设提供有力支撑。大会内容涵盖多个方面：1. 主论坛：邀请国内外政产学研各界的权威专家，分享最新政策导向、行业趋势和技术创新。2. 分论坛：设立多个分论坛，聚焦人工智能安全、数据要素流通、数字政府建设、数字经济挑战与机遇等热点话题。3. 成果发布：展示最新的研究成果、技术产品和解决方案，促进产学研用深度合作。4. 圆桌讨论：组织多场圆桌讨论，让与会者围绕特定议题进行深入交流，碰撞思想火花。5. 展览展示：举办数字安全领域的专业展览，展示前沿技术和应用案例。6. 配套活动：包括但不限于企业对接会、项目洽谈会、技术沙龙等，为与会者搭建合作交流平台。如果您对特定的议程、嘉宾或活动感兴趣，欢迎随时向我提问，我会为您提供更详细的信息。
+2025-04-08 11:48:04 [http-nio-8081-exec-7] INFO  c.h.controller.QaController - 返回AI回答, 长度: 428
+2025-04-08 11:52:54 [http-nio-8081-exec-8] INFO  c.h.controller.QaController - 收到问题: 大会内容
+2025-04-08 11:52:54 [http-nio-8081-exec-8] DEBUG c.h.service.impl.QaServiceImpl - 处理问题: 大会内容, 会议ID: default
+2025-04-08 11:52:54 [http-nio-8081-exec-8] DEBUG c.h.service.impl.QaServiceImpl - 请求时间戳: 1744084374534
+2025-04-08 11:52:54 [http-nio-8081-exec-8] DEBUG c.h.service.impl.QaServiceImpl - API请求地址: https://www.das-ai.com/open/api/v2/agent/execute
+2025-04-08 11:52:54 [http-nio-8081-exec-8] INFO  c.h.service.impl.QaServiceImpl - 开始调用AI服务，尝试次数: 1
+2025-04-08 11:53:19 [http-nio-8081-exec-8] DEBUG c.h.service.impl.QaServiceImpl - 响应内容: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":363,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2986},"session":{"messages":[{"role":"user","content":"大会内容"},{"role":"assistant","content":"2025年西湖论剑·数字安全大会将继续深入探讨数字安全领域的最新进展和挑战，特别是人工智能和数据要素在数字转型中的发展与安全。今年大会的主题是\"AI向治·安全向智\"，标志着我们对数字安全关注的重点从传统网络安全转向了更加智能化、综合治理的方向。\n\n大会内容主要包括以下几个方面：\n\n1. **开幕式**：由大会组织方致开幕词，介绍大会的主要议程和亮点，同时邀请重要嘉宾致辞。\n\n2. **主论坛**：邀请国内外政产学研界的重要嘉宾，就数字安全领域的最新动向、国家政策、前沿技术、行业应用等热点话题进行深入的主题演讲和圆桌讨论。\n\n3. **分论坛**：设立多个分论坛，涵盖数字政府、数字经济、数字社会、数据治理、AI安全等专题，旨在通过多角度、多层次的交流，促进产学研用的深度融合。\n\n4. **展览展示**：设置展览区，展示最新的数字安全技术和解决方案，为参会者提供一个了解行业动态和技术趋势的平台。\n\n5. **成果发布**：公布大会期间的研究成果、合作项目、创新产品等，展现数字安全领域的最新进展。\n\n6. **技术交流**：为技术专家和从业者提供一个技术交流的平台，通过专题讲座、技术研讨等形式，深入探讨技术细节和实践经验。\n\n7. **合作洽谈**：为参会企业、研究机构等提供机会，促进相互之间的合作洽谈，推动行业内部的合作与发展。\n\n8. **闭幕式**：总结大会成果，展望未来发展方向，并为下一年度的西湖论剑大会定下基调。\n\n如果您对大会的具体议程、嘉宾信息或其他内容有任何疑问，欢迎您随时提问，我会尽力为您解答。"}],"id":"9ee12a9c-0138-4d41-8095-b92ba39d39a9"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.5781098.17440843751897599"}
+2025-04-08 11:53:19 [http-nio-8081-exec-8] DEBUG c.h.service.impl.QaServiceImpl - AI服务原始响应: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":363,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2986},"session":{"messages":[{"role":"user","content":"大会内容"},{"role":"assistant","content":"2025年西湖论剑·数字安全大会将继续深入探讨数字安全领域的最新进展和挑战，特别是人工智能和数据要素在数字转型中的发展与安全。今年大会的主题是\"AI向治·安全向智\"，标志着我们对数字安全关注的重点从传统网络安全转向了更加智能化、综合治理的方向。\n\n大会内容主要包括以下几个方面：\n\n1. **开幕式**：由大会组织方致开幕词，介绍大会的主要议程和亮点，同时邀请重要嘉宾致辞。\n\n2. **主论坛**：邀请国内外政产学研界的重要嘉宾，就数字安全领域的最新动向、国家政策、前沿技术、行业应用等热点话题进行深入的主题演讲和圆桌讨论。\n\n3. **分论坛**：设立多个分论坛，涵盖数字政府、数字经济、数字社会、数据治理、AI安全等专题，旨在通过多角度、多层次的交流，促进产学研用的深度融合。\n\n4. **展览展示**：设置展览区，展示最新的数字安全技术和解决方案，为参会者提供一个了解行业动态和技术趋势的平台。\n\n5. **成果发布**：公布大会期间的研究成果、合作项目、创新产品等，展现数字安全领域的最新进展。\n\n6. **技术交流**：为技术专家和从业者提供一个技术交流的平台，通过专题讲座、技术研讨等形式，深入探讨技术细节和实践经验。\n\n7. **合作洽谈**：为参会企业、研究机构等提供机会，促进相互之间的合作洽谈，推动行业内部的合作与发展。\n\n8. **闭幕式**：总结大会成果，展望未来发展方向，并为下一年度的西湖论剑大会定下基调。\n\n如果您对大会的具体议程、嘉宾信息或其他内容有任何疑问，欢迎您随时提问，我会尽力为您解答。"}],"id":"9ee12a9c-0138-4d41-8095-b92ba39d39a9"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.5781098.17440843751897599"}
+2025-04-08 11:53:19 [http-nio-8081-exec-8] DEBUG c.h.service.impl.QaServiceImpl - 开始解析AI回复内容
+2025-04-08 11:53:19 [http-nio-8081-exec-8] DEBUG c.h.service.impl.QaServiceImpl - 成功解析AI回答: "2025年西湖论剑·数字安全大会将继续深入探讨数字安全领域的最新进展和挑战，特别是人工智能和数据要素在数字转型中的发展与安全。今年大会的主题是\
+2025-04-08 11:53:19 [http-nio-8081-exec-8] INFO  c.h.service.impl.QaServiceImpl - AI服务回答: "2025年西湖论剑·数字安全大会将继续深入探讨数字安全领域的最新进展和挑战，特别是人工智能和数据要素在数字转型中的发展与安全。今年大会的主题是\
+2025-04-08 11:53:19 [http-nio-8081-exec-8] DEBUG c.h.service.impl.QaServiceImpl - 答案生成成功: "2025年西湖论剑·数字安全大会将继续深入探讨数字安全领域的最新进展和挑战，特别是人工智能和数据要素在数字转型中的发展与安全。今年大会的主题是\
+2025-04-08 11:53:19 [http-nio-8081-exec-8] INFO  c.h.controller.QaController - 返回AI回答, 长度: 73
+2025-04-08 11:53:42 [http-nio-8081-exec-10] INFO  c.h.controller.QaController - 收到问题: 你是四黑
+2025-04-08 11:53:42 [http-nio-8081-exec-10] DEBUG c.h.service.impl.QaServiceImpl - 处理问题: 你是四黑, 会议ID: default
+2025-04-08 11:53:42 [http-nio-8081-exec-10] DEBUG c.h.service.impl.QaServiceImpl - 请求时间戳: 1744084422018
+2025-04-08 11:53:42 [http-nio-8081-exec-10] DEBUG c.h.service.impl.QaServiceImpl - API请求地址: https://www.das-ai.com/open/api/v2/agent/execute
+2025-04-08 11:53:42 [http-nio-8081-exec-10] INFO  c.h.service.impl.QaServiceImpl - 开始调用AI服务，尝试次数: 1
+2025-04-08 11:53:46 [http-nio-8081-exec-10] DEBUG c.h.service.impl.QaServiceImpl - 响应内容: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":54,"prompt_tokens":2624,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2678},"session":{"messages":[{"role":"user","content":"你是四黑"},{"role":"assistant","content":"很抱歉，我可能没有理解您的意思。如果您有任何关于2025西湖论剑大会的问题，或需要其他帮助，欢迎告诉我！如果这是某种特定的称呼或暗号，我也愿意倾听您更多的解释，以更好地服务您。"}],"id":"5a2bcdb0-7904-4939-952a-9bccd163692b"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.2947313.17440844224641189"}
+2025-04-08 11:53:46 [http-nio-8081-exec-10] DEBUG c.h.service.impl.QaServiceImpl - AI服务原始响应: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":54,"prompt_tokens":2624,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2678},"session":{"messages":[{"role":"user","content":"你是四黑"},{"role":"assistant","content":"很抱歉，我可能没有理解您的意思。如果您有任何关于2025西湖论剑大会的问题，或需要其他帮助，欢迎告诉我！如果这是某种特定的称呼或暗号，我也愿意倾听您更多的解释，以更好地服务您。"}],"id":"5a2bcdb0-7904-4939-952a-9bccd163692b"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.2947313.17440844224641189"}
+2025-04-08 11:53:46 [http-nio-8081-exec-10] DEBUG c.h.service.impl.QaServiceImpl - 开始解析AI回复内容
+2025-04-08 11:53:46 [http-nio-8081-exec-10] DEBUG c.h.service.impl.QaServiceImpl - 成功解析AI回答: "很抱歉，我可能没有理解您的意思。如果您有任何关于2025西湖论剑大会的问题，或需要其他帮助，欢迎告诉我！如果这是某种特定的称呼或暗号，我也愿意倾听您更多的解释，以更好地服务您。
+2025-04-08 11:53:46 [http-nio-8081-exec-10] INFO  c.h.service.impl.QaServiceImpl - AI服务回答: "很抱歉，我可能没有理解您的意思。如果您有任何关于2025西湖论剑大会的问题，或需要其他帮助，欢迎告诉我！如果这是某种特定的称呼或暗号，我也愿意倾听您更多的解释，以更好地服务您。
+2025-04-08 11:53:46 [http-nio-8081-exec-10] DEBUG c.h.service.impl.QaServiceImpl - 答案生成成功: "很抱歉，我可能没有理解您的意思。如果您有任何关于2025西湖论剑大会的问题，或需要其他帮助，欢迎告诉我！如果这是某种特定的称呼或暗号，我也愿意倾听您更多的解释，以更好地服务您。
+2025-04-08 11:53:46 [http-nio-8081-exec-10] INFO  c.h.controller.QaController - 返回AI回答, 长度: 89
+2025-04-08 11:54:39 [http-nio-8081-exec-9] INFO  c.h.controller.QaController - 收到问题: 你是谁
+2025-04-08 11:54:39 [http-nio-8081-exec-9] DEBUG c.h.service.impl.QaServiceImpl - 处理问题: 你是谁, 会议ID: default
+2025-04-08 11:54:39 [http-nio-8081-exec-9] DEBUG c.h.service.impl.QaServiceImpl - 请求时间戳: 1744084479066
+2025-04-08 11:54:39 [http-nio-8081-exec-9] DEBUG c.h.service.impl.QaServiceImpl - API请求地址: https://www.das-ai.com/open/api/v2/agent/execute
+2025-04-08 11:54:39 [http-nio-8081-exec-9] INFO  c.h.service.impl.QaServiceImpl - 开始调用AI服务，尝试次数: 1
+2025-04-08 11:54:48 [http-nio-8081-exec-9] DEBUG c.h.service.impl.QaServiceImpl - 响应内容: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":125,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2748},"session":{"messages":[{"role":"user","content":"你是谁"},{"role":"assistant","content":"我是2025西湖论剑大会的线上智能参会助手，依托安恒信息恒脑大模型强大的人工智能技术，可以为参会者提供大会相关的全方位服务。无论您是想了解大会的日程安排、嘉宾信息、成果发布，还是需要获取大会的最新动态，我都能为您提供帮助。此外，我还能根据您的身份和兴趣，提供个性化的日程推荐和信息推送，并实时更新推送大会的变更信息和重要通知、参会指南等，方便您的参会，提升大会网站及小程序的使用体验！如果您有任何问题，欢迎随时向我提问。"}],"id":"a568b9ab-be37-4e03-b911-5ff08ab1a27f"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.2433986.17440844794210105"}
+2025-04-08 11:54:48 [http-nio-8081-exec-9] DEBUG c.h.service.impl.QaServiceImpl - AI服务原始响应: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":125,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2748},"session":{"messages":[{"role":"user","content":"你是谁"},{"role":"assistant","content":"我是2025西湖论剑大会的线上智能参会助手，依托安恒信息恒脑大模型强大的人工智能技术，可以为参会者提供大会相关的全方位服务。无论您是想了解大会的日程安排、嘉宾信息、成果发布，还是需要获取大会的最新动态，我都能为您提供帮助。此外，我还能根据您的身份和兴趣，提供个性化的日程推荐和信息推送，并实时更新推送大会的变更信息和重要通知、参会指南等，方便您的参会，提升大会网站及小程序的使用体验！如果您有任何问题，欢迎随时向我提问。"}],"id":"a568b9ab-be37-4e03-b911-5ff08ab1a27f"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.2433986.17440844794210105"}
+2025-04-08 11:54:48 [http-nio-8081-exec-9] DEBUG c.h.service.impl.QaServiceImpl - 开始解析AI回复内容
+2025-04-08 11:54:48 [http-nio-8081-exec-9] DEBUG c.h.service.impl.QaServiceImpl - 成功解析AI回答: "我是2025西湖论剑大会的线上智能参会助手，依托安恒信息恒脑大模型强大的人工智能技术，可以为参会者提供大会相关的全方位服务。无论您是想了解大会的日程安排、嘉宾信息、成果发布，还是需要获取大会的最新动态，我都能为您提供帮助。此外，我还能根据您的身份和兴趣，提供个性化的日程推荐和信息推送，并实时更新推送大会的变更信息和重要通知、参会指南等，方便您的参会，提升大会网站及小程序的使用体验！如果您有任何问题，欢迎随时向我提问。
+2025-04-08 11:54:48 [http-nio-8081-exec-9] INFO  c.h.service.impl.QaServiceImpl - AI服务回答: "我是2025西湖论剑大会的线上智能参会助手，依托安恒信息恒脑大模型强大的人工智能技术，可以为参会者提供大会相关的全方位服务。无论您是想了解大会的日程安排、嘉宾信息、成果发布，还是需要获取大会的最新动态，我都能为您提供帮助。此外，我还能根据您的身份和兴趣，提供个性化的日程推荐和信息推送，并实时更新推送大会的变更信息和重要通知、参会指南等，方便您的参会，提升大会网站及小程序的使用体验！如果您有任何问题，欢迎随时向我提问。
+2025-04-08 11:54:48 [http-nio-8081-exec-9] DEBUG c.h.service.impl.QaServiceImpl - 答案生成成功: "我是2025西湖论剑大会的线上智能参会助手，依托安恒信息恒脑大模型强大的人工智能技术，可以为参会者提供大会相关的全方位服务。无论您是想了解大会的日程安排、嘉宾信息、成果发布，还是需要获取大会的最新动态，我都能为您提供帮助。此外，我还能根据您的身份和兴趣，提供个性化的日程推荐和信息推送，并实时更新推送大会的变更信息和重要通知、参会指南等，方便您的参会，提升大会网站及小程序的使用体验！如果您有任何问题，欢迎随时向我提问。
+2025-04-08 11:54:48 [http-nio-8081-exec-9] INFO  c.h.controller.QaController - 返回AI回答, 长度: 211
+2025-04-08 11:55:33 [http-nio-8081-exec-1] INFO  c.h.controller.QaController - 收到问题: 你是四黑
+2025-04-08 11:55:33 [http-nio-8081-exec-1] DEBUG c.h.service.impl.QaServiceImpl - 处理问题: 你是四黑, 会议ID: default
+2025-04-08 11:55:33 [http-nio-8081-exec-1] DEBUG c.h.service.impl.QaServiceImpl - 请求时间戳: 1744084533778
+2025-04-08 11:55:33 [http-nio-8081-exec-1] DEBUG c.h.service.impl.QaServiceImpl - API请求地址: https://www.das-ai.com/open/api/v2/agent/execute
+2025-04-08 11:55:33 [http-nio-8081-exec-1] INFO  c.h.service.impl.QaServiceImpl - 开始调用AI服务，尝试次数: 1
+2025-04-08 11:55:43 [http-nio-8081-exec-1] DEBUG c.h.service.impl.QaServiceImpl - 响应内容: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":126,"prompt_tokens":2624,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2750},"session":{"messages":[{"role":"user","content":"你是四黑"},{"role":"assistant","content":"我理解“四黑”在网络用语中的含义，通常是指“十分黑色”或用来形容事情的性质非常恶劣。但在这个语境下，如果这是对我或者西湖论剑大会的一种称呼，那可能是一个误会或者是玩笑。作为2025西湖论剑大会的智能参会助手，我的任务是提供帮助和服务，确保每位参会者能有一个愉快和收获满满的体验。如果有任何问题或者需要帮助的地方，可以随时告诉我，我会尽全力帮助您。如果您是指其他意思的“四黑”，能否具体说明一下？这样我可以更好地理解并回应您的需求。"}],"id":"3cbff2a6-cc80-4756-9dd8-9649084498ac"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.2947326.17440845342052417"}
+2025-04-08 11:55:43 [http-nio-8081-exec-1] DEBUG c.h.service.impl.QaServiceImpl - AI服务原始响应: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":126,"prompt_tokens":2624,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2750},"session":{"messages":[{"role":"user","content":"你是四黑"},{"role":"assistant","content":"我理解“四黑”在网络用语中的含义，通常是指“十分黑色”或用来形容事情的性质非常恶劣。但在这个语境下，如果这是对我或者西湖论剑大会的一种称呼，那可能是一个误会或者是玩笑。作为2025西湖论剑大会的智能参会助手，我的任务是提供帮助和服务，确保每位参会者能有一个愉快和收获满满的体验。如果有任何问题或者需要帮助的地方，可以随时告诉我，我会尽全力帮助您。如果您是指其他意思的“四黑”，能否具体说明一下？这样我可以更好地理解并回应您的需求。"}],"id":"3cbff2a6-cc80-4756-9dd8-9649084498ac"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.2947326.17440845342052417"}
+2025-04-08 11:55:43 [http-nio-8081-exec-1] DEBUG c.h.service.impl.QaServiceImpl - 开始解析AI回复内容
+2025-04-08 11:55:43 [http-nio-8081-exec-1] DEBUG c.h.service.impl.QaServiceImpl - 成功解析AI回答: "我理解“四黑”在网络用语中的含义，通常是指“十分黑色”或用来形容事情的性质非常恶劣。但在这个语境下，如果这是对我或者西湖论剑大会的一种称呼，那可能是一个误会或者是玩笑。作为2025西湖论剑大会的智能参会助手，我的任务是提供帮助和服务，确保每位参会者能有一个愉快和收获满满的体验。如果有任何问题或者需要帮助的地方，可以随时告诉我，我会尽全力帮助您。如果您是指其他意思的“四黑”，能否具体说明一下？这样我可以更好地理解并回应您的需求。
+2025-04-08 11:55:43 [http-nio-8081-exec-1] INFO  c.h.service.impl.QaServiceImpl - AI服务回答: "我理解“四黑”在网络用语中的含义，通常是指“十分黑色”或用来形容事情的性质非常恶劣。但在这个语境下，如果这是对我或者西湖论剑大会的一种称呼，那可能是一个误会或者是玩笑。作为2025西湖论剑大会的智能参会助手，我的任务是提供帮助和服务，确保每位参会者能有一个愉快和收获满满的体验。如果有任何问题或者需要帮助的地方，可以随时告诉我，我会尽全力帮助您。如果您是指其他意思的“四黑”，能否具体说明一下？这样我可以更好地理解并回应您的需求。
+2025-04-08 11:55:43 [http-nio-8081-exec-1] DEBUG c.h.service.impl.QaServiceImpl - 答案生成成功: "我理解“四黑”在网络用语中的含义，通常是指“十分黑色”或用来形容事情的性质非常恶劣。但在这个语境下，如果这是对我或者西湖论剑大会的一种称呼，那可能是一个误会或者是玩笑。作为2025西湖论剑大会的智能参会助手，我的任务是提供帮助和服务，确保每位参会者能有一个愉快和收获满满的体验。如果有任何问题或者需要帮助的地方，可以随时告诉我，我会尽全力帮助您。如果您是指其他意思的“四黑”，能否具体说明一下？这样我可以更好地理解并回应您的需求。
+2025-04-08 11:55:43 [http-nio-8081-exec-1] INFO  c.h.controller.QaController - 返回AI回答, 长度: 216
+2025-04-08 12:04:21 [http-nio-8081-exec-2] INFO  c.h.controller.QaController - 收到问题: 你是谁
+2025-04-08 12:04:21 [http-nio-8081-exec-2] DEBUG c.h.service.impl.QaServiceImpl - 处理问题: 你是谁, 会议ID: default
+2025-04-08 12:04:21 [http-nio-8081-exec-2] DEBUG c.h.service.impl.QaServiceImpl - 请求时间戳: 1744085061641
+2025-04-08 12:04:21 [http-nio-8081-exec-2] DEBUG c.h.service.impl.QaServiceImpl - API请求地址: https://www.das-ai.com/open/api/v2/agent/execute
+2025-04-08 12:04:21 [http-nio-8081-exec-2] INFO  c.h.service.impl.QaServiceImpl - 开始调用AI服务，尝试次数: 1
+2025-04-08 12:04:29 [http-nio-8081-exec-2] DEBUG c.h.service.impl.QaServiceImpl - 响应内容: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":108,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2731},"session":{"messages":[{"role":"user","content":"你是谁"},{"role":"assistant","content":"我是2025西湖论剑大会的线上智能参会助手，基于安恒信息恒脑大模型的人工智能技术，能够为您提供与大会相关的全方位服务。无论是查询日程安排、嘉宾信息、成果发布，还是获取大会最新动态，我都能为您提供帮助。同时，根据您的身份和兴趣，我还可以提供个性化的日程推荐和信息推送，确保您能够及时了解大会的变更信息和重要通知，让您的参会体验更加便捷和高效。有什么我可以帮您的吗？"}],"id":"29dee0ae-f5f5-41f3-aaf4-3a23f22b9a9f"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.5781110.17440850621188669"}
+2025-04-08 12:04:29 [http-nio-8081-exec-2] DEBUG c.h.service.impl.QaServiceImpl - AI服务原始响应: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":108,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2731},"session":{"messages":[{"role":"user","content":"你是谁"},{"role":"assistant","content":"我是2025西湖论剑大会的线上智能参会助手，基于安恒信息恒脑大模型的人工智能技术，能够为您提供与大会相关的全方位服务。无论是查询日程安排、嘉宾信息、成果发布，还是获取大会最新动态，我都能为您提供帮助。同时，根据您的身份和兴趣，我还可以提供个性化的日程推荐和信息推送，确保您能够及时了解大会的变更信息和重要通知，让您的参会体验更加便捷和高效。有什么我可以帮您的吗？"}],"id":"29dee0ae-f5f5-41f3-aaf4-3a23f22b9a9f"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.5781110.17440850621188669"}
+2025-04-08 12:04:29 [http-nio-8081-exec-2] DEBUG c.h.service.impl.QaServiceImpl - 开始解析AI回复内容
+2025-04-08 12:04:29 [http-nio-8081-exec-2] DEBUG c.h.service.impl.QaServiceImpl - 成功解析AI回答: "我是2025西湖论剑大会的线上智能参会助手，基于安恒信息恒脑大模型的人工智能技术，能够为您提供与大会相关的全方位服务。无论是查询日程安排、嘉宾信息、成果发布，还是获取大会最新动态，我都能为您提供帮助。同时，根据您的身份和兴趣，我还可以提供个性化的日程推荐和信息推送，确保您能够及时了解大会的变更信息和重要通知，让您的参会体验更加便捷和高效。有什么我可以帮您的吗？
+2025-04-08 12:04:29 [http-nio-8081-exec-2] INFO  c.h.service.impl.QaServiceImpl - AI服务回答: "我是2025西湖论剑大会的线上智能参会助手，基于安恒信息恒脑大模型的人工智能技术，能够为您提供与大会相关的全方位服务。无论是查询日程安排、嘉宾信息、成果发布，还是获取大会最新动态，我都能为您提供帮助。同时，根据您的身份和兴趣，我还可以提供个性化的日程推荐和信息推送，确保您能够及时了解大会的变更信息和重要通知，让您的参会体验更加便捷和高效。有什么我可以帮您的吗？
+2025-04-08 12:04:29 [http-nio-8081-exec-2] DEBUG c.h.service.impl.QaServiceImpl - 答案生成成功: "我是2025西湖论剑大会的线上智能参会助手，基于安恒信息恒脑大模型的人工智能技术，能够为您提供与大会相关的全方位服务。无论是查询日程安排、嘉宾信息、成果发布，还是获取大会最新动态，我都能为您提供帮助。同时，根据您的身份和兴趣，我还可以提供个性化的日程推荐和信息推送，确保您能够及时了解大会的变更信息和重要通知，让您的参会体验更加便捷和高效。有什么我可以帮您的吗？
+2025-04-08 12:04:29 [http-nio-8081-exec-2] INFO  c.h.controller.QaController - 返回AI回答, 长度: 182
+2025-04-08 12:04:34 [http-nio-8081-exec-4] INFO  c.h.controller.QaController - 收到问题: 会议内容
+2025-04-08 12:04:34 [http-nio-8081-exec-4] DEBUG c.h.service.impl.QaServiceImpl - 处理问题: 会议内容, 会议ID: default
+2025-04-08 12:04:34 [http-nio-8081-exec-4] DEBUG c.h.service.impl.QaServiceImpl - 请求时间戳: 1744085074637
+2025-04-08 12:04:34 [http-nio-8081-exec-4] DEBUG c.h.service.impl.QaServiceImpl - API请求地址: https://www.das-ai.com/open/api/v2/agent/execute
+2025-04-08 12:04:34 [http-nio-8081-exec-4] INFO  c.h.service.impl.QaServiceImpl - 开始调用AI服务，尝试次数: 1
+2025-04-08 12:04:51 [http-nio-8081-exec-4] DEBUG c.h.service.impl.QaServiceImpl - 响应内容: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":246,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2869},"session":{"messages":[{"role":"user","content":"会议内容"},{"role":"assistant","content":"2025西湖论剑·数字安全大会，即将在中国数谷核心区举办，主题为\"AI向治·安全向智\"。今年的大会聚焦人工智能与数据安全，旨在探索数字安全赋能数字政府、数字经济、数字社会的有效途径，为全球数智化转型提供\"中国式治理\"新范式。会议将涵盖政策解读、技术分享、场景应用等多方面内容，汇聚政产学研各界力量，共同研讨数字时代下的安全之道。\n\n会议的主要内容包括但不限于：\n- **政策解读**：解读最新发布的数字安全相关政策，分享政府在推动数字安全方面的最新举措。\n- **技术交流**：介绍最新的数字安全技术进展，包括但不限于AI安全、数据加密、隐私保护等领域的技术突破。\n- **场景应用**：展示数字安全技术在不同场景下的应用案例，比如智慧城市、金融科技、智能制造等行业中的实践。\n- **圆桌论坛**：邀请来自不同领域的专家和企业代表，就数字安全的热点话题展开讨论。\n- **成果发布**：发布最新的研究成果、技术产品和解决方案，展示数字安全领域的最新进展。\n\n如果您对具体议题感兴趣或想了解更多详情，欢迎提问！"}],"id":"6281d1d7-6b97-45e5-a296-b48a2339d042"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.5781107.17440850750027029"}
+2025-04-08 12:04:51 [http-nio-8081-exec-4] DEBUG c.h.service.impl.QaServiceImpl - AI服务原始响应: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":246,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2869},"session":{"messages":[{"role":"user","content":"会议内容"},{"role":"assistant","content":"2025西湖论剑·数字安全大会，即将在中国数谷核心区举办，主题为\"AI向治·安全向智\"。今年的大会聚焦人工智能与数据安全，旨在探索数字安全赋能数字政府、数字经济、数字社会的有效途径，为全球数智化转型提供\"中国式治理\"新范式。会议将涵盖政策解读、技术分享、场景应用等多方面内容，汇聚政产学研各界力量，共同研讨数字时代下的安全之道。\n\n会议的主要内容包括但不限于：\n- **政策解读**：解读最新发布的数字安全相关政策，分享政府在推动数字安全方面的最新举措。\n- **技术交流**：介绍最新的数字安全技术进展，包括但不限于AI安全、数据加密、隐私保护等领域的技术突破。\n- **场景应用**：展示数字安全技术在不同场景下的应用案例，比如智慧城市、金融科技、智能制造等行业中的实践。\n- **圆桌论坛**：邀请来自不同领域的专家和企业代表，就数字安全的热点话题展开讨论。\n- **成果发布**：发布最新的研究成果、技术产品和解决方案，展示数字安全领域的最新进展。\n\n如果您对具体议题感兴趣或想了解更多详情，欢迎提问！"}],"id":"6281d1d7-6b97-45e5-a296-b48a2339d042"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.5781107.17440850750027029"}
+2025-04-08 12:04:51 [http-nio-8081-exec-4] DEBUG c.h.service.impl.QaServiceImpl - 开始解析AI回复内容
+2025-04-08 12:04:51 [http-nio-8081-exec-4] DEBUG c.h.service.impl.QaServiceImpl - 成功解析AI回答: "2025西湖论剑·数字安全大会，即将在中国数谷核心区举办，主题为\
+2025-04-08 12:04:51 [http-nio-8081-exec-4] INFO  c.h.service.impl.QaServiceImpl - AI服务回答: "2025西湖论剑·数字安全大会，即将在中国数谷核心区举办，主题为\
+2025-04-08 12:04:51 [http-nio-8081-exec-4] DEBUG c.h.service.impl.QaServiceImpl - 答案生成成功: "2025西湖论剑·数字安全大会，即将在中国数谷核心区举办，主题为\
+2025-04-08 12:04:51 [http-nio-8081-exec-4] INFO  c.h.controller.QaController - 返回AI回答, 长度: 34
+2025-04-08 12:05:12 [http-nio-8081-exec-5] INFO  c.h.controller.QaController - 收到问题: 会议内容
+2025-04-08 12:05:12 [http-nio-8081-exec-5] DEBUG c.h.service.impl.QaServiceImpl - 处理问题: 会议内容, 会议ID: default
+2025-04-08 12:05:12 [http-nio-8081-exec-5] DEBUG c.h.service.impl.QaServiceImpl - 请求时间戳: 1744085112412
+2025-04-08 12:05:12 [http-nio-8081-exec-5] DEBUG c.h.service.impl.QaServiceImpl - API请求地址: https://www.das-ai.com/open/api/v2/agent/execute
+2025-04-08 12:05:12 [http-nio-8081-exec-5] INFO  c.h.service.impl.QaServiceImpl - 开始调用AI服务，尝试次数: 1
+2025-04-08 12:05:28 [http-nio-8081-exec-5] DEBUG c.h.service.impl.QaServiceImpl - 响应内容: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":244,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2867},"session":{"messages":[{"role":"user","content":"会议内容"},{"role":"assistant","content":"2025西湖论剑·数字安全大会的主题为\"AI向治·安全向智\"，会议将聚焦人工智能和数据要素的发展与安全，探讨政策、技术、应用场景三大方向，旨在为全球数智化转型提供\"中国式治理\"新范式。大会将涵盖以下几个方面：\n\n- **主题演讲**：邀请国内外知名学者、行业领袖、政府官员就数字安全的新趋势、新技术、新政策进行深入探讨与分享。\n- **专题讨论**：围绕数字政府、数字经济、数字社会等领域的具体问题，设立不同的专题讨论，促进多方位交流。\n- **技术展示**：设立专门的技术展区，展示最新的数字安全技术成果与应用实例。\n- **成果发布**：发布最新的研究成果、技术产品，以及未来发展规划等。\n- **合作洽谈**：为参会者搭建合作平台，促进项目对接、技术转让及市场拓展。\n\n大会旨在通过多种形式的交流活动，推动数字安全领域的创新发展，为参会者提供一个了解数字安全前沿动态、深化技术合作的平台。如果您对具体的议程安排、演讲嘉宾等信息感兴趣，可以告诉我，我会为您查询更多详细信息。"}],"id":"2487e748-6cd8-464f-95c0-d46e76a902aa"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.5781110.17440851127598715"}
+2025-04-08 12:05:28 [http-nio-8081-exec-5] DEBUG c.h.service.impl.QaServiceImpl - AI服务原始响应: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":244,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2867},"session":{"messages":[{"role":"user","content":"会议内容"},{"role":"assistant","content":"2025西湖论剑·数字安全大会的主题为\"AI向治·安全向智\"，会议将聚焦人工智能和数据要素的发展与安全，探讨政策、技术、应用场景三大方向，旨在为全球数智化转型提供\"中国式治理\"新范式。大会将涵盖以下几个方面：\n\n- **主题演讲**：邀请国内外知名学者、行业领袖、政府官员就数字安全的新趋势、新技术、新政策进行深入探讨与分享。\n- **专题讨论**：围绕数字政府、数字经济、数字社会等领域的具体问题，设立不同的专题讨论，促进多方位交流。\n- **技术展示**：设立专门的技术展区，展示最新的数字安全技术成果与应用实例。\n- **成果发布**：发布最新的研究成果、技术产品，以及未来发展规划等。\n- **合作洽谈**：为参会者搭建合作平台，促进项目对接、技术转让及市场拓展。\n\n大会旨在通过多种形式的交流活动，推动数字安全领域的创新发展，为参会者提供一个了解数字安全前沿动态、深化技术合作的平台。如果您对具体的议程安排、演讲嘉宾等信息感兴趣，可以告诉我，我会为您查询更多详细信息。"}],"id":"2487e748-6cd8-464f-95c0-d46e76a902aa"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.5781110.17440851127598715"}
+2025-04-08 12:05:28 [http-nio-8081-exec-5] DEBUG c.h.service.impl.QaServiceImpl - 开始解析AI回复内容
+2025-04-08 12:05:28 [http-nio-8081-exec-5] DEBUG c.h.service.impl.QaServiceImpl - 成功解析AI回答: "2025西湖论剑·数字安全大会的主题为\
+2025-04-08 12:05:28 [http-nio-8081-exec-5] INFO  c.h.service.impl.QaServiceImpl - AI服务回答: "2025西湖论剑·数字安全大会的主题为\
+2025-04-08 12:05:28 [http-nio-8081-exec-5] DEBUG c.h.service.impl.QaServiceImpl - 答案生成成功: "2025西湖论剑·数字安全大会的主题为\
+2025-04-08 12:05:28 [http-nio-8081-exec-5] INFO  c.h.controller.QaController - 返回AI回答, 长度: 21
+2025-04-08 12:09:58 [http-nio-8081-exec-6] INFO  c.h.controller.QaController - 收到问题: 你是谁
+2025-04-08 12:09:58 [http-nio-8081-exec-6] DEBUG c.h.service.impl.QaServiceImpl - 处理问题: 你是谁, 会议ID: default
+2025-04-08 12:09:58 [http-nio-8081-exec-6] DEBUG c.h.service.impl.QaServiceImpl - 请求时间戳: 1744085398165
+2025-04-08 12:09:58 [http-nio-8081-exec-6] DEBUG c.h.service.impl.QaServiceImpl - API请求地址: https://www.das-ai.com/open/api/v2/agent/execute
+2025-04-08 12:09:58 [http-nio-8081-exec-6] INFO  c.h.service.impl.QaServiceImpl - 开始调用AI服务，尝试次数: 1
+2025-04-08 12:10:02 [http-nio-8081-exec-6] DEBUG c.h.service.impl.QaServiceImpl - 响应内容: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":50,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2673},"session":{"messages":[{"role":"user","content":"你是谁"},{"role":"assistant","content":"我是2025西湖论剑大会的线上智能参会助手，依托安恒信息恒脑大模型强大的人工智能技术，能够为参会者提供大会相关的全面服务。有任何与大会相关的问题，欢迎随时向我提问！"}],"id":"735d8a4b-8409-4678-be5f-2ba583fd668e"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.134712.17440853986852967"}
+2025-04-08 12:10:02 [http-nio-8081-exec-6] DEBUG c.h.service.impl.QaServiceImpl - AI服务原始响应: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":50,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2673},"session":{"messages":[{"role":"user","content":"你是谁"},{"role":"assistant","content":"我是2025西湖论剑大会的线上智能参会助手，依托安恒信息恒脑大模型强大的人工智能技术，能够为参会者提供大会相关的全面服务。有任何与大会相关的问题，欢迎随时向我提问！"}],"id":"735d8a4b-8409-4678-be5f-2ba583fd668e"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.134712.17440853986852967"}
+2025-04-08 12:10:02 [http-nio-8081-exec-6] DEBUG c.h.service.impl.QaServiceImpl - 开始解析AI回复内容
+2025-04-08 12:10:02 [http-nio-8081-exec-6] DEBUG c.h.service.impl.QaServiceImpl - 成功解析AI回答: "我是2025西湖论剑大会的线上智能参会助手，依托安恒信息恒脑大模型强大的人工智能技术，能够为参会者提供大会相关的全面服务。有任何与大会相关的问题，欢迎随时向我提问！
+2025-04-08 12:10:02 [http-nio-8081-exec-6] INFO  c.h.service.impl.QaServiceImpl - AI服务回答: "我是2025西湖论剑大会的线上智能参会助手，依托安恒信息恒脑大模型强大的人工智能技术，能够为参会者提供大会相关的全面服务。有任何与大会相关的问题，欢迎随时向我提问！
+2025-04-08 12:10:02 [http-nio-8081-exec-6] DEBUG c.h.service.impl.QaServiceImpl - 答案生成成功: "我是2025西湖论剑大会的线上智能参会助手，依托安恒信息恒脑大模型强大的人工智能技术，能够为参会者提供大会相关的全面服务。有任何与大会相关的问题，欢迎随时向我提问！
+2025-04-08 12:10:02 [http-nio-8081-exec-6] INFO  c.h.controller.QaController - 返回AI回答, 长度: 83
+2025-04-08 12:10:23 [http-nio-8081-exec-7] INFO  c.h.controller.QaController - 收到问题: 大会内容
+2025-04-08 12:10:23 [http-nio-8081-exec-7] DEBUG c.h.service.impl.QaServiceImpl - 处理问题: 大会内容, 会议ID: default
+2025-04-08 12:10:23 [http-nio-8081-exec-7] DEBUG c.h.service.impl.QaServiceImpl - 请求时间戳: 1744085423281
+2025-04-08 12:10:23 [http-nio-8081-exec-7] DEBUG c.h.service.impl.QaServiceImpl - API请求地址: https://www.das-ai.com/open/api/v2/agent/execute
+2025-04-08 12:10:23 [http-nio-8081-exec-7] INFO  c.h.service.impl.QaServiceImpl - 开始调用AI服务，尝试次数: 1
+2025-04-08 12:10:45 [http-nio-8081-exec-7] DEBUG c.h.service.impl.QaServiceImpl - 响应内容: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":319,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2942},"session":{"messages":[{"role":"user","content":"大会内容"},{"role":"assistant","content":"2025西湖论剑·数字安全大会的主题是\"AI向治·安全向智\"，将聚焦人工智能和数据要素的发展与安全，旨在探索数字安全赋能数字政府、数字经济、数字社会的有效途径。大会将联袂“中国数谷”，在中国数谷核心区举办年度峰会，汇聚国内外政产学研多方力量，为全球数智化转型提供\"中国式治理\"新范式。\n\n大会内容将涵盖但不限于以下方面：\n\n1. **政策解读**：解读最新发布的数字安全相关政策，讨论政策对产业发展的影响和应对策略。\n2. **技术分享**：展现最新的人工智能、网络安全、数据保护等技术发展和应用案例，探讨技术创新趋势。\n3. **案例分析**：分享成功的数字化转型案例，包括政府、企业和组织机构在数字安全领域的实践经验。\n4. **圆桌论坛**：邀请行业领袖、专家学者和企业代表，围绕热点话题进行深入讨论。\n5. **成果发布**：发布最新的研究成果、技术方案和产品，展示数字安全领域的最新成就。\n6. **展览展示**：设置专题展区，展出数字安全相关的软硬件产品、解决方案和服务。\n7. **互动环节**：设置互动环节，如问题解答、技术交流、行业沙龙等，促进参会者之间的交流与合作。\n\n具体议程安排和活动内容，可以在大会官方网站或小程序中查看，也可以通过我获取最新的日程安排和活动信息。如果您有特定的兴趣点或想了解的内容，可以告诉我，我会为您提供更详细的信息。"}],"id":"448cd446-0ad4-40a8-b204-abf6283ca745"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.22364.17440854236406411"}
+2025-04-08 12:10:45 [http-nio-8081-exec-7] DEBUG c.h.service.impl.QaServiceImpl - AI服务原始响应: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":319,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2942},"session":{"messages":[{"role":"user","content":"大会内容"},{"role":"assistant","content":"2025西湖论剑·数字安全大会的主题是\"AI向治·安全向智\"，将聚焦人工智能和数据要素的发展与安全，旨在探索数字安全赋能数字政府、数字经济、数字社会的有效途径。大会将联袂“中国数谷”，在中国数谷核心区举办年度峰会，汇聚国内外政产学研多方力量，为全球数智化转型提供\"中国式治理\"新范式。\n\n大会内容将涵盖但不限于以下方面：\n\n1. **政策解读**：解读最新发布的数字安全相关政策，讨论政策对产业发展的影响和应对策略。\n2. **技术分享**：展现最新的人工智能、网络安全、数据保护等技术发展和应用案例，探讨技术创新趋势。\n3. **案例分析**：分享成功的数字化转型案例，包括政府、企业和组织机构在数字安全领域的实践经验。\n4. **圆桌论坛**：邀请行业领袖、专家学者和企业代表，围绕热点话题进行深入讨论。\n5. **成果发布**：发布最新的研究成果、技术方案和产品，展示数字安全领域的最新成就。\n6. **展览展示**：设置专题展区，展出数字安全相关的软硬件产品、解决方案和服务。\n7. **互动环节**：设置互动环节，如问题解答、技术交流、行业沙龙等，促进参会者之间的交流与合作。\n\n具体议程安排和活动内容，可以在大会官方网站或小程序中查看，也可以通过我获取最新的日程安排和活动信息。如果您有特定的兴趣点或想了解的内容，可以告诉我，我会为您提供更详细的信息。"}],"id":"448cd446-0ad4-40a8-b204-abf6283ca745"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.22364.17440854236406411"}
+2025-04-08 12:10:45 [http-nio-8081-exec-7] DEBUG c.h.service.impl.QaServiceImpl - 开始解析AI回复内容
+2025-04-08 12:10:45 [http-nio-8081-exec-7] DEBUG c.h.service.impl.QaServiceImpl - 成功解析AI回答: "2025西湖论剑·数字安全大会的主题是\
+2025-04-08 12:10:45 [http-nio-8081-exec-7] INFO  c.h.service.impl.QaServiceImpl - AI服务回答: "2025西湖论剑·数字安全大会的主题是\
+2025-04-08 12:10:45 [http-nio-8081-exec-7] DEBUG c.h.service.impl.QaServiceImpl - 答案生成成功: "2025西湖论剑·数字安全大会的主题是\
+2025-04-08 12:10:45 [http-nio-8081-exec-7] INFO  c.h.controller.QaController - 返回AI回答, 长度: 21
+2025-04-08 13:21:54 [http-nio-8081-exec-10] INFO  c.h.controller.QaController - 收到问题: 大会内容
+2025-04-08 13:21:54 [http-nio-8081-exec-10] DEBUG c.h.service.impl.QaServiceImpl - 处理问题: 大会内容, 会议ID: default
+2025-04-08 13:21:54 [http-nio-8081-exec-10] DEBUG c.h.service.impl.QaServiceImpl - 请求时间戳: 1744089714309
+2025-04-08 13:21:54 [http-nio-8081-exec-10] DEBUG c.h.service.impl.QaServiceImpl - API请求地址: https://www.das-ai.com/open/api/v2/agent/execute
+2025-04-08 13:21:54 [http-nio-8081-exec-10] INFO  c.h.service.impl.QaServiceImpl - 开始调用AI服务，尝试次数: 1
+2025-04-08 13:22:19 [http-nio-8081-exec-10] DEBUG c.h.service.impl.QaServiceImpl - 响应内容: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":268,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2891},"session":{"messages":[{"role":"user","content":"大会内容"},{"role":"assistant","content":"2025西湖论剑·数字安全大会将主题定为\"AI向治·安全向智\"，这次年度峰会将在中国数谷核心区举行，汇聚国内外政产学研多方力量，共同探讨人工智能和数据元素的发展与安全之道。大会将重点关注政策、技术和应用场景三大方向，旨在为全球的数智化转型提供全新的\"中国式治理\"模式。\n\n大会内容将包括但不限于以下几部分：\n\n1. **主旨演讲**：邀请来自全球的政府官员、行业领袖和专家学者发表演讲，分享最新的政策导向、行业趋势和技术动态。\n2. **专题论坛**：围绕数字治理、网络安全、人工智能技术及应用等多方面的话题，设立多个专题论坛，深入探讨行业焦点问题。\n3. **技术展示**：设置专门的技术展区，展示最新的数字安全解决方案、人工智能产品及服务，为参会者提供直观了解行业前沿技术的机会。\n4. **成果发布**：大会期间，还将有多个重要报告和白皮书的发布，分享最新的研究成果和行业洞见。\n5. **互动交流**：组织圆桌会议、研讨会等形式多样的互动环节，促进参会者之间的交流与合作。\n\n您是否需要了解某个具体方面的信息？例如特定的演讲嘉宾、技术展示、或者成果发布的详情？"}],"id":"d47bea71-e87c-4668-99ae-ef7db0c1f3cd"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.2947311.17440897158393311"}
+2025-04-08 13:22:19 [http-nio-8081-exec-10] DEBUG c.h.service.impl.QaServiceImpl - AI服务原始响应: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":268,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2891},"session":{"messages":[{"role":"user","content":"大会内容"},{"role":"assistant","content":"2025西湖论剑·数字安全大会将主题定为\"AI向治·安全向智\"，这次年度峰会将在中国数谷核心区举行，汇聚国内外政产学研多方力量，共同探讨人工智能和数据元素的发展与安全之道。大会将重点关注政策、技术和应用场景三大方向，旨在为全球的数智化转型提供全新的\"中国式治理\"模式。\n\n大会内容将包括但不限于以下几部分：\n\n1. **主旨演讲**：邀请来自全球的政府官员、行业领袖和专家学者发表演讲，分享最新的政策导向、行业趋势和技术动态。\n2. **专题论坛**：围绕数字治理、网络安全、人工智能技术及应用等多方面的话题，设立多个专题论坛，深入探讨行业焦点问题。\n3. **技术展示**：设置专门的技术展区，展示最新的数字安全解决方案、人工智能产品及服务，为参会者提供直观了解行业前沿技术的机会。\n4. **成果发布**：大会期间，还将有多个重要报告和白皮书的发布，分享最新的研究成果和行业洞见。\n5. **互动交流**：组织圆桌会议、研讨会等形式多样的互动环节，促进参会者之间的交流与合作。\n\n您是否需要了解某个具体方面的信息？例如特定的演讲嘉宾、技术展示、或者成果发布的详情？"}],"id":"d47bea71-e87c-4668-99ae-ef7db0c1f3cd"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.2947311.17440897158393311"}
+2025-04-08 13:22:19 [http-nio-8081-exec-10] DEBUG c.h.service.impl.QaServiceImpl - 开始解析AI回复内容
+2025-04-08 13:22:19 [http-nio-8081-exec-10] DEBUG c.h.service.impl.QaServiceImpl - 成功解析AI回答: "2025西湖论剑·数字安全大会将主题定为\
+2025-04-08 13:22:19 [http-nio-8081-exec-10] INFO  c.h.service.impl.QaServiceImpl - AI服务回答: "2025西湖论剑·数字安全大会将主题定为\
+2025-04-08 13:22:19 [http-nio-8081-exec-10] DEBUG c.h.service.impl.QaServiceImpl - 答案生成成功: "2025西湖论剑·数字安全大会将主题定为\
+2025-04-08 13:22:19 [http-nio-8081-exec-10] INFO  c.h.controller.QaController - 返回AI回答, 长度: 22
+2025-04-08 13:35:21 [http-nio-8081-exec-9] INFO  c.h.controller.QaController - 收到问题: 大会内容
+2025-04-08 13:35:21 [http-nio-8081-exec-9] DEBUG c.h.service.impl.QaServiceImpl - 处理问题: 大会内容, 会议ID: default
+2025-04-08 13:35:21 [http-nio-8081-exec-9] DEBUG c.h.service.impl.QaServiceImpl - 请求时间戳: 1744090521818
+2025-04-08 13:35:21 [http-nio-8081-exec-9] DEBUG c.h.service.impl.QaServiceImpl - API请求地址: https://www.das-ai.com/open/api/v2/agent/execute
+2025-04-08 13:35:21 [http-nio-8081-exec-9] INFO  c.h.service.impl.QaServiceImpl - 开始调用AI服务，尝试次数: 1
+2025-04-08 13:35:46 [http-nio-8081-exec-9] DEBUG c.h.service.impl.QaServiceImpl - 响应内容: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":350,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2973},"session":{"messages":[{"role":"user","content":"大会内容"},{"role":"assistant","content":"2025西湖论剑·数字安全大会将聚焦“AI向治·安全向智”这一主题，深入探讨人工智能与数据安全领域的最新发展及应用。大会将邀请来自政府、产业界、学术界及国际组织的嘉宾，共同交流和分享数字时代下安全治理的新思路与新技术。\n\n### 会议主要内容包括：\n\n1. **开幕式与主旨演讲**：大会将邀请重要嘉宾进行开幕致辞，并举办多场主旨演讲，由顶尖专家和行业领袖分享关于数字安全与人工智能治理的洞见。\n2. **专题论坛**：涵盖多个热点话题，如AI伦理与法律、数据安全技术、安全政策解读等，通过圆桌讨论、主题演讲等形式，促进深度交流与合作。\n3. **展览与演示**：展示最新的数字安全解决方案和技术产品，为参会者提供直观的体验机会。\n4. **研究报告发布**：大会期间将发布若干重要的研究报告，总结当前数字安全领域的研究成果，预测未来趋势。\n5. **成果展示**：分享数字安全领域的成功案例，促进技术创新和应用实践的传播。\n6. **人才培养与教育**：探讨数字安全领域的人才培养模式，加强校企合作，推动专业教育和培训的发展。\n\n### 特色亮点：\n\n- **国际视野**：邀请国际嘉宾，共同探讨全球数字安全挑战与对策。\n- **跨界合作**：鼓励跨行业、跨领域合作，探索数字安全的新模式和新路径。\n- **创新体验**：设置互动体验区，让参会者亲身体验前沿科技，增强参与感。\n\n如果您有更具体的问题，或希望了解更多关于某个分论坛的信息，请随时告诉我！"}],"id":"1e06bfd4-0417-48d3-b9c8-502c69ddc878"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.532954.17440905223707627"}
+2025-04-08 13:35:46 [http-nio-8081-exec-9] DEBUG c.h.service.impl.QaServiceImpl - AI服务原始响应: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":350,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2973},"session":{"messages":[{"role":"user","content":"大会内容"},{"role":"assistant","content":"2025西湖论剑·数字安全大会将聚焦“AI向治·安全向智”这一主题，深入探讨人工智能与数据安全领域的最新发展及应用。大会将邀请来自政府、产业界、学术界及国际组织的嘉宾，共同交流和分享数字时代下安全治理的新思路与新技术。\n\n### 会议主要内容包括：\n\n1. **开幕式与主旨演讲**：大会将邀请重要嘉宾进行开幕致辞，并举办多场主旨演讲，由顶尖专家和行业领袖分享关于数字安全与人工智能治理的洞见。\n2. **专题论坛**：涵盖多个热点话题，如AI伦理与法律、数据安全技术、安全政策解读等，通过圆桌讨论、主题演讲等形式，促进深度交流与合作。\n3. **展览与演示**：展示最新的数字安全解决方案和技术产品，为参会者提供直观的体验机会。\n4. **研究报告发布**：大会期间将发布若干重要的研究报告，总结当前数字安全领域的研究成果，预测未来趋势。\n5. **成果展示**：分享数字安全领域的成功案例，促进技术创新和应用实践的传播。\n6. **人才培养与教育**：探讨数字安全领域的人才培养模式，加强校企合作，推动专业教育和培训的发展。\n\n### 特色亮点：\n\n- **国际视野**：邀请国际嘉宾，共同探讨全球数字安全挑战与对策。\n- **跨界合作**：鼓励跨行业、跨领域合作，探索数字安全的新模式和新路径。\n- **创新体验**：设置互动体验区，让参会者亲身体验前沿科技，增强参与感。\n\n如果您有更具体的问题，或希望了解更多关于某个分论坛的信息，请随时告诉我！"}],"id":"1e06bfd4-0417-48d3-b9c8-502c69ddc878"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.532954.17440905223707627"}
+2025-04-08 13:35:46 [http-nio-8081-exec-9] DEBUG c.h.service.impl.QaServiceImpl - 开始解析AI回复内容
+2025-04-08 13:35:46 [http-nio-8081-exec-9] DEBUG c.h.service.impl.QaServiceImpl - 成功解析AI回答: "2025西湖论剑·数字安全大会将聚焦“AI向治·安全向智”这一主题，深入探讨人工智能与数据安全领域的最新发展及应用。大会将邀请来自政府、产业界、学术界及国际组织的嘉宾，共同交流和分享数字时代下安全治理的新思路与新技术。### 会议主要内容包括：1. 开幕式与主旨演讲：大会将邀请重要嘉宾进行开幕致辞，并举办多场主旨演讲，由顶尖专家和行业领袖分享关于数字安全与人工智能治理的洞见。2. 专题论坛：涵盖多个热点话题，如AI伦理与法律、数据安全技术、安全政策解读等，通过圆桌讨论、主题演讲等形式，促进深度交流与合作。3. 展览与演示：展示最新的数字安全解决方案和技术产品，为参会者提供直观的体验机会。4. 研究报告发布：大会期间将发布若干重要的研究报告，总结当前数字安全领域的研究成果，预测未来趋势。5. 成果展示：分享数字安全领域的成功案例，促进技术创新和应用实践的传播。6. 人才培养与教育：探讨数字安全领域的人才培养模式，加强校企合作，推动专业教育和培训的发展。### 特色亮点：- 国际视野：邀请国际嘉宾，共同探讨全球数字安全挑战与对策。- 跨界合作：鼓励跨行业、跨领域合作，探索数字安全的新模式和新路径。- 创新体验：设置互动体验区，让参会者亲身体验前沿科技，增强参与感。如果您有更具体的问题，或希望了解更多关于某个分论坛的信息，请随时告诉我！
+2025-04-08 13:35:46 [http-nio-8081-exec-9] INFO  c.h.service.impl.QaServiceImpl - AI服务回答: "2025西湖论剑·数字安全大会将聚焦“AI向治·安全向智”这一主题，深入探讨人工智能与数据安全领域的最新发展及应用。大会将邀请来自政府、产业界、学术界及国际组织的嘉宾，共同交流和分享数字时代下安全治理的新思路与新技术。### 会议主要内容包括：1. 开幕式与主旨演讲：大会将邀请重要嘉宾进行开幕致辞，并举办多场主旨演讲，由顶尖专家和行业领袖分享关于数字安全与人工智能治理的洞见。2. 专题论坛：涵盖多个热点话题，如AI伦理与法律、数据安全技术、安全政策解读等，通过圆桌讨论、主题演讲等形式，促进深度交流与合作。3. 展览与演示：展示最新的数字安全解决方案和技术产品，为参会者提供直观的体验机会。4. 研究报告发布：大会期间将发布若干重要的研究报告，总结当前数字安全领域的研究成果，预测未来趋势。5. 成果展示：分享数字安全领域的成功案例，促进技术创新和应用实践的传播。6. 人才培养与教育：探讨数字安全领域的人才培养模式，加强校企合作，推动专业教育和培训的发展。### 特色亮点：- 国际视野：邀请国际嘉宾，共同探讨全球数字安全挑战与对策。- 跨界合作：鼓励跨行业、跨领域合作，探索数字安全的新模式和新路径。- 创新体验：设置互动体验区，让参会者亲身体验前沿科技，增强参与感。如果您有更具体的问题，或希望了解更多关于某个分论坛的信息，请随时告诉我！
+2025-04-08 13:35:46 [http-nio-8081-exec-9] DEBUG c.h.service.impl.QaServiceImpl - 答案生成成功: "2025西湖论剑·数字安全大会将聚焦“AI向治·安全向智”这一主题，深入探讨人工智能与数据安全领域的最新发展及应用。大会将邀请来自政府、产业界、学术界及国际组织的嘉宾，共同交流和分享数字时代下安全治理的新思路与新技术。### 会议主要内容包括：1. 开幕式与主旨演讲：大会将邀请重要嘉宾进行开幕致辞，并举办多场主旨演讲，由顶尖专家和行业领袖分享关于数字安全与人工智能治理的洞见。2. 专题论坛：涵盖多个热点话题，如AI伦理与法律、数据安全技术、安全政策解读等，通过圆桌讨论、主题演讲等形式，促进深度交流与合作。3. 展览与演示：展示最新的数字安全解决方案和技术产品，为参会者提供直观的体验机会。4. 研究报告发布：大会期间将发布若干重要的研究报告，总结当前数字安全领域的研究成果，预测未来趋势。5. 成果展示：分享数字安全领域的成功案例，促进技术创新和应用实践的传播。6. 人才培养与教育：探讨数字安全领域的人才培养模式，加强校企合作，推动专业教育和培训的发展。### 特色亮点：- 国际视野：邀请国际嘉宾，共同探讨全球数字安全挑战与对策。- 跨界合作：鼓励跨行业、跨领域合作，探索数字安全的新模式和新路径。- 创新体验：设置互动体验区，让参会者亲身体验前沿科技，增强参与感。如果您有更具体的问题，或希望了解更多关于某个分论坛的信息，请随时告诉我！
+2025-04-08 13:35:46 [http-nio-8081-exec-9] INFO  c.h.controller.QaController - 返回AI回答, 长度: 575
+2025-04-08 14:25:33 [http-nio-8081-exec-3] INFO  c.h.controller.QaController - 收到问题: 你是谁
+2025-04-08 14:25:33 [http-nio-8081-exec-3] DEBUG c.h.service.impl.QaServiceImpl - 处理问题: 你是谁, 会议ID: default
+2025-04-08 14:25:33 [http-nio-8081-exec-3] DEBUG c.h.service.impl.QaServiceImpl - 请求时间戳: 1744093533511
+2025-04-08 14:25:33 [http-nio-8081-exec-3] DEBUG c.h.service.impl.QaServiceImpl - API请求地址: https://www.das-ai.com/open/api/v2/agent/execute
+2025-04-08 14:25:33 [http-nio-8081-exec-3] INFO  c.h.service.impl.QaServiceImpl - 开始调用AI服务，尝试次数: 1
+2025-04-08 14:25:41 [http-nio-8081-exec-3] DEBUG c.h.service.impl.QaServiceImpl - 响应内容: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":95,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2718},"session":{"messages":[{"role":"user","content":"你是谁"},{"role":"assistant","content":"我是2025西湖论剑大会的线上智能参会助手，基于安恒信息恒脑大模型的人工智能技术，为参会者提供全方位的服务，包括但不限于查询日程安排、嘉宾信息、成果发布等大会相关内容，及时更新推送大会的变更信息和重要通知，以及提供个性化的日程推荐和信息推送。希望通过我的服务，能为您的参会体验带来便利。您有什么问题或需要帮助的吗？"}],"id":"959d5891-d1f9-41f7-9404-f4569b82d57f"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.22359.17440935340590217"}
+2025-04-08 14:25:41 [http-nio-8081-exec-3] DEBUG c.h.service.impl.QaServiceImpl - AI服务原始响应: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":95,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2718},"session":{"messages":[{"role":"user","content":"你是谁"},{"role":"assistant","content":"我是2025西湖论剑大会的线上智能参会助手，基于安恒信息恒脑大模型的人工智能技术，为参会者提供全方位的服务，包括但不限于查询日程安排、嘉宾信息、成果发布等大会相关内容，及时更新推送大会的变更信息和重要通知，以及提供个性化的日程推荐和信息推送。希望通过我的服务，能为您的参会体验带来便利。您有什么问题或需要帮助的吗？"}],"id":"959d5891-d1f9-41f7-9404-f4569b82d57f"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.22359.17440935340590217"}
+2025-04-08 14:25:41 [http-nio-8081-exec-3] DEBUG c.h.service.impl.QaServiceImpl - 开始解析AI回复内容
+2025-04-08 14:25:41 [http-nio-8081-exec-3] DEBUG c.h.service.impl.QaServiceImpl - 成功解析AI回答: "我是2025西湖论剑大会的线上智能参会助手，基于安恒信息恒脑大模型的人工智能技术，为参会者提供全方位的服务，包括但不限于查询日程安排、嘉宾信息、成果发布等大会相关内容，及时更新推送大会的变更信息和重要通知，以及提供个性化的日程推荐和信息推送。希望通过我的服务，能为您的参会体验带来便利。您有什么问题或需要帮助的吗？
+2025-04-08 14:25:41 [http-nio-8081-exec-3] INFO  c.h.service.impl.QaServiceImpl - AI服务回答: "我是2025西湖论剑大会的线上智能参会助手，基于安恒信息恒脑大模型的人工智能技术，为参会者提供全方位的服务，包括但不限于查询日程安排、嘉宾信息、成果发布等大会相关内容，及时更新推送大会的变更信息和重要通知，以及提供个性化的日程推荐和信息推送。希望通过我的服务，能为您的参会体验带来便利。您有什么问题或需要帮助的吗？
+2025-04-08 14:25:41 [http-nio-8081-exec-3] DEBUG c.h.service.impl.QaServiceImpl - 答案生成成功: "我是2025西湖论剑大会的线上智能参会助手，基于安恒信息恒脑大模型的人工智能技术，为参会者提供全方位的服务，包括但不限于查询日程安排、嘉宾信息、成果发布等大会相关内容，及时更新推送大会的变更信息和重要通知，以及提供个性化的日程推荐和信息推送。希望通过我的服务，能为您的参会体验带来便利。您有什么问题或需要帮助的吗？
+2025-04-08 14:25:41 [http-nio-8081-exec-3] INFO  c.h.controller.QaController - 返回AI回答, 长度: 158
+2025-04-08 14:32:40 [http-nio-8081-exec-4] INFO  c.h.controller.QaController - 收到问题: 你是谁
+2025-04-08 14:32:40 [http-nio-8081-exec-4] DEBUG c.h.service.impl.QaServiceImpl - 处理问题: 你是谁, 会议ID: default
+2025-04-08 14:32:40 [http-nio-8081-exec-4] DEBUG c.h.service.impl.QaServiceImpl - 请求时间戳: 1744093960223
+2025-04-08 14:32:40 [http-nio-8081-exec-4] DEBUG c.h.service.impl.QaServiceImpl - API请求地址: https://www.das-ai.com/open/api/v2/agent/execute
+2025-04-08 14:32:40 [http-nio-8081-exec-4] INFO  c.h.service.impl.QaServiceImpl - 开始调用AI服务，尝试次数: 1
+2025-04-08 14:32:46 [http-nio-8081-exec-4] DEBUG c.h.service.impl.QaServiceImpl - 响应内容: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":75,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2698},"session":{"messages":[{"role":"user","content":"你是谁"},{"role":"assistant","content":"我是2025西湖论剑大会的线上智能参会助手，依托于安恒信息恒脑大模型强大的人工智能技术，为参会者提供大会相关的全方位服务。无论您是想查询日程安排、了解嘉宾信息、获取最新的大会动态，还是需要个性化的日程推荐和信息推送，我都可以帮助您。欢迎提问！"}],"id":"b404abc5-50e4-47ce-9cbe-48bb1490440a"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.1749.17440939610315219"}
+2025-04-08 14:32:46 [http-nio-8081-exec-4] DEBUG c.h.service.impl.QaServiceImpl - AI服务原始响应: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":75,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2698},"session":{"messages":[{"role":"user","content":"你是谁"},{"role":"assistant","content":"我是2025西湖论剑大会的线上智能参会助手，依托于安恒信息恒脑大模型强大的人工智能技术，为参会者提供大会相关的全方位服务。无论您是想查询日程安排、了解嘉宾信息、获取最新的大会动态，还是需要个性化的日程推荐和信息推送，我都可以帮助您。欢迎提问！"}],"id":"b404abc5-50e4-47ce-9cbe-48bb1490440a"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.1749.17440939610315219"}
+2025-04-08 14:32:46 [http-nio-8081-exec-4] DEBUG c.h.service.impl.QaServiceImpl - 开始解析AI回复内容
+2025-04-08 14:32:46 [http-nio-8081-exec-4] DEBUG c.h.service.impl.QaServiceImpl - 成功解析AI回答: "我是2025西湖论剑大会的线上智能参会助手，依托于安恒信息恒脑大模型强大的人工智能技术，为参会者提供大会相关的全方位服务。无论您是想查询日程安排、了解嘉宾信息、获取最新的大会动态，还是需要个性化的日程推荐和信息推送，我都可以帮助您。欢迎提问！
+2025-04-08 14:32:46 [http-nio-8081-exec-4] INFO  c.h.service.impl.QaServiceImpl - AI服务回答: "我是2025西湖论剑大会的线上智能参会助手，依托于安恒信息恒脑大模型强大的人工智能技术，为参会者提供大会相关的全方位服务。无论您是想查询日程安排、了解嘉宾信息、获取最新的大会动态，还是需要个性化的日程推荐和信息推送，我都可以帮助您。欢迎提问！
+2025-04-08 14:32:46 [http-nio-8081-exec-4] DEBUG c.h.service.impl.QaServiceImpl - 答案生成成功: "我是2025西湖论剑大会的线上智能参会助手，依托于安恒信息恒脑大模型强大的人工智能技术，为参会者提供大会相关的全方位服务。无论您是想查询日程安排、了解嘉宾信息、获取最新的大会动态，还是需要个性化的日程推荐和信息推送，我都可以帮助您。欢迎提问！
+2025-04-08 14:32:46 [http-nio-8081-exec-4] INFO  c.h.controller.QaController - 返回AI回答, 长度: 122
+2025-04-08 14:33:00 [http-nio-8081-exec-5] INFO  c.h.controller.QaController - 收到问题: 大会内容
+2025-04-08 14:33:00 [http-nio-8081-exec-5] DEBUG c.h.service.impl.QaServiceImpl - 处理问题: 大会内容, 会议ID: default
+2025-04-08 14:33:00 [http-nio-8081-exec-5] DEBUG c.h.service.impl.QaServiceImpl - 请求时间戳: 1744093980218
+2025-04-08 14:33:00 [http-nio-8081-exec-5] DEBUG c.h.service.impl.QaServiceImpl - API请求地址: https://www.das-ai.com/open/api/v2/agent/execute
+2025-04-08 14:33:00 [http-nio-8081-exec-5] INFO  c.h.service.impl.QaServiceImpl - 开始调用AI服务，尝试次数: 1
+2025-04-08 14:33:06 [http-nio-8081-exec-5] DEBUG c.h.service.impl.QaServiceImpl - 响应内容: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":79,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2702},"session":{"messages":[{"role":"user","content":"大会内容"},{"role":"assistant","content":"您是指2025年西湖论剑·数字安全大会的内容吗？可以告诉我您具体想了解哪个方面的信息？比如日程安排、嘉宾介绍、讨论主题、成果发布等，这样我可以为您提供更详细的资料。如果您是想了解往届大会的情况，也请告诉我具体是哪一届的，我将根据您的需求做好信息的提供。"}],"id":"477ebbbc-886e-455d-957d-e452d106fa73"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.2947330.17440939806114953"}
+2025-04-08 14:33:06 [http-nio-8081-exec-5] DEBUG c.h.service.impl.QaServiceImpl - AI服务原始响应: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":79,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2702},"session":{"messages":[{"role":"user","content":"大会内容"},{"role":"assistant","content":"您是指2025年西湖论剑·数字安全大会的内容吗？可以告诉我您具体想了解哪个方面的信息？比如日程安排、嘉宾介绍、讨论主题、成果发布等，这样我可以为您提供更详细的资料。如果您是想了解往届大会的情况，也请告诉我具体是哪一届的，我将根据您的需求做好信息的提供。"}],"id":"477ebbbc-886e-455d-957d-e452d106fa73"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.2947330.17440939806114953"}
+2025-04-08 14:33:06 [http-nio-8081-exec-5] DEBUG c.h.service.impl.QaServiceImpl - 开始解析AI回复内容
+2025-04-08 14:33:06 [http-nio-8081-exec-5] DEBUG c.h.service.impl.QaServiceImpl - 成功解析AI回答: "您是指2025年西湖论剑·数字安全大会的内容吗？可以告诉我您具体想了解哪个方面的信息？比如日程安排、嘉宾介绍、讨论主题、成果发布等，这样我可以为您提供更详细的资料。如果您是想了解往届大会的情况，也请告诉我具体是哪一届的，我将根据您的需求做好信息的提供。
+2025-04-08 14:33:06 [http-nio-8081-exec-5] INFO  c.h.service.impl.QaServiceImpl - AI服务回答: "您是指2025年西湖论剑·数字安全大会的内容吗？可以告诉我您具体想了解哪个方面的信息？比如日程安排、嘉宾介绍、讨论主题、成果发布等，这样我可以为您提供更详细的资料。如果您是想了解往届大会的情况，也请告诉我具体是哪一届的，我将根据您的需求做好信息的提供。
+2025-04-08 14:33:06 [http-nio-8081-exec-5] DEBUG c.h.service.impl.QaServiceImpl - 答案生成成功: "您是指2025年西湖论剑·数字安全大会的内容吗？可以告诉我您具体想了解哪个方面的信息？比如日程安排、嘉宾介绍、讨论主题、成果发布等，这样我可以为您提供更详细的资料。如果您是想了解往届大会的情况，也请告诉我具体是哪一届的，我将根据您的需求做好信息的提供。
+2025-04-08 14:33:06 [http-nio-8081-exec-5] INFO  c.h.controller.QaController - 返回AI回答, 长度: 127
+2025-04-08 14:34:09 [http-nio-8081-exec-7] INFO  c.h.controller.QaController - 收到问题: 5月5日的会议日程
+2025-04-08 14:34:09 [http-nio-8081-exec-7] DEBUG c.h.service.impl.QaServiceImpl - 处理问题: 5月5日的会议日程, 会议ID: default
+2025-04-08 14:34:09 [http-nio-8081-exec-7] DEBUG c.h.service.impl.QaServiceImpl - 请求时间戳: 1744094049654
+2025-04-08 14:34:09 [http-nio-8081-exec-7] DEBUG c.h.service.impl.QaServiceImpl - API请求地址: https://www.das-ai.com/open/api/v2/agent/execute
+2025-04-08 14:34:09 [http-nio-8081-exec-7] INFO  c.h.service.impl.QaServiceImpl - 开始调用AI服务，尝试次数: 1
+2025-04-08 14:34:37 [http-nio-8081-exec-7] DEBUG c.h.service.impl.QaServiceImpl - 响应内容: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":189,"prompt_tokens":7672,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":7861},"session":{"messages":[{"role":"user","content":"5月5日的会议日程"},{"role":"assistant","content":"5月5日的会议日程安排是西湖论剑·网络安全科普活动—格致论道专场，该活动将于当晚举行。关于具体的时间、地点和活动详情，请参考下面的图片信息。![](3.png?9a661861-9ff5-4baa-bab2-e58857316077) 如果您有其他问题，欢迎继续提问。"}],"id":"4a4e932b-20cc-4ea8-b884-ee563c7495ec"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.5781108.17440940502953733"}
+2025-04-08 14:34:37 [http-nio-8081-exec-7] DEBUG c.h.service.impl.QaServiceImpl - AI服务原始响应: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":189,"prompt_tokens":7672,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":7861},"session":{"messages":[{"role":"user","content":"5月5日的会议日程"},{"role":"assistant","content":"5月5日的会议日程安排是西湖论剑·网络安全科普活动—格致论道专场，该活动将于当晚举行。关于具体的时间、地点和活动详情，请参考下面的图片信息。![](3.png?9a661861-9ff5-4baa-bab2-e58857316077) 如果您有其他问题，欢迎继续提问。"}],"id":"4a4e932b-20cc-4ea8-b884-ee563c7495ec"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.5781108.17440940502953733"}
+2025-04-08 14:34:37 [http-nio-8081-exec-7] DEBUG c.h.service.impl.QaServiceImpl - 开始解析AI回复内容
+2025-04-08 14:34:37 [http-nio-8081-exec-7] DEBUG c.h.service.impl.QaServiceImpl - 成功解析AI回答: "5月5日的会议日程安排是西湖论剑·网络安全科普活动—格致论道专场，该活动将于当晚举行。关于具体的时间、地点和活动详情，请参考下面的图片信息。![](3.png?9a661861-9ff5-4baa-bab2-e58857316077) 如果您有其他问题，欢迎继续提问。
+2025-04-08 14:34:37 [http-nio-8081-exec-7] INFO  c.h.service.impl.QaServiceImpl - AI服务回答: "5月5日的会议日程安排是西湖论剑·网络安全科普活动—格致论道专场，该活动将于当晚举行。关于具体的时间、地点和活动详情，请参考下面的图片信息。![](3.png?9a661861-9ff5-4baa-bab2-e58857316077) 如果您有其他问题，欢迎继续提问。
+2025-04-08 14:34:37 [http-nio-8081-exec-7] DEBUG c.h.service.impl.QaServiceImpl - 答案生成成功: "5月5日的会议日程安排是西湖论剑·网络安全科普活动—格致论道专场，该活动将于当晚举行。关于具体的时间、地点和活动详情，请参考下面的图片信息。![](3.png?9a661861-9ff5-4baa-bab2-e58857316077) 如果您有其他问题，欢迎继续提问。
+2025-04-08 14:34:37 [http-nio-8081-exec-7] INFO  c.h.controller.QaController - 返回AI回答, 长度: 135
+2025-04-08 14:38:15 [http-nio-8081-exec-10] INFO  c.h.controller.QaController - 收到问题: 嘉宾介绍
+2025-04-08 14:38:15 [http-nio-8081-exec-10] DEBUG c.h.service.impl.QaServiceImpl - 处理问题: 嘉宾介绍, 会议ID: default
+2025-04-08 14:38:15 [http-nio-8081-exec-10] DEBUG c.h.service.impl.QaServiceImpl - 请求时间戳: 1744094295804
+2025-04-08 14:38:15 [http-nio-8081-exec-10] DEBUG c.h.service.impl.QaServiceImpl - API请求地址: https://www.das-ai.com/open/api/v2/agent/execute
+2025-04-08 14:38:15 [http-nio-8081-exec-10] INFO  c.h.service.impl.QaServiceImpl - 开始调用AI服务，尝试次数: 1
+2025-04-08 14:38:46 [http-nio-8081-exec-10] ERROR c.h.service.impl.QaServiceImpl - AI服务调用异常 (尝试 1/1): Read timed out
+2025-04-08 14:38:46 [http-nio-8081-exec-10] ERROR c.h.service.impl.QaServiceImpl - AI服务调用失败，已重试 1 次
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.InputRecord.readFully(InputRecord.java:465)
+	at sun.security.ssl.InputRecord.read(InputRecord.java:503)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:975)
+	at sun.security.ssl.SSLSocketImpl.readDataRecord(SSLSocketImpl.java:933)
+	at sun.security.ssl.AppInputStream.read(AppInputStream.java:105)
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:246)
+	at java.io.BufferedInputStream.read1(BufferedInputStream.java:286)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:345)
+	at sun.net.www.http.HttpClient.parseHTTPHeader(HttpClient.java:735)
+	at sun.net.www.http.HttpClient.parseHTTP(HttpClient.java:678)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1587)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1492)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:347)
+	at com.helperserver.service.impl.QaServiceImpl.callAgent(QaServiceImpl.java:210)
+	at com.helperserver.service.impl.QaServiceImpl.getAnswer(QaServiceImpl.java:71)
+	at com.helperserver.controller.QaController.ask(QaController.java:30)
+	at sun.reflect.GeneratedMethodAccessor8.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:928)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1794)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2025-04-08 14:38:46 [http-nio-8081-exec-10] DEBUG c.h.service.impl.QaServiceImpl - AI服务原始响应: {"error":"AI服务连接失败，已重试 1 次: Read timed out"}
+2025-04-08 14:38:46 [http-nio-8081-exec-10] DEBUG c.h.service.impl.QaServiceImpl - 开始解析AI回复内容
+2025-04-08 14:38:46 [http-nio-8081-exec-10] ERROR c.h.service.impl.QaServiceImpl - API返回错误信息: {"error":"AI服务连接失败，已重试 1 次: Read timed out"}
+2025-04-08 14:38:46 [http-nio-8081-exec-10] INFO  c.h.service.impl.QaServiceImpl - AI服务回答: API调用错误: {"error":"AI服务连接失败，已重试 1 次: Read timed out"}
+2025-04-08 14:38:46 [http-nio-8081-exec-10] DEBUG c.h.service.impl.QaServiceImpl - 答案生成成功: API调用错误: {"error":"AI服务连接失败，已重试 1 次: Read timed out"}
+2025-04-08 14:38:46 [http-nio-8081-exec-10] INFO  c.h.controller.QaController - 返回AI回答, 长度: 53
+2025-04-08 14:38:46 [http-nio-8081-exec-10] WARN  c.h.controller.QaController - AI回答异常，原始回答: API调用错误: {"error":"AI服务连接失败，已重试 1 次: Read timed out"}
+2025-04-08 14:39:46 [http-nio-8081-exec-9] INFO  c.h.controller.QaController - 收到问题: 你是谁
+2025-04-08 14:39:46 [http-nio-8081-exec-9] DEBUG c.h.service.impl.QaServiceImpl - 处理问题: 你是谁, 会议ID: default
+2025-04-08 14:39:46 [http-nio-8081-exec-9] DEBUG c.h.service.impl.QaServiceImpl - 请求时间戳: 1744094386873
+2025-04-08 14:39:46 [http-nio-8081-exec-9] DEBUG c.h.service.impl.QaServiceImpl - API请求地址: https://www.das-ai.com/open/api/v2/agent/execute
+2025-04-08 14:39:46 [http-nio-8081-exec-9] INFO  c.h.service.impl.QaServiceImpl - 开始调用AI服务，尝试次数: 1
+2025-04-08 14:39:57 [http-nio-8081-exec-9] DEBUG c.h.service.impl.QaServiceImpl - 响应内容: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":120,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2743},"session":{"messages":[{"role":"user","content":"你是谁"},{"role":"assistant","content":"我是2025西湖论剑大会的线上智能参会助手，由安恒信息恒脑大模型提供支持。我能够为参会者提供全方位的服务，包括查询大会日程、嘉宾信息、成果发布等内容，获取大会最新动态，解答参会者的各类问题，并根据参会者的身份和兴趣提供个性化的日程推荐和信息推送。同时，我还能实时更新推送大会变更信息和重要通知等，为参会者提供便利，提升大会网站及小程序的使用体验。如果您有任何关于大会的问题或需要帮助，随时可以问我哦！"}],"id":"29bdb847-7870-4c5b-9750-5f7901c519a3"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.532946.17440943873309053"}
+2025-04-08 14:39:57 [http-nio-8081-exec-9] DEBUG c.h.service.impl.QaServiceImpl - AI服务原始响应: {"msg":"恭喜您，操作成功","code":0,"flag":0,"data":{"token_usage":{"completion_tokens":120,"prompt_tokens":2623,"completion_tokens_details":{"reasoning_tokens":0},"total_tokens":2743},"session":{"messages":[{"role":"user","content":"你是谁"},{"role":"assistant","content":"我是2025西湖论剑大会的线上智能参会助手，由安恒信息恒脑大模型提供支持。我能够为参会者提供全方位的服务，包括查询大会日程、嘉宾信息、成果发布等内容，获取大会最新动态，解答参会者的各类问题，并根据参会者的身份和兴趣提供个性化的日程推荐和信息推送。同时，我还能实时更新推送大会变更信息和重要通知等，为参会者提供便利，提升大会网站及小程序的使用体验。如果您有任何关于大会的问题或需要帮助，随时可以问我哦！"}],"id":"29bdb847-7870-4c5b-9750-5f7901c519a3"},"results":{}},"tid":"e089a08c57a34776aa82c214411478e5.532946.17440943873309053"}
+2025-04-08 14:39:57 [http-nio-8081-exec-9] DEBUG c.h.service.impl.QaServiceImpl - 开始解析AI回复内容
+2025-04-08 14:39:57 [http-nio-8081-exec-9] DEBUG c.h.service.impl.QaServiceImpl - 成功解析AI回答: "我是2025西湖论剑大会的线上智能参会助手，由安恒信息恒脑大模型提供支持。我能够为参会者提供全方位的服务，包括查询大会日程、嘉宾信息、成果发布等内容，获取大会最新动态，解答参会者的各类问题，并根据参会者的身份和兴趣提供个性化的日程推荐和信息推送。同时，我还能实时更新推送大会变更信息和重要通知等，为参会者提供便利，提升大会网站及小程序的使用体验。如果您有任何关于大会的问题或需要帮助，随时可以问我哦！
+2025-04-08 14:39:57 [http-nio-8081-exec-9] INFO  c.h.service.impl.QaServiceImpl - AI服务回答: "我是2025西湖论剑大会的线上智能参会助手，由安恒信息恒脑大模型提供支持。我能够为参会者提供全方位的服务，包括查询大会日程、嘉宾信息、成果发布等内容，获取大会最新动态，解答参会者的各类问题，并根据参会者的身份和兴趣提供个性化的日程推荐和信息推送。同时，我还能实时更新推送大会变更信息和重要通知等，为参会者提供便利，提升大会网站及小程序的使用体验。如果您有任何关于大会的问题或需要帮助，随时可以问我哦！
+2025-04-08 14:39:57 [http-nio-8081-exec-9] DEBUG c.h.service.impl.QaServiceImpl - 答案生成成功: "我是2025西湖论剑大会的线上智能参会助手，由安恒信息恒脑大模型提供支持。我能够为参会者提供全方位的服务，包括查询大会日程、嘉宾信息、成果发布等内容，获取大会最新动态，解答参会者的各类问题，并根据参会者的身份和兴趣提供个性化的日程推荐和信息推送。同时，我还能实时更新推送大会变更信息和重要通知等，为参会者提供便利，提升大会网站及小程序的使用体验。如果您有任何关于大会的问题或需要帮助，随时可以问我哦！
+2025-04-08 14:39:57 [http-nio-8081-exec-9] INFO  c.h.controller.QaController - 返回AI回答, 长度: 201
+2025-04-08 14:40:59 [http-nio-8081-exec-2] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/ai_helper?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai, version : 1.2.8, lastPacketReceivedIdleMillis : 11420089
+2025-04-08 14:40:59 [http-nio-8081-exec-2] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/ai_helper?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai, version : 1.2.8, lastPacketReceivedIdleMillis : 11420170
+2025-04-08 14:40:59 [http-nio-8081-exec-2] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/ai_helper?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai, version : 1.2.8, lastPacketReceivedIdleMillis : 11420190
+2025-04-08 14:40:59 [http-nio-8081-exec-2] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/ai_helper?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai, version : 1.2.8, lastPacketReceivedIdleMillis : 11420196
+2025-04-08 14:40:59 [http-nio-8081-exec-2] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/ai_helper?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai, version : 1.2.8, lastPacketReceivedIdleMillis : 11420216
+2025-04-08 14:40:59 [http-nio-8081-exec-2] DEBUG c.h.mapper.UserMapper.selectByEmail - ==>  Preparing: SELECT * FROM user WHERE email = ?
+2025-04-08 14:40:59 [http-nio-8081-exec-2] DEBUG c.h.mapper.UserMapper.selectByEmail - ==> Parameters: 1965492320@qq.com(String)
+2025-04-08 14:40:59 [http-nio-8081-exec-2] DEBUG c.h.mapper.UserMapper.selectByEmail - <==      Total: 1
+2025-04-08 18:15:40 [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-04-08 18:15:40 [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed

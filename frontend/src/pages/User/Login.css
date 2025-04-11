@@ -1,0 +1,114 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f0f2f5;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 400px;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.login-header h1 {
+  color: #1890ff;
+  font-size: 28px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.login-header p {
+  color: #8c8c8c;
+  font-size: 16px;
+  margin: 0;
+}
+
+.login-input {
+  height: 50px;
+  border-radius: 8px;
+  border: 1px solid #e8e8e8;
+  transition: all 0.3s ease;
+}
+
+.login-input:hover,
+.login-input:focus {
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.1);
+}
+
+.login-button {
+  height: 50px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  background: #1890ff;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.login-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(24, 144, 255, 0.3);
+}
+
+.register-link {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.register-button {
+  color: #1890ff;
+  font-size: 16px;
+  padding: 0;
+  height: auto;
+}
+
+.register-button:hover {
+  color: #096dd9;
+  text-decoration: underline;
+}
+
+.site-form-item-icon {
+  color: #8c8c8c;
+}
+
+/* 添加响应式设计 */
+@media (max-width: 576px) {
+  .login-box {
+    margin: 20px;
+    padding: 30px;
+  }
+
+  .login-header h1 {
+    font-size: 24px;
+  }
+
+  .login-header p {
+    font-size: 14px;
+  }
+}
+
+/* 添加输入框动画效果 */
+.login-input {
+  transition: all 0.3s ease;
+}
+
+.login-input:focus {
+  transform: translateY(-1px);
+}
+
+/* 添加加载动画 */
+.ant-btn-loading {
+  opacity: 0.8;
+} 
