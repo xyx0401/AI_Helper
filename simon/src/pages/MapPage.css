@@ -1,0 +1,103 @@
+/* 整体布局 */
+.map-container {
+  min-height: 100vh;
+  background: #fff;
+}
+
+/* 头部样式 */
+.map-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  background: #001529;
+  height: 64px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo-icon {
+  font-size: 24px;
+  color: #fff;
+}
+
+.conference-title {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.nav-menu {
+  flex: 1;
+  max-width: 600px;
+  margin-left: 40px;
+  background: transparent;
+  border-bottom: none;
+}
+
+.user-avatar {
+  margin-left: auto;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* 内容区域 */
+.map-content {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+}
+
+.map-wrapper {
+  margin-top: 16px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.map-wrapper:hover {
+  transform: translateY(-2px);
+}
+
+.map-image {
+  width: 100%;
+  display: block;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.map-content img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.map-content.threeD {
+  transform: perspective(1000px) rotateX(10deg);
+}
+
+.map-content.threeD:hover img {
+  transform: translateZ(20px);
+}
+
+.map-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(255,255,255,0.9);
+  padding: 1.5rem;
+  border-radius: 8px;
+  max-width: 300px;
+} 
