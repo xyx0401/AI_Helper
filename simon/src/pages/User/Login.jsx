@@ -56,7 +56,7 @@ const Login = () => {
           >
             <Input 
               prefix={<UserOutlined className="site-form-item-icon" />} 
-              placeholder="用户名/邮箱/手机号" 
+              placeholder="邮箱/手机号" 
               className="login-input"
             />
           </Form.Item>

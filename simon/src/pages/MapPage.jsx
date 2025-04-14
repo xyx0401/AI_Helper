@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Layout, Menu, Card, Avatar } from 'antd';
+import { Layout, Menu, Card, Avatar, Dropdown } from 'antd';
 import { 
   EnvironmentOutlined, 
   ScheduleOutlined, 
@@ -30,7 +30,10 @@ const MapPage = () => {
         navigate('/schedule');
         break;
       case 'speakers':
-        navigate('/speakers');
+        window.open('https://www.gcsis.cn/expert/', '_blank');
+        break;
+      case 'security':
+        navigate('/security');
         break;
       default:
         break;
@@ -39,27 +42,50 @@ const MapPage = () => {
 
   return (
     <Layout className="map-container">
-      <Header className="map-header">
-        <div className="header-left">
-          <SafetyOutlined className="logo-icon" />
-          <span className="conference-title">西湖论剑数字安全大会</span>
+      <Header className="nav-header">
+        <div className="nav-logo">
+          <SafetyOutlined style={{ fontSize: '24px', color: '#fff' }} />
+          <span className="nav-title">西湖论剑数字安全大会</span>
         </div>
-        <Menu
-          theme="dark"
-          mode="horizontal"
-          className="nav-menu"
-          onClick={handleNavClick}
-          items={[
-            { label: '返回首页', key: 'home', icon: <SafetyOutlined /> },
-            { label: '会议日程', key: 'schedule', icon: <ScheduleOutlined /> },
-            { label: '嘉宾介绍', key: 'speakers', icon: <TeamOutlined /> }
-          ]}
-        />
-        <Avatar 
-          className="user-avatar"
-          icon={<UserOutlined />}
-          style={{ backgroundColor: '#87d068' }}
-        />
+        <div className="nav-right">
+          <Menu
+            theme="dark"
+            mode="horizontal"
+            className="top-nav"
+            onClick={handleNavClick}
+            items={[
+              { label: '返回首页', key: 'home', icon: <SafetyOutlined /> },
+              { label: '会议日程', key: 'schedule', icon: <ScheduleOutlined /> },
+              { label: '嘉宾介绍', key: 'speakers', icon: <TeamOutlined /> },
+            ]}
+          />
+          <Dropdown
+            menu={{
+              items: [
+                {
+                  key: 'settings',
+                  label: '个人设置',
+                  icon: <SafetyOutlined />,
+                  onClick: () => navigate('/settings')
+                },
+                {
+                  key: 'logout',
+                  label: '退出登录',
+                  icon: <SafetyOutlined />,
+                  onClick: () => {
+                    // Handle logout
+                  }
+                }
+              ]
+            }}
+            placement="bottomRight"
+          >
+            <Avatar
+              style={{ backgroundColor: '#87d068', cursor: 'pointer' }}
+              icon={<UserOutlined />}
+            />
+          </Dropdown>
+        </div>
       </Header>
       
       <Content className="map-content">
@@ -74,7 +100,7 @@ const MapPage = () => {
         >
           <div className="map-wrapper" onClick={handleMapClick}>
             <img
-              src={`${process.env.PUBLIC_URL}/pic/地图${currentMap}.png`} // 使用PUBLIC_URL确保路径正确
+              src={`/pic/地图${currentMap}.png`}
               alt={`会场地图${currentMap}`}
               className="map-image"
             />

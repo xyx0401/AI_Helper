@@ -1,55 +1,85 @@
 import React from 'react';
-import { Layout, Menu, Typography } from 'antd';
-import { SafetyOutlined, TeamOutlined, ScheduleOutlined, EnvironmentOutlined } from '@ant-design/icons';
+import { Layout, Menu, Typography, Avatar, Dropdown } from 'antd';
+import { SafetyOutlined, TeamOutlined, ScheduleOutlined, EnvironmentOutlined, UserOutlined, SettingOutlined, LogoutOutlined } from '@ant-design/icons';
 import './SchedulePage.css';
 import { useNavigate } from 'react-router-dom';
+import { getCurrentUser, logout } from '../../services/auth';
 
 const { Header, Content } = Layout;
 const { Title } = Typography;
 
 const SchedulePage = () => {
   const navigate = useNavigate();
+  const user = getCurrentUser();
 
-  const handleNavClick = (type) => {
-    if (type === 'schedule') {
-      navigate('/schedule');
-    } else if (type === 'speakers') {
-      navigate('/speakers');
-    } else if (type === 'map') {
-      navigate('/map');
-    } else if (type === 'security') {
-      navigate('/security');
+  const handleNavClick = ({ key }) => {
+    switch(key) {
+      case 'home':
+        navigate('/home');
+        break;
+      case 'speakers':
+        window.open('https://www.gcsis.cn/expert/', '_blank');
+        break;
+      case 'map':
+        navigate('/map');
+        break;
+      case 'security':
+        navigate('/security');
+        break;
+      default:
+        break;
     }
+  };
+
+  const handleLogout = () => {
+    logout();
+    navigate('/login');
   };
 
   return (
     <Layout className="schedule-layout">
-      <Header className="header">
-        <div className="logo">
+      <Header className="nav-header">
+        <div className="nav-logo">
           <SafetyOutlined style={{ fontSize: '24px', color: '#fff' }} />
-          <Title level={3} style={{ color: '#fff', margin: '0 0 0 16px' }}>
-            西湖论剑数字安全大会
-          </Title>
+          <span className="nav-title">西湖论剑数字安全大会</span>
         </div>
-        <Menu
-          theme="dark"
-          mode="horizontal"
-          className="top-nav"
-          onClick={({ key }) => handleNavClick(key)}
-        >
-          <Menu.Item key="schedule">
-            <ScheduleOutlined /> 会议日程
-          </Menu.Item>
-          <Menu.Item key="speakers">
-            <TeamOutlined /> 嘉宾介绍
-          </Menu.Item>
-          <Menu.Item key="map">
-            <EnvironmentOutlined /> 会场地图
-          </Menu.Item>
-          <Menu.Item key="security">
-            <SafetyOutlined /> 安全指南
-          </Menu.Item>
-        </Menu>
+        <div className="nav-right">
+          <Menu
+            theme="dark"
+            mode="horizontal"
+            className="nav-menu"
+            onClick={handleNavClick}
+            items={[
+              { label: '返回首页', key: 'home', icon: <ScheduleOutlined /> },
+              { label: '嘉宾介绍', key: 'speakers', icon: <TeamOutlined /> },
+              { label: '会场地图', key: 'map', icon: <EnvironmentOutlined /> },
+            ]}
+          />
+          <Dropdown
+            menu={{
+              items: [
+                {
+                  key: 'settings',
+                  label: '个人设置',
+                  icon: <SettingOutlined />,
+                  onClick: () => navigate('/settings')
+                },
+                {
+                  key: 'logout',
+                  label: '退出登录',
+                  icon: <LogoutOutlined />,
+                  onClick: handleLogout
+                }
+              ]
+            }}
+            placement="bottomRight"
+          >
+            <Avatar
+              style={{ backgroundColor: '#87d068', cursor: 'pointer' }}
+              icon={<UserOutlined />}
+            />
+          </Dropdown>
+        </div>
       </Header>
       <Content className="schedule-content">
         <div className="schedule-container">

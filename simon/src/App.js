@@ -33,7 +33,7 @@ function App() {
         <Route path="/login" element={<UserLogin />} />
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/home" element={<HomePage />} />
-        <Route path="/" element={<Navigate to="/home" />} />
+        <Route path="/" element={<Navigate to="/home" replace />} />
         <Route path="/map" element={<MapPage />} />
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/settings" element={<UserSettings />} />

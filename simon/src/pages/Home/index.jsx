@@ -124,24 +124,22 @@ export default function HomePage() {
     return '我是西湖论剑数字安全大会的AI助手，很高兴为您服务！请问有什么可以帮助您的吗？';
   };
 
-  const handleNavClick = (type) => {
-    const messages = {
-      schedule: '正在跳转至会议日程...',
-      speakers: '正在跳转至嘉宾介绍...',
-      map: '正在跳转至会场地图...',
-      security: '正在跳转至安全指南...'
-    };
-
-    setMessages(prev => [...prev, {
-      type: 'system',
-      text: messages[type],
-      time: new Date().toLocaleTimeString()
-    }]);
-
-    if (type === 'schedule') {
-      navigate('/schedule');
-    } else if (type === 'map') {
-      navigate('/map');
+  const handleNavClick = ({ key }) => {
+    switch(key) {
+      case 'schedule':
+        navigate('/schedule');
+        break;
+      case 'speakers':
+        window.open('https://www.gcsis.cn/expert/', '_blank');
+        break;
+      case 'map':
+        navigate('/map');
+        break;
+      case 'security':
+        navigate('/security');
+        break;
+      default:
+        break;
     }
   };
 
@@ -155,65 +153,48 @@ export default function HomePage() {
 
   return (
     <Layout className="home-layout">
-      <Header className="header">
-        <div className="logo">
+      <Header className="nav-header">
+        <div className="nav-logo">
           <SafetyOutlined style={{ fontSize: '24px', color: '#fff' }} />
-          <Title level={3} style={{ color: '#fff', margin: '0 0 0 16px' }}>
-            西湖论剑数字安全大会
-          </Title>
+          <span className="nav-title">西湖论剑数字安全大会</span>
         </div>
-        <Menu
-          theme="dark"
-          mode="horizontal"
-          className="top-nav"
-          onClick={({ key }) => handleNavClick(key)}
-        >
-          <Menu.Item key="schedule">
-            <ScheduleOutlined /> 会议日程
-          </Menu.Item>
-          <Menu.Item key="speakers">
-            <TeamOutlined /> 嘉宾介绍
-          </Menu.Item>
-          <Menu.Item key="map">
-            <EnvironmentOutlined /> 会场地图
-          </Menu.Item>
-          <Menu.Item key="security">
-            <SafetyOutlined /> 安全指南
-          </Menu.Item>
-        </Menu>
-        <Dropdown
-          overlay={
-            <Menu className="user-menu">
-              <Menu.Item key="info" className="user-info">
-                <div className="user-id">ID: {user ? user.userId : 'Guest'}</div>
-                <div className="user-name">用户名: {username}</div>
-              </Menu.Item>
-              <Menu.Divider />
-              <Menu.Item 
-                key="settings" 
-                icon={<SettingOutlined />}
-                onClick={() => navigate('/settings')}
-              >
-                用户设置
-              </Menu.Item>
-              <Menu.Item 
-                key="logout" 
-                icon={<LogoutOutlined />}
-                onClick={handleLogout}
-              >
-                退出登录
-              </Menu.Item>
-            </Menu>
-          }
-          trigger={['hover']}
-          placement="bottomRight"
-        >
-          <Avatar 
-            className="user-avatar"
-            icon={<UserOutlined />}
-            style={{ backgroundColor: '#1890ff', cursor: 'pointer' }}
+        <div className="nav-right">
+          <Menu
+            theme="dark"
+            mode="horizontal"
+            className="top-nav"
+            onClick={handleNavClick}
+            items={[
+              { label: '会议日程', key: 'schedule', icon: <ScheduleOutlined /> },
+              { label: '嘉宾介绍', key: 'speakers', icon: <TeamOutlined /> },
+              { label: '会场地图', key: 'map', icon: <EnvironmentOutlined /> },
+            ]}
           />
-        </Dropdown>
+          <Dropdown
+            menu={{
+              items: [
+                {
+                  key: 'settings',
+                  label: '个人设置',
+                  icon: <SettingOutlined />,
+                  onClick: () => navigate('/settings')
+                },
+                {
+                  key: 'logout',
+                  label: '退出登录',
+                  icon: <LogoutOutlined />,
+                  onClick: handleLogout
+                }
+              ]
+            }}
+            placement="bottomRight"
+          >
+            <Avatar
+              style={{ backgroundColor: '#87d068', cursor: 'pointer' }}
+              icon={<UserOutlined />}
+            />
+          </Dropdown>
+        </div>
       </Header>
 
       <Content className="content">
@@ -223,13 +204,6 @@ export default function HomePage() {
             <Card 
               title="论坛关注度实时排行" 
               bordered={false}
-              extra={
-                <Select defaultValue="realtime" style={{ width: 120 }}>
-                  <Option value="realtime">实时热度</Option>
-                  <Option value="daily">今日排行</Option>
-                  <Option value="weekly">本周排行</Option>
-                </Select>
-              }
             >
               <List
                 dataSource={[
@@ -274,21 +248,17 @@ export default function HomePage() {
                 className="navigation-card"
               >
                 <div className="nav-grid">
-                  <div className="nav-item" onClick={() => handleNavClick('schedule')}>
+                  <div className="nav-item" onClick={() => handleNavClick({ key: 'schedule' })}>
                     <ScheduleOutlined className="nav-icon" />
                     <span>会议日程</span>
                   </div>
-                  <div className="nav-item" onClick={() => handleNavClick('speakers')}>
+                  <div className="nav-item" onClick={() => handleNavClick({ key: 'speakers' })}>
                     <TeamOutlined className="nav-icon" />
                     <span>嘉宾介绍</span>
                   </div>
-                  <div className="nav-item" onClick={() => handleNavClick('map')}>
+                  <div className="nav-item" onClick={() => handleNavClick({ key: 'map' })}>
                     <EnvironmentOutlined className="nav-icon" />
                     <span>会场地图</span>
-                  </div>
-                  <div className="nav-item" onClick={() => handleNavClick('security')}>
-                    <SafetyOutlined className="nav-icon" />
-                    <span>安全指南</span>
                   </div>
                 </div>
               </Card>
@@ -296,7 +266,7 @@ export default function HomePage() {
 
             {/* 欢迎信息模态框 */}
             <Modal
-              title="欢迎来到2024西湖论剑数字安全大会"
+              title="欢迎来到2025西湖论剑数字安全大会"
               visible={welcomeVisible}
               onOk={() => setWelcomeVisible(false)}
               onCancel={() => setWelcomeVisible(false)}
